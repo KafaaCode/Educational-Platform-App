@@ -1,6 +1,7 @@
 {
     "pageNotFound":"Oops! Page Not Found",
     "pageNotFoundMsg":"The page you are looking for does not exist.",
-    "loding":"loding..."
-
+    "loding":"loding...",
+    "backOnline":"Connected to the internet",
+    "youAreOffline":"No internet connection"
 }

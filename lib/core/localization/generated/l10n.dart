@@ -79,6 +79,26 @@ class Lang {
       args: [],
     );
   }
+
+  /// `Connected to the internet`
+  String get backOnline {
+    return Intl.message(
+      'Connected to the internet',
+      name: 'backOnline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connection`
+  String get youAreOffline {
+    return Intl.message(
+      'No internet connection',
+      name: 'youAreOffline',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Lang> {
