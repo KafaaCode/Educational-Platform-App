@@ -99,6 +99,36 @@ class Lang {
       args: [],
     );
   }
+
+  /// ` `
+  String get tilteIntroPage1 {
+    return Intl.message(
+      ' ',
+      name: 'tilteIntroPage1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get textIntroPage1 {
+    return Intl.message(
+      ' ',
+      name: 'textIntroPage1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get btnIntroPage1 {
+    return Intl.message(
+      ' ',
+      name: 'btnIntroPage1',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Lang> {

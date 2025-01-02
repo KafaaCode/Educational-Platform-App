@@ -1,7 +1,11 @@
 {
+    "@@locale": "en_US",
     "pageNotFound":"Oops! Page Not Found",
     "pageNotFoundMsg":"The page you are looking for does not exist.",
     "loding":"loding...",
     "backOnline":"Connected to the internet",
-    "youAreOffline":"No internet connection"
+    "youAreOffline":"No internet connection",
+    "tilteIntroPage1":" ",
+    "textIntroPage1":" ",
+    "btnIntroPage1":" "
 }
