@@ -12,9 +12,8 @@ class IntroPage extends StatelessWidget {
       Positioned.fill(
         child: Opacity(
           opacity: 0.8,
-          // Adjust transparency
           child: Image.asset(
-            'assets/images/bg_intro_page1.png', // Replace with your image asset path
+            'assets/images/bg_intro_page1.png',
             fit: BoxFit.cover,
             alignment: Alignment.center,
           ),
@@ -27,18 +26,17 @@ class IntroPage extends StatelessWidget {
           Center(
               child: Image.asset('assets/images/logo.png',
                   width: 150.w, height: 200.h)),
-          SizedBox(height: 20.h), // Responsive spacing
-
+          SizedBox(height: 20.h),
           Container(
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.1),
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.white.withOpacity(0.5), // لون الظل
-                  spreadRadius: 5, // انتشار الظل
-                  blurRadius: 7, // تشويش الظل
-                  offset: const Offset(0, 3), // إزاحة الظل
+                  color: Colors.white.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: const Offset(0, 3),
                 ),
                 BoxShadow(
                   color: Colors.white.withOpacity(0.05),
