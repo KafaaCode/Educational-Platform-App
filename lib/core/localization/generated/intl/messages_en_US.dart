@@ -22,10 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "backOnline":
+            MessageLookupByLibrary.simpleMessage("Connected to the internet"),
         "loding": MessageLookupByLibrary.simpleMessage("loding..."),
         "pageNotFound":
             MessageLookupByLibrary.simpleMessage("Oops! Page Not Found"),
         "pageNotFoundMsg": MessageLookupByLibrary.simpleMessage(
-            "The page you are looking for does not exist.")
+            "The page you are looking for does not exist."),
+        "youAreOffline":
+            MessageLookupByLibrary.simpleMessage("No internet connection")
       };
 }
