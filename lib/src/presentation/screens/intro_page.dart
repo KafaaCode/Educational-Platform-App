@@ -33,13 +33,13 @@ class IntroPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.white.withOpacity(0.5),
+                  color: Colors.white.withOpacity(0.6),
                   spreadRadius: 5,
                   blurRadius: 7,
                   offset: const Offset(0, 3),
                 ),
                 BoxShadow(
-                  color: Colors.white.withOpacity(0.05),
+                  color: Colors.white.withOpacity(0.06),
                   spreadRadius: 3,
                   blurRadius: 5,
                   offset: const Offset(0, -3),
