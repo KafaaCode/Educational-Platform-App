@@ -52,7 +52,7 @@ class _MainApp extends State<MainApp> {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              locale: const Locale('en'),
+              locale: const Locale('ar'),
               supportedLocales: Lang.delegate.supportedLocales,
               onGenerateTitle: (BuildContext context) => "app",
               initialRoute: RoutesNames.chechAuthRoute,
