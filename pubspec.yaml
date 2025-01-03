@@ -39,6 +39,12 @@ flutter:
   assets:
     - assets/lottie/
     - assets/images/
+    - assets/fonts/
+fonts:
+   - family: Bahij_TheSansArabic
+     fonts:
+       - asset: assets/fonts/Bahij_TheSansArabic-Bold.ttf
+         weight: 500
 flutter_intl: 
    enabled: true 
    class_name: Lang 
