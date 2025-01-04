@@ -1,6 +1,7 @@
 import 'package:educational_platform_app/core/routes/routes_name.dart';
 import 'package:educational_platform_app/src/presentation/screens/404page.dart';
 import 'package:educational_platform_app/src/presentation/screens/intro_page_tow.dart';
+import 'package:educational_platform_app/src/presentation/screens/login/login_questions_pages.dart';
 import 'package:fluro/fluro.dart';
 
 void configureRoutes(FluroRouter router) {
@@ -8,7 +9,7 @@ void configureRoutes(FluroRouter router) {
     RoutesNames.chechAuthRoute,
     handler: Handler(
       handlerFunc: (context, parameters) {
-        return IntroPageTow();
+        return LoginQuestionsPagesTwo();
       },
     ),
   );

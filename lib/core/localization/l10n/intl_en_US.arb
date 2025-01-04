@@ -7,5 +7,16 @@
     "youAreOffline":"No internet connection",
     "tilteIntroPage1":" ",
     "textIntroPage1":" ",
-    "btnIntroPage1":" "
+    "btnIntroPage1":" ",
+    "type":" ",
+    "academicStage":" ",
+    "basic":" ",
+    "highSchool":" ",
+    "continueRegistration":" ",
+    "female":" ",
+    "male":" ",
+    "createAccount":" ",
+    "loginAStudent":" ",
+    "loginTeacher":" ",
+    "registration":" "
 }

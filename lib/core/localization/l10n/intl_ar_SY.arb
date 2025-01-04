@@ -7,5 +7,16 @@
     "youAreOffline":"لايوجد اتصال في الانترنت",
     "tilteIntroPage1":"تعلم وازدهر",
     "textIntroPage1":"أطلق العنان لإمكانياتك، من خلال دوراتنا التدريبية التي يقودها الخبراء",
-    "btnIntroPage1":"متابعة التسجيل"
+    "btnIntroPage1":"متابعة التسجيل",
+    "type":"النوع",
+    "academicStage":"المرحلة الدراسية",
+    "basic":"الأساسية",
+    "highSchool":"الثانوية",
+    "continueRegistration":"متابعة التسجيل",
+    "female":"أنثى",
+    "male":"ذكر",
+    "createAccount":"إنشاء حساب",
+    "loginAStudent":"تسجيل دخول كطالب",
+    "loginTeacher":"تسجيل دخول كمدرس",
+    "registration":"تسجيل"
 }

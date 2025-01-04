@@ -22,16 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "academicStage": MessageLookupByLibrary.simpleMessage(" "),
         "backOnline":
             MessageLookupByLibrary.simpleMessage("Connected to the internet"),
+        "basic": MessageLookupByLibrary.simpleMessage(" "),
         "btnIntroPage1": MessageLookupByLibrary.simpleMessage(" "),
+        "continueRegistration": MessageLookupByLibrary.simpleMessage(" "),
+        "createAccount": MessageLookupByLibrary.simpleMessage(" "),
+        "female": MessageLookupByLibrary.simpleMessage(" "),
+        "highSchool": MessageLookupByLibrary.simpleMessage(" "),
         "loding": MessageLookupByLibrary.simpleMessage("loding..."),
+        "loginAStudent": MessageLookupByLibrary.simpleMessage(" "),
+        "loginTeacher": MessageLookupByLibrary.simpleMessage(" "),
+        "male": MessageLookupByLibrary.simpleMessage(" "),
         "pageNotFound":
             MessageLookupByLibrary.simpleMessage("Oops! Page Not Found"),
         "pageNotFoundMsg": MessageLookupByLibrary.simpleMessage(
             "The page you are looking for does not exist."),
+        "registration": MessageLookupByLibrary.simpleMessage(" "),
         "textIntroPage1": MessageLookupByLibrary.simpleMessage(" "),
         "tilteIntroPage1": MessageLookupByLibrary.simpleMessage(" "),
+        "type": MessageLookupByLibrary.simpleMessage(" "),
         "youAreOffline":
             MessageLookupByLibrary.simpleMessage("No internet connection")
       };
