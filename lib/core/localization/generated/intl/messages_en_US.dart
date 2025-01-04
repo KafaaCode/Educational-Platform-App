@@ -23,14 +23,17 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "academicStage": MessageLookupByLibrary.simpleMessage(" "),
+        "account": MessageLookupByLibrary.simpleMessage(" "),
         "backOnline":
             MessageLookupByLibrary.simpleMessage("Connected to the internet"),
         "basic": MessageLookupByLibrary.simpleMessage(" "),
         "btnIntroPage1": MessageLookupByLibrary.simpleMessage(" "),
         "continueRegistration": MessageLookupByLibrary.simpleMessage(" "),
+        "courses": MessageLookupByLibrary.simpleMessage(" "),
         "createAccount": MessageLookupByLibrary.simpleMessage(" "),
         "female": MessageLookupByLibrary.simpleMessage(" "),
         "highSchool": MessageLookupByLibrary.simpleMessage(" "),
+        "home": MessageLookupByLibrary.simpleMessage(" "),
         "loding": MessageLookupByLibrary.simpleMessage("loding..."),
         "loginAStudent": MessageLookupByLibrary.simpleMessage(" "),
         "loginTeacher": MessageLookupByLibrary.simpleMessage(" "),
@@ -40,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageNotFoundMsg": MessageLookupByLibrary.simpleMessage(
             "The page you are looking for does not exist."),
         "registration": MessageLookupByLibrary.simpleMessage(" "),
+        "tests": MessageLookupByLibrary.simpleMessage(" "),
         "textIntroPage1": MessageLookupByLibrary.simpleMessage(" "),
         "tilteIntroPage1": MessageLookupByLibrary.simpleMessage(" "),
         "type": MessageLookupByLibrary.simpleMessage(" "),

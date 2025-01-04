@@ -239,6 +239,46 @@ class Lang {
       args: [],
     );
   }
+
+  /// ` `
+  String get account {
+    return Intl.message(
+      ' ',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get courses {
+    return Intl.message(
+      ' ',
+      name: 'courses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get home {
+    return Intl.message(
+      ' ',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get tests {
+    return Intl.message(
+      ' ',
+      name: 'tests',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Lang> {
