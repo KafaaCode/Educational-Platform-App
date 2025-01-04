@@ -18,5 +18,9 @@
     "createAccount":" ",
     "loginAStudent":" ",
     "loginTeacher":" ",
-    "registration":" "
+    "registration":" ",
+    "account":" ",
+    "courses":" ",
+    "home":" ",
+    "tests":" "
 }

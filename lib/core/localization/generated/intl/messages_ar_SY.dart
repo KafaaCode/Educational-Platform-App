@@ -24,15 +24,18 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "academicStage":
             MessageLookupByLibrary.simpleMessage("المرحلة الدراسية"),
+        "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "backOnline":
             MessageLookupByLibrary.simpleMessage("تم الاتصال في الانترنت"),
         "basic": MessageLookupByLibrary.simpleMessage("الأساسية"),
         "btnIntroPage1": MessageLookupByLibrary.simpleMessage("متابعة التسجيل"),
         "continueRegistration":
             MessageLookupByLibrary.simpleMessage("متابعة التسجيل"),
+        "courses": MessageLookupByLibrary.simpleMessage("الكورسات"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "female": MessageLookupByLibrary.simpleMessage("أنثى"),
         "highSchool": MessageLookupByLibrary.simpleMessage("الثانوية"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "loding": MessageLookupByLibrary.simpleMessage("جار التحميل"),
         "loginAStudent":
             MessageLookupByLibrary.simpleMessage("تسجيل دخول كطالب"),
@@ -44,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageNotFoundMsg": MessageLookupByLibrary.simpleMessage(
             "الصفحة التي تبحث عنها غير موجودة."),
         "registration": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "tests": MessageLookupByLibrary.simpleMessage("الاختبارات"),
         "textIntroPage1": MessageLookupByLibrary.simpleMessage(
             "أطلق العنان لإمكانياتك، من خلال دوراتنا التدريبية التي يقودها الخبراء"),
         "tilteIntroPage1": MessageLookupByLibrary.simpleMessage("تعلم وازدهر"),
