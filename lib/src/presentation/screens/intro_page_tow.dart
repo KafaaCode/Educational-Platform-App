@@ -1,3 +1,4 @@
+import 'package:educational_platform_app/core/localization/generated/l10n.dart';
 import 'package:educational_platform_app/src/presentation/widgets/background.dart';
 import 'package:educational_platform_app/src/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class IntroPageTow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Lang lang = Lang.of(context);
     return Background(
         child: Center(
       child: Column(
@@ -17,19 +19,22 @@ class IntroPageTow extends StatelessWidget {
           SizedBox(
             height: 25.h,
           ),
-          Button(onPressed: () {}, text: "إنشاء حساب", type: ButtonType.worng),
+          Button(
+              onPressed: () {},
+              text: lang.createAccount,
+              type: ButtonType.worng),
           SizedBox(
             height: 10.h,
           ),
           Button(
               onPressed: () {},
-              text: "تسجيل دخول كطالب",
+              text: lang.loginAStudent,
               type: ButtonType.nomal),
           SizedBox(
             height: 10.h,
           ),
           Button(
-              onPressed: () {}, text: "تسجيل دخول كمدرس", type: ButtonType.red),
+              onPressed: () {}, text: lang.loginTeacher, type: ButtonType.red),
         ],
       ),
     ));

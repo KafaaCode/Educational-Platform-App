@@ -129,6 +129,116 @@ class Lang {
       args: [],
     );
   }
+
+  /// ` `
+  String get type {
+    return Intl.message(
+      ' ',
+      name: 'type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get academicStage {
+    return Intl.message(
+      ' ',
+      name: 'academicStage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get basic {
+    return Intl.message(
+      ' ',
+      name: 'basic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get highSchool {
+    return Intl.message(
+      ' ',
+      name: 'highSchool',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get continueRegistration {
+    return Intl.message(
+      ' ',
+      name: 'continueRegistration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get female {
+    return Intl.message(
+      ' ',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get male {
+    return Intl.message(
+      ' ',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get createAccount {
+    return Intl.message(
+      ' ',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get loginAStudent {
+    return Intl.message(
+      ' ',
+      name: 'loginAStudent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get loginTeacher {
+    return Intl.message(
+      ' ',
+      name: 'loginTeacher',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` `
+  String get registration {
+    return Intl.message(
+      ' ',
+      name: 'registration',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Lang> {

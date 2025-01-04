@@ -28,6 +28,7 @@ class Background extends StatelessWidget {
               ),
             ),
           ),
+
           Positioned(
             child: Opacity(
               opacity: 1,
@@ -59,9 +60,6 @@ class Background extends StatelessWidget {
                 )),
           ),
 
-          // Central image/icon
-          child,
-
           Positioned(
             top: 170,
             right: 170,
@@ -81,6 +79,7 @@ class Background extends StatelessWidget {
                   )),
             ),
           ),
+          child,
         ],
       ),
     );
