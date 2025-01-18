@@ -6,7 +6,10 @@ import 'package:educational_platform_app/src/presentation/screens/main/widgets/t
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MainPage createState() => _MainPage();
 }
 
@@ -47,35 +50,52 @@ class _MainPage extends State<MainPage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        iconSize: 35,
-        unselectedItemColor: Colors.black26,
-        elevation: 30,
-        // landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
-        selectedItemColor: const Color.fromRGBO(85, 148, 92, 1),
-        showUnselectedLabels: true,
-        items: [
-          BottomNavigationBarItem(
-            icon: const Icon(
-              Icons.person_2_outlined,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.35),
+              spreadRadius: 5,
+              blurRadius: 19,
+              offset: const Offset(0, 3),
             ),
-            label: lang.account,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.book_outlined),
-            label: lang.tests,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.emoji_events_outlined),
-            label: lang.courses,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.home_outlined),
-            label: lang.home,
-          ),
-        ],
+          ],
+        ),
+        child: ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+            ),
+            child: BottomNavigationBar(
+              currentIndex: _selectedIndex,
+              onTap: _onItemTapped,
+              iconSize: 35,
+              unselectedItemColor: Colors.black26,
+              backgroundColor: Colors.black,
+              // landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+              selectedItemColor: const Color.fromRGBO(85, 148, 92, 1),
+              showUnselectedLabels: true,
+              items: [
+                BottomNavigationBarItem(
+                  icon: const Icon(
+                    Icons.person_2_outlined,
+                  ),
+                  label: lang.account,
+                ),
+                BottomNavigationBarItem(
+                  icon: const Icon(Icons.book_outlined),
+                  label: lang.tests,
+                ),
+                BottomNavigationBarItem(
+                  icon: const Icon(Icons.emoji_events_outlined),
+                  label: lang.courses,
+                ),
+                BottomNavigationBarItem(
+                  icon: const Icon(Icons.home_outlined),
+                  label: lang.home,
+                ),
+              ],
+            )),
       ),
       body: IndexedStack(
         index: _selectedIndex,
