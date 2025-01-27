@@ -3,12 +3,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'check_auth_event.dart';
 part 'check_auth_state.dart';
-part '../bloc/check_auth_bloc.freezed.dart';
+part 'check_auth_bloc.freezed.dart';
 
 class CheckAuthBloc extends Bloc<CheckAuthEvent, CheckAuthState> {
   CheckAuthBloc() : super(_Initial()) {
-    on<CheckAuthEvent>((event, emit) {
-      
-    });
+    on<CheckAuthEvent>((event, emit) {});
   }
 }
