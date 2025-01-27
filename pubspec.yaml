@@ -19,6 +19,7 @@ dependencies:
   flutter_localization: any
   flutter_screenutil: ^5.8.4
   freezed: any
+  flutter_flavor: ^3.1.4
   toastification: any
   url_strategy: any
   lottie: ^3.1.3
