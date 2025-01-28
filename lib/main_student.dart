@@ -6,6 +6,7 @@ import 'package:educational_platform_app/student/core/routes/router_screens.dart
 import 'package:educational_platform_app/student/core/routes/routers_define.dart';
 import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/core/services/services_locator.dart';
+import 'package:educational_platform_app/student/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -56,6 +57,7 @@ class _MainApp extends State<MainApp> {
               ],
               locale: const Locale('ar'),
               supportedLocales: Lang.delegate.supportedLocales,
+              theme: appTheme,
               onGenerateTitle: (BuildContext context) => "Student App",
               initialRoute: RoutesNames.chechAuthRoute,
               onGenerateRoute: AppRouter.router.generator,
