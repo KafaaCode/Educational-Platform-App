@@ -35,7 +35,7 @@ class _TextInputFieldState extends State<TextInputField> {
         obscureText: widget.isPassword ? _obscureText : false,
         decoration: InputDecoration(
           contentPadding:
-              const EdgeInsets.symmetric(vertical: 25, horizontal: 0),
+              const EdgeInsets.symmetric(vertical: 20, horizontal: 0),
           labelText: widget.labeltext,
           labelStyle: TextStyle(
             fontFamily: 'Cairo',

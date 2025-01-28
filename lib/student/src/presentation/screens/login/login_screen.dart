@@ -1,4 +1,4 @@
-import 'package:educational_platform_app/student/src/presentation/screens/login/widgets/Text_field_widget.dart';
+import 'package:educational_platform_app/student/src/presentation/widgets/Text_field_widget.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/app_scaffold.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
