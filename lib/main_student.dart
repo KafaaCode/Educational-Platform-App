@@ -1,6 +1,6 @@
+import 'package:educational_platform_app/core/localization/generated/l10n.dart';
+import 'package:educational_platform_app/core/localization/language/language_cubit.dart';
 import 'package:educational_platform_app/flavors.dart';
-import 'package:educational_platform_app/student/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/student/core/localization/language/language_cubit.dart';
 import 'package:educational_platform_app/student/core/observer/app_observer.dart';
 import 'package:educational_platform_app/student/core/routes/router_screens.dart';
 import 'package:educational_platform_app/student/core/routes/routers_define.dart';
@@ -18,7 +18,6 @@ void main() {
   Bloc.observer = AppBlocObserver();
   ServicesLocator().init();
   configureRoutes(AppRouter.router);
-
   configureStudentFlavors();
   runApp(const MainApp());
 }
@@ -57,7 +56,7 @@ class _MainApp extends State<MainApp> {
               ],
               locale: const Locale('ar'),
               supportedLocales: Lang.delegate.supportedLocales,
-              onGenerateTitle: (BuildContext context) => "app",
+              onGenerateTitle: (BuildContext context) => "Student App",
               initialRoute: RoutesNames.chechAuthRoute,
               onGenerateRoute: AppRouter.router.generator,
               navigatorKey: SingleInstanceService.navigatorKey,

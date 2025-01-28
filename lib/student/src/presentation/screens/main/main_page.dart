@@ -1,8 +1,8 @@
-import 'package:educational_platform_app/student/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/account_widget.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/courses_widget.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/main_widget.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/tests_widget.dart';
+import 'package:educational_platform_app/core/localization/generated/l10n.dart';
+import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/account_widget.dart';
+import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/courses_widget.dart';
+import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/main_widget.dart';
+import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/tests_widget.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {

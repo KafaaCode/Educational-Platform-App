@@ -1,4 +1,4 @@
-import 'package:educational_platform_app/student/core/localization/generated/l10n.dart';
+import 'package:educational_platform_app/core/localization/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

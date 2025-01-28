@@ -1,6 +1,6 @@
-import 'package:educational_platform_app/student/core/routes/routes_name.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/404page.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/main/main_page.dart';
+import 'package:educational_platform_app/teacher/core/routes/routes_name.dart';
+import 'package:educational_platform_app/teacher/src/presentation/screens/404page.dart';
+import 'package:educational_platform_app/teacher/src/presentation/screens/main/main_page.dart';
 import 'package:fluro/fluro.dart';
 
 void configureRoutes(FluroRouter router) {

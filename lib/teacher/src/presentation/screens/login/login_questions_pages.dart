@@ -1,7 +1,7 @@
-import 'package:educational_platform_app/student/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/login/widgets/questions_button.dart';
+import 'package:educational_platform_app/core/localization/generated/l10n.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/background.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';
+import 'package:educational_platform_app/teacher/src/presentation/screens/login/widgets/questions_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

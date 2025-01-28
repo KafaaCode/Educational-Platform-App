@@ -1,14 +1,14 @@
+import 'package:educational_platform_app/core/localization/generated/l10n.dart';
+import 'package:educational_platform_app/core/localization/language/language_cubit.dart';
 import 'package:educational_platform_app/flavors.dart';
-import 'package:educational_platform_app/teacher/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/teacher/core/localization/language/language_cubit.dart';
 import 'package:educational_platform_app/teacher/core/observer/app_observer.dart';
 import 'package:educational_platform_app/teacher/core/routes/router_screens.dart';
 import 'package:educational_platform_app/teacher/core/routes/routers_define.dart';
 import 'package:educational_platform_app/teacher/core/routes/routes_name.dart';
 import 'package:educational_platform_app/teacher/core/services/services_locator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:url_strategy/url_strategy.dart';
 
@@ -56,7 +56,7 @@ class _MainApp extends State<MainApp> {
               ],
               locale: const Locale('ar'),
               supportedLocales: Lang.delegate.supportedLocales,
-              onGenerateTitle: (BuildContext context) => "app",
+              onGenerateTitle: (BuildContext context) => "Teacher App",
               initialRoute: RoutesNames.chechAuthRoute,
               onGenerateRoute: AppRouter.router.generator,
               navigatorKey: SingleInstanceService.navigatorKey,
