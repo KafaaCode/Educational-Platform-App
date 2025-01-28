@@ -1,6 +1,5 @@
 import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/404page.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/login/login_questions_pages.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/login/login_screen.dart';
 
 import 'package:fluro/fluro.dart';
