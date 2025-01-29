@@ -3,16 +3,20 @@ import 'package:flutter/material.dart';
 class TextInputField extends StatefulWidget {
   final TextEditingController? controller;
   final String labeltext;
+  final String? initialValue;
   final IconData icon;
   final TextInputType? textInputType;
   final FormFieldValidator<String>? validator;
+  final Function(String vlaue)? onChanged;
   final bool isPassword;
 
   const TextInputField({
     super.key,
     required this.labeltext,
     required this.icon,
+    this.onChanged,
     this.textInputType,
+    this.initialValue,
     this.controller,
     this.validator,
     this.isPassword = false,
@@ -30,8 +34,11 @@ class _TextInputFieldState extends State<TextInputField> {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: TextFormField(
+        initialValue: null, // إزالة initialValue لأننا نستخدم controller
+        onChanged: widget.onChanged,
         controller: widget.controller,
-        textDirection: TextDirection.rtl,
+        textDirection: TextDirection.ltr, // تغيير اتجاه النص
+        textAlign: TextAlign.right, // محاذاة النص إلى اليمين
         obscureText: widget.isPassword ? _obscureText : false,
         decoration: InputDecoration(
           contentPadding:

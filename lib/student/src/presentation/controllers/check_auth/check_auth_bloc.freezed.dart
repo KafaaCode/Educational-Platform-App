@@ -19,32 +19,44 @@ mixin _$CheckAuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(User user) updateInfo,
+    required TResult Function(User user) sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user)? sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(User user)? updateInfo,
+    TResult Function(User user)? sendData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_SendDataEvent value) sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_SendDataEvent value)? sendData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_SendDataEvent value)? sendData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +125,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(User user) updateInfo,
+    required TResult Function(User user) sendData,
   }) {
     return started();
   }
@@ -121,6 +135,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user)? sendData,
   }) {
     return started?.call();
   }
@@ -129,6 +145,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(User user)? updateInfo,
+    TResult Function(User user)? sendData,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -141,6 +159,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_SendDataEvent value) sendData,
   }) {
     return started(this);
   }
@@ -149,6 +169,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_SendDataEvent value)? sendData,
   }) {
     return started?.call(this);
   }
@@ -157,6 +179,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_SendDataEvent value)? sendData,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,29 +195,325 @@ abstract class _Started implements CheckAuthEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateInfoEventImplCopyWith<$Res> {
+  factory _$$UpdateInfoEventImplCopyWith(_$UpdateInfoEventImpl value,
+          $Res Function(_$UpdateInfoEventImpl) then) =
+      __$$UpdateInfoEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({User user});
+}
+
+/// @nodoc
+class __$$UpdateInfoEventImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$UpdateInfoEventImpl>
+    implements _$$UpdateInfoEventImplCopyWith<$Res> {
+  __$$UpdateInfoEventImplCopyWithImpl(
+      _$UpdateInfoEventImpl _value, $Res Function(_$UpdateInfoEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$UpdateInfoEventImpl(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
+  const _$UpdateInfoEventImpl({required this.user});
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'CheckAuthEvent.updateInfo(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateInfoEventImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateInfoEventImplCopyWith<_$UpdateInfoEventImpl> get copyWith =>
+      __$$UpdateInfoEventImplCopyWithImpl<_$UpdateInfoEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(User user) updateInfo,
+    required TResult Function(User user) sendData,
+  }) {
+    return updateInfo(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user)? sendData,
+  }) {
+    return updateInfo?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(User user)? updateInfo,
+    TResult Function(User user)? sendData,
+    required TResult orElse(),
+  }) {
+    if (updateInfo != null) {
+      return updateInfo(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_SendDataEvent value) sendData,
+  }) {
+    return updateInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_SendDataEvent value)? sendData,
+  }) {
+    return updateInfo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_SendDataEvent value)? sendData,
+    required TResult orElse(),
+  }) {
+    if (updateInfo != null) {
+      return updateInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateInfoEvent implements CheckAuthEvent {
+  const factory _UpdateInfoEvent({required final User user}) =
+      _$UpdateInfoEventImpl;
+
+  User get user;
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateInfoEventImplCopyWith<_$UpdateInfoEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SendDataEventImplCopyWith<$Res> {
+  factory _$$SendDataEventImplCopyWith(
+          _$SendDataEventImpl value, $Res Function(_$SendDataEventImpl) then) =
+      __$$SendDataEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({User user});
+}
+
+/// @nodoc
+class __$$SendDataEventImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$SendDataEventImpl>
+    implements _$$SendDataEventImplCopyWith<$Res> {
+  __$$SendDataEventImplCopyWithImpl(
+      _$SendDataEventImpl _value, $Res Function(_$SendDataEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+  }) {
+    return _then(_$SendDataEventImpl(
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SendDataEventImpl implements _SendDataEvent {
+  const _$SendDataEventImpl({required this.user});
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'CheckAuthEvent.sendData(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SendDataEventImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendDataEventImplCopyWith<_$SendDataEventImpl> get copyWith =>
+      __$$SendDataEventImplCopyWithImpl<_$SendDataEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(User user) updateInfo,
+    required TResult Function(User user) sendData,
+  }) {
+    return sendData(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user)? sendData,
+  }) {
+    return sendData?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(User user)? updateInfo,
+    TResult Function(User user)? sendData,
+    required TResult orElse(),
+  }) {
+    if (sendData != null) {
+      return sendData(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_SendDataEvent value) sendData,
+  }) {
+    return sendData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_SendDataEvent value)? sendData,
+  }) {
+    return sendData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_SendDataEvent value)? sendData,
+    required TResult orElse(),
+  }) {
+    if (sendData != null) {
+      return sendData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendDataEvent implements CheckAuthEvent {
+  const factory _SendDataEvent({required final User user}) =
+      _$SendDataEventImpl;
+
+  User get user;
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SendDataEventImplCopyWith<_$SendDataEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$CheckAuthState {
   bool get loading => throw _privateConstructorUsedError;
   bool get error => throw _privateConstructorUsedError;
   bool get isAuth => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool loading, bool error, bool isAuth, String errorMessage)
+    required TResult Function(bool loading, bool error, bool isAuth, User user,
+            String errorMessage)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            bool loading, bool error, bool isAuth, String errorMessage)?
+    TResult? Function(bool loading, bool error, bool isAuth, User user,
+            String errorMessage)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            bool loading, bool error, bool isAuth, String errorMessage)?
+    TResult Function(bool loading, bool error, bool isAuth, User user,
+            String errorMessage)?
         initial,
     required TResult orElse(),
   }) =>
@@ -228,7 +548,8 @@ abstract class $CheckAuthStateCopyWith<$Res> {
           CheckAuthState value, $Res Function(CheckAuthState) then) =
       _$CheckAuthStateCopyWithImpl<$Res, CheckAuthState>;
   @useResult
-  $Res call({bool loading, bool error, bool isAuth, String errorMessage});
+  $Res call(
+      {bool loading, bool error, bool isAuth, User user, String errorMessage});
 }
 
 /// @nodoc
@@ -249,6 +570,7 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
     Object? loading = null,
     Object? error = null,
     Object? isAuth = null,
+    Object? user = null,
     Object? errorMessage = null,
   }) {
     return _then(_value.copyWith(
@@ -264,6 +586,10 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
           ? _value.isAuth
           : isAuth // ignore: cast_nullable_to_non_nullable
               as bool,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -280,7 +606,8 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool loading, bool error, bool isAuth, String errorMessage});
+  $Res call(
+      {bool loading, bool error, bool isAuth, User user, String errorMessage});
 }
 
 /// @nodoc
@@ -299,6 +626,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? loading = null,
     Object? error = null,
     Object? isAuth = null,
+    Object? user = null,
     Object? errorMessage = null,
   }) {
     return _then(_$InitialImpl(
@@ -314,6 +642,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.isAuth
           : isAuth // ignore: cast_nullable_to_non_nullable
               as bool,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -325,10 +657,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl(
+  _$InitialImpl(
       {this.loading = false,
       this.error = false,
       this.isAuth = false,
+      this.user = const User(
+          id: '0',
+          name: '',
+          email: '',
+          role: '',
+          gander: '',
+          region: '',
+          academicStage: {'stage': '', 'type': ""}),
       this.errorMessage = ''});
 
   @override
@@ -342,11 +682,14 @@ class _$InitialImpl implements _Initial {
   final bool isAuth;
   @override
   @JsonKey()
+  final User user;
+  @override
+  @JsonKey()
   final String errorMessage;
 
   @override
   String toString() {
-    return 'CheckAuthState.initial(loading: $loading, error: $error, isAuth: $isAuth, errorMessage: $errorMessage)';
+    return 'CheckAuthState.initial(loading: $loading, error: $error, isAuth: $isAuth, user: $user, errorMessage: $errorMessage)';
   }
 
   @override
@@ -357,13 +700,14 @@ class _$InitialImpl implements _Initial {
             (identical(other.loading, loading) || other.loading == loading) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.isAuth, isAuth) || other.isAuth == isAuth) &&
+            (identical(other.user, user) || other.user == user) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, loading, error, isAuth, errorMessage);
+      Object.hash(runtimeType, loading, error, isAuth, user, errorMessage);
 
   /// Create a copy of CheckAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -376,33 +720,33 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool loading, bool error, bool isAuth, String errorMessage)
+    required TResult Function(bool loading, bool error, bool isAuth, User user,
+            String errorMessage)
         initial,
   }) {
-    return initial(loading, error, isAuth, errorMessage);
+    return initial(loading, error, isAuth, user, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            bool loading, bool error, bool isAuth, String errorMessage)?
+    TResult? Function(bool loading, bool error, bool isAuth, User user,
+            String errorMessage)?
         initial,
   }) {
-    return initial?.call(loading, error, isAuth, errorMessage);
+    return initial?.call(loading, error, isAuth, user, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            bool loading, bool error, bool isAuth, String errorMessage)?
+    TResult Function(bool loading, bool error, bool isAuth, User user,
+            String errorMessage)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(loading, error, isAuth, errorMessage);
+      return initial(loading, error, isAuth, user, errorMessage);
     }
     return orElse();
   }
@@ -437,10 +781,11 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements CheckAuthState {
-  const factory _Initial(
+  factory _Initial(
       {final bool loading,
       final bool error,
       final bool isAuth,
+      final User user,
       final String errorMessage}) = _$InitialImpl;
 
   @override
@@ -449,6 +794,8 @@ abstract class _Initial implements CheckAuthState {
   bool get error;
   @override
   bool get isAuth;
+  @override
+  User get user;
   @override
   String get errorMessage;
 

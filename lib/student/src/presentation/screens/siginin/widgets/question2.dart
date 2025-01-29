@@ -1,25 +1,44 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
+import 'package:educational_platform_app/student/src/data/models/user.dart';
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/page_line.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/questions_button.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Question2 extends StatefulWidget {
-  const Question2({super.key});
-
+  const Question2(
+      {super.key, required this.pageController, required this.state});
+  final PageController pageController;
+  final CheckAuthState state;
   @override
   State<Question2> createState() => _Question1State();
 }
 
 class _Question1State extends State<Question2> {
   String? selectedFilter;
+
+  @override
+  void initState() {
+    selectedFilter ??= widget.state.user?.gander;
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    selectedFilter ??= widget.state.user?.gander;
     Lang lang = Lang.of(context);
     return Column(
       children: [
-        const PageLine(pageIndex: 2),
+        PageLine(
+          pageIndex: 2,
+          onTap: (value) {
+            widget.pageController.jumpToPage(value);
+          },
+        ),
         const SizedBox(
           height: 20,
         ),
@@ -36,6 +55,10 @@ class _Question1State extends State<Question2> {
                     onTap: () {
                       setState(() {
                         selectedFilter = 'male';
+                        context.read<CheckAuthBloc>().add(
+                            CheckAuthEvent.updateInfo(
+                                user: widget.state.user
+                                    .copyWith(gander: selectedFilter!)));
                       });
                     },
                   ),
@@ -46,6 +69,10 @@ class _Question1State extends State<Question2> {
                     onTap: () {
                       setState(() {
                         selectedFilter = 'female';
+                        context.read<CheckAuthBloc>().add(
+                            CheckAuthEvent.updateInfo(
+                                user: widget.state.user
+                                    .copyWith(gander: selectedFilter!)));
                       });
                     },
                   ),
@@ -54,7 +81,13 @@ class _Question1State extends State<Question2> {
               const SizedBox(
                 height: 40,
               ),
-              Button(onPressed: () {}, text: lang.continueRegistration)
+              Button(
+                  onPressed: () {
+                    context
+                        .read<CheckAuthBloc>()
+                        .add(CheckAuthEvent.sendData(user: widget.state.user));
+                  },
+                  text: lang.continueRegistration)
             ],
           ),
         ),

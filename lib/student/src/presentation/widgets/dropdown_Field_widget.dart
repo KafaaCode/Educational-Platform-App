@@ -42,11 +42,11 @@ class DropdownFieldWidget extends StatelessWidget {
             ),
           ),
         ),
-        items: items.map<DropdownMenuItem<String>>((String value) {
+        items: items.map<DropdownMenuItem<String>>((String value1) {
           return DropdownMenuItem<String>(
-            value: value,
+            value: value1,
             child: Text(
-              value,
+              value1,
               textDirection: TextDirection.rtl,
               style: const TextStyle(fontFamily: 'Cairo'),
             ),
