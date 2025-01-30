@@ -1,12 +1,11 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/student/src/data/models/user.dart';
+import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/page_line.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/questions_button.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Question1 extends StatefulWidget {
   final PageController pageController;
@@ -22,13 +21,13 @@ class _Question1State extends State<Question1> {
 
   @override
   void initState() {
-    selectedFilter ??= widget.state.user?.academicStage['stage'] ?? 'basic';
+    selectedFilter ??= widget.state.user.academicStage['stage'] ?? 'basic';
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    selectedFilter ??= widget.state.user?.academicStage['stage'] ?? 'basic';
+    selectedFilter ??= widget.state.user.academicStage['stage'] ?? 'basic';
     Lang lang = Lang.of(context);
     return Column(
       children: [
@@ -100,7 +99,7 @@ class _Question1State extends State<Question1> {
               const Text("لديك حساب؟"),
               InkWell(
                 onTap: () {
-                  print("stooop");
+                  Navigator.of(context).pushNamed(RoutesNames.loginRoute);
                 },
                 child: const Text(
                   'سجل دخول الان',

@@ -1,3 +1,5 @@
+import 'package:educational_platform_app/student/core/routes/routes_name.dart';
+import 'package:educational_platform_app/student/core/validations/app_validations.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/page_line.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/Text_field_widget.dart';
@@ -20,18 +22,21 @@ class _SignInScreenState extends State<SignInScreen> {
   late TextEditingController nameController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  String? selectedValue;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
-    super.initState();
     nameController = TextEditingController(text: widget.state.user.name);
     emailController = TextEditingController(text: widget.state.user.email);
     passwordController = TextEditingController(text: '');
+    selectedValue =
+        widget.state.user.region.isEmpty ? null : widget.state.user.region;
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    String? selectedValue;
     return Container(
       alignment: Alignment.center,
       child: Column(
@@ -49,14 +54,14 @@ class _SignInScreenState extends State<SignInScreen> {
           Expanded(
             flex: 5,
             child: Form(
-              key: GlobalKey<NavigatorState>(),
+              key: _formKey,
               child: Column(
                 children: [
                   TextInputField(
-                    controller: nameController,
-                    labeltext: "الاسم الكامل",
-                    icon: Icons.person,
-                  ),
+                      controller: nameController,
+                      labeltext: "الاسم الكامل",
+                      icon: Icons.person,
+                      validator: AppValidators.validateFirstName),
                   const SizedBox(
                     height: 20,
                   ),
@@ -64,6 +69,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     controller: emailController,
                     labeltext: "البريد الألكتروني",
                     icon: Icons.email_rounded,
+                    validator: AppValidators.emailValidation,
                   ),
                   const SizedBox(
                     height: 20,
@@ -73,6 +79,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     labeltext: "كلمة المرور",
                     isPassword: true,
                     controller: passwordController,
+                    validator: AppValidators.passwordValidation,
                   ),
                   const SizedBox(
                     height: 20,
@@ -90,14 +97,23 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   Button(
                     onPressed: () {
-                      BlocProvider.of<CheckAuthBloc>(context).add(
-                          CheckAuthEvent.updateInfo(
-                              user: widget.state.user.copyWith(
-                                  name: nameController.text,
-                                  email: emailController.text,
-                                  password: passwordController.text,
-                                  region: selectedValue)));
-                      widget.pageController.jumpToPage(1);
+                      if (_formKey.currentState?.validate() ?? false) {
+                        if (selectedValue == null) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('الرجاء اختيار بلد الاقامة')),
+                          );
+                          return;
+                        }
+                        BlocProvider.of<CheckAuthBloc>(context).add(
+                            CheckAuthEvent.updateInfo(
+                                user: widget.state.user.copyWith(
+                                    name: nameController.text,
+                                    email: emailController.text,
+                                    password: passwordController.text,
+                                    region: selectedValue!)));
+                        widget.pageController.jumpToPage(1);
+                      }
                     },
                     text: 'استمر',
                   )
@@ -113,7 +129,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 const Text("لديك حساب؟"),
                 InkWell(
                   onTap: () {
-                    print("stooop");
+                    Navigator.of(context).pushNamed(RoutesNames.loginRoute);
                   },
                   child: const Text(
                     'سجل دخول الان',

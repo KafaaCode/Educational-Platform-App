@@ -5,6 +5,7 @@ class CheckAuthEvent with _$CheckAuthEvent {
   const factory CheckAuthEvent.started() = _Started;
   const factory CheckAuthEvent.updateInfo({required User user}) =
       _UpdateInfoEvent;
-
-  const factory CheckAuthEvent.sendData({required User user}) = _SendDataEvent;
+  const factory CheckAuthEvent.resgiter({required User user}) = _resgiterEvent;
+  const factory CheckAuthEvent.login(
+      {required String eamil, required String password}) = _loginEvent;
 }

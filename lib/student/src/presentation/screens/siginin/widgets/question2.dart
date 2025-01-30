@@ -1,12 +1,11 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/student/src/data/models/user.dart';
+import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/page_line.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/questions_button.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Question2 extends StatefulWidget {
   const Question2(
@@ -22,14 +21,14 @@ class _Question1State extends State<Question2> {
 
   @override
   void initState() {
-    selectedFilter ??= widget.state.user?.gander;
+    selectedFilter ??= widget.state.user.gander;
 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    selectedFilter ??= widget.state.user?.gander;
+    selectedFilter ??= widget.state.user.gander;
     Lang lang = Lang.of(context);
     return Column(
       children: [
@@ -85,7 +84,7 @@ class _Question1State extends State<Question2> {
                   onPressed: () {
                     context
                         .read<CheckAuthBloc>()
-                        .add(CheckAuthEvent.sendData(user: widget.state.user));
+                        .add(CheckAuthEvent.resgiter(user: widget.state.user));
                   },
                   text: lang.continueRegistration)
             ],
@@ -99,7 +98,7 @@ class _Question1State extends State<Question2> {
               const Text("لديك حساب؟"),
               InkWell(
                 onTap: () {
-                  print("stooop");
+                  Navigator.of(context).pushNamed(RoutesNames.loginRoute);
                 },
                 child: const Text(
                   'سجل دخول الان',

@@ -6,7 +6,7 @@ class TextInputField extends StatefulWidget {
   final String? initialValue;
   final IconData icon;
   final TextInputType? textInputType;
-  final FormFieldValidator<String>? validator;
+  final String? Function(String?)? validator;
   final Function(String vlaue)? onChanged;
   final bool isPassword;
 

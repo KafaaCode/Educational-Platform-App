@@ -20,21 +20,24 @@ mixin _$CheckAuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(User user) updateInfo,
-    required TResult Function(User user) sendData,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String eamil, String password) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(User user)? updateInfo,
-    TResult? Function(User user)? sendData,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String eamil, String password)? login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(User user)? updateInfo,
-    TResult Function(User user)? sendData,
+    TResult Function(User user)? resgiter,
+    TResult Function(String eamil, String password)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,21 +45,24 @@ mixin _$CheckAuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
-    required TResult Function(_SendDataEvent value) sendData,
+    required TResult Function(_resgiterEvent value) resgiter,
+    required TResult Function(_loginEvent value) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
-    TResult? Function(_SendDataEvent value)? sendData,
+    TResult? Function(_resgiterEvent value)? resgiter,
+    TResult? Function(_loginEvent value)? login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
-    TResult Function(_SendDataEvent value)? sendData,
+    TResult Function(_resgiterEvent value)? resgiter,
+    TResult Function(_loginEvent value)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,7 +132,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(User user) updateInfo,
-    required TResult Function(User user) sendData,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String eamil, String password) login,
   }) {
     return started();
   }
@@ -136,7 +143,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(User user)? updateInfo,
-    TResult? Function(User user)? sendData,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String eamil, String password)? login,
   }) {
     return started?.call();
   }
@@ -146,7 +154,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(User user)? updateInfo,
-    TResult Function(User user)? sendData,
+    TResult Function(User user)? resgiter,
+    TResult Function(String eamil, String password)? login,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,7 +169,8 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
-    required TResult Function(_SendDataEvent value) sendData,
+    required TResult Function(_resgiterEvent value) resgiter,
+    required TResult Function(_loginEvent value) login,
   }) {
     return started(this);
   }
@@ -170,7 +180,8 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
-    TResult? Function(_SendDataEvent value)? sendData,
+    TResult? Function(_resgiterEvent value)? resgiter,
+    TResult? Function(_loginEvent value)? login,
   }) {
     return started?.call(this);
   }
@@ -180,7 +191,8 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
-    TResult Function(_SendDataEvent value)? sendData,
+    TResult Function(_resgiterEvent value)? resgiter,
+    TResult Function(_loginEvent value)? login,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -201,6 +213,8 @@ abstract class _$$UpdateInfoEventImplCopyWith<$Res> {
       __$$UpdateInfoEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -224,6 +238,16 @@ class __$$UpdateInfoEventImplCopyWithImpl<$Res>
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
+  }
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -265,7 +289,8 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(User user) updateInfo,
-    required TResult Function(User user) sendData,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String eamil, String password) login,
   }) {
     return updateInfo(user);
   }
@@ -275,7 +300,8 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(User user)? updateInfo,
-    TResult? Function(User user)? sendData,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String eamil, String password)? login,
   }) {
     return updateInfo?.call(user);
   }
@@ -285,7 +311,8 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(User user)? updateInfo,
-    TResult Function(User user)? sendData,
+    TResult Function(User user)? resgiter,
+    TResult Function(String eamil, String password)? login,
     required TResult orElse(),
   }) {
     if (updateInfo != null) {
@@ -299,7 +326,8 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
-    required TResult Function(_SendDataEvent value) sendData,
+    required TResult Function(_resgiterEvent value) resgiter,
+    required TResult Function(_loginEvent value) login,
   }) {
     return updateInfo(this);
   }
@@ -309,7 +337,8 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
-    TResult? Function(_SendDataEvent value)? sendData,
+    TResult? Function(_resgiterEvent value)? resgiter,
+    TResult? Function(_loginEvent value)? login,
   }) {
     return updateInfo?.call(this);
   }
@@ -319,7 +348,8 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
-    TResult Function(_SendDataEvent value)? sendData,
+    TResult Function(_resgiterEvent value)? resgiter,
+    TResult Function(_loginEvent value)? login,
     required TResult orElse(),
   }) {
     if (updateInfo != null) {
@@ -343,20 +373,22 @@ abstract class _UpdateInfoEvent implements CheckAuthEvent {
 }
 
 /// @nodoc
-abstract class _$$SendDataEventImplCopyWith<$Res> {
-  factory _$$SendDataEventImplCopyWith(
-          _$SendDataEventImpl value, $Res Function(_$SendDataEventImpl) then) =
-      __$$SendDataEventImplCopyWithImpl<$Res>;
+abstract class _$$resgiterEventImplCopyWith<$Res> {
+  factory _$$resgiterEventImplCopyWith(
+          _$resgiterEventImpl value, $Res Function(_$resgiterEventImpl) then) =
+      __$$resgiterEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$$SendDataEventImplCopyWithImpl<$Res>
-    extends _$CheckAuthEventCopyWithImpl<$Res, _$SendDataEventImpl>
-    implements _$$SendDataEventImplCopyWith<$Res> {
-  __$$SendDataEventImplCopyWithImpl(
-      _$SendDataEventImpl _value, $Res Function(_$SendDataEventImpl) _then)
+class __$$resgiterEventImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$resgiterEventImpl>
+    implements _$$resgiterEventImplCopyWith<$Res> {
+  __$$resgiterEventImplCopyWithImpl(
+      _$resgiterEventImpl _value, $Res Function(_$resgiterEventImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of CheckAuthEvent
@@ -366,33 +398,43 @@ class __$$SendDataEventImplCopyWithImpl<$Res>
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$SendDataEventImpl(
+    return _then(_$resgiterEventImpl(
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
     ));
   }
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 /// @nodoc
 
-class _$SendDataEventImpl implements _SendDataEvent {
-  const _$SendDataEventImpl({required this.user});
+class _$resgiterEventImpl implements _resgiterEvent {
+  const _$resgiterEventImpl({required this.user});
 
   @override
   final User user;
 
   @override
   String toString() {
-    return 'CheckAuthEvent.sendData(user: $user)';
+    return 'CheckAuthEvent.resgiter(user: $user)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SendDataEventImpl &&
+            other is _$resgiterEventImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -404,17 +446,18 @@ class _$SendDataEventImpl implements _SendDataEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SendDataEventImplCopyWith<_$SendDataEventImpl> get copyWith =>
-      __$$SendDataEventImplCopyWithImpl<_$SendDataEventImpl>(this, _$identity);
+  _$$resgiterEventImplCopyWith<_$resgiterEventImpl> get copyWith =>
+      __$$resgiterEventImplCopyWithImpl<_$resgiterEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(User user) updateInfo,
-    required TResult Function(User user) sendData,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String eamil, String password) login,
   }) {
-    return sendData(user);
+    return resgiter(user);
   }
 
   @override
@@ -422,9 +465,10 @@ class _$SendDataEventImpl implements _SendDataEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(User user)? updateInfo,
-    TResult? Function(User user)? sendData,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String eamil, String password)? login,
   }) {
-    return sendData?.call(user);
+    return resgiter?.call(user);
   }
 
   @override
@@ -432,11 +476,12 @@ class _$SendDataEventImpl implements _SendDataEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(User user)? updateInfo,
-    TResult Function(User user)? sendData,
+    TResult Function(User user)? resgiter,
+    TResult Function(String eamil, String password)? login,
     required TResult orElse(),
   }) {
-    if (sendData != null) {
-      return sendData(user);
+    if (resgiter != null) {
+      return resgiter(user);
     }
     return orElse();
   }
@@ -446,9 +491,10 @@ class _$SendDataEventImpl implements _SendDataEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
-    required TResult Function(_SendDataEvent value) sendData,
+    required TResult Function(_resgiterEvent value) resgiter,
+    required TResult Function(_loginEvent value) login,
   }) {
-    return sendData(this);
+    return resgiter(this);
   }
 
   @override
@@ -456,9 +502,10 @@ class _$SendDataEventImpl implements _SendDataEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
-    TResult? Function(_SendDataEvent value)? sendData,
+    TResult? Function(_resgiterEvent value)? resgiter,
+    TResult? Function(_loginEvent value)? login,
   }) {
-    return sendData?.call(this);
+    return resgiter?.call(this);
   }
 
   @override
@@ -466,26 +513,191 @@ class _$SendDataEventImpl implements _SendDataEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
-    TResult Function(_SendDataEvent value)? sendData,
+    TResult Function(_resgiterEvent value)? resgiter,
+    TResult Function(_loginEvent value)? login,
     required TResult orElse(),
   }) {
-    if (sendData != null) {
-      return sendData(this);
+    if (resgiter != null) {
+      return resgiter(this);
     }
     return orElse();
   }
 }
 
-abstract class _SendDataEvent implements CheckAuthEvent {
-  const factory _SendDataEvent({required final User user}) =
-      _$SendDataEventImpl;
+abstract class _resgiterEvent implements CheckAuthEvent {
+  const factory _resgiterEvent({required final User user}) =
+      _$resgiterEventImpl;
 
   User get user;
 
   /// Create a copy of CheckAuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SendDataEventImplCopyWith<_$SendDataEventImpl> get copyWith =>
+  _$$resgiterEventImplCopyWith<_$resgiterEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$loginEventImplCopyWith<$Res> {
+  factory _$$loginEventImplCopyWith(
+          _$loginEventImpl value, $Res Function(_$loginEventImpl) then) =
+      __$$loginEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String eamil, String password});
+}
+
+/// @nodoc
+class __$$loginEventImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$loginEventImpl>
+    implements _$$loginEventImplCopyWith<$Res> {
+  __$$loginEventImplCopyWithImpl(
+      _$loginEventImpl _value, $Res Function(_$loginEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? eamil = null,
+    Object? password = null,
+  }) {
+    return _then(_$loginEventImpl(
+      eamil: null == eamil
+          ? _value.eamil
+          : eamil // ignore: cast_nullable_to_non_nullable
+              as String,
+      password: null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$loginEventImpl implements _loginEvent {
+  const _$loginEventImpl({required this.eamil, required this.password});
+
+  @override
+  final String eamil;
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'CheckAuthEvent.login(eamil: $eamil, password: $password)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$loginEventImpl &&
+            (identical(other.eamil, eamil) || other.eamil == eamil) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, eamil, password);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$loginEventImplCopyWith<_$loginEventImpl> get copyWith =>
+      __$$loginEventImplCopyWithImpl<_$loginEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(User user) updateInfo,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String eamil, String password) login,
+  }) {
+    return login(eamil, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String eamil, String password)? login,
+  }) {
+    return login?.call(eamil, password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(User user)? updateInfo,
+    TResult Function(User user)? resgiter,
+    TResult Function(String eamil, String password)? login,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(eamil, password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_resgiterEvent value) resgiter,
+    required TResult Function(_loginEvent value) login,
+  }) {
+    return login(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_resgiterEvent value)? resgiter,
+    TResult? Function(_loginEvent value)? login,
+  }) {
+    return login?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_resgiterEvent value)? resgiter,
+    TResult Function(_loginEvent value)? login,
+    required TResult orElse(),
+  }) {
+    if (login != null) {
+      return login(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _loginEvent implements CheckAuthEvent {
+  const factory _loginEvent(
+      {required final String eamil,
+      required final String password}) = _$loginEventImpl;
+
+  String get eamil;
+  String get password;
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$loginEventImplCopyWith<_$loginEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -550,6 +762,8 @@ abstract class $CheckAuthStateCopyWith<$Res> {
   @useResult
   $Res call(
       {bool loading, bool error, bool isAuth, User user, String errorMessage});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -596,6 +810,16 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
               as String,
     ) as $Val);
   }
+
+  /// Create a copy of CheckAuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -608,6 +832,9 @@ abstract class _$$InitialImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool loading, bool error, bool isAuth, User user, String errorMessage});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc

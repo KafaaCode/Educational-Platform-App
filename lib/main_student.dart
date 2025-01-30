@@ -47,7 +47,7 @@ class _MainApp extends State<MainApp> {
                 create: (context) => LanguageCubit(),
                 lazy: false,
               ),
-              BlocProvider(create: (context) => CheckAuthBloc())
+              BlocProvider(create: (context) => CheckAuthBloc(sl()))
             ],
             child: MaterialApp(
               debugShowCheckedModeBanner: false,

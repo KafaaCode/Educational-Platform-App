@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-class User {
+class UserTest {
   final String id;
   final String name;
   final String email;
@@ -13,7 +13,7 @@ class User {
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
-  const User({
+  const UserTest({
     required this.id,
     required this.name,
     required this.email,
@@ -27,7 +27,7 @@ class User {
     this.updatedAt,
   });
 
-  User copyWith({
+  UserTest copyWith({
     String? id,
     String? name,
     String? email,
@@ -40,7 +40,7 @@ class User {
     DateTime? createdAt,
     DateTime? updatedAt,
   }) {
-    return User(
+    return UserTest(
       id: id ?? this.id,
       name: name ?? this.name,
       email: email ?? this.email,
@@ -71,8 +71,8 @@ class User {
     };
   }
 
-  factory User.fromMap(Map<String, dynamic> map) {
-    return User(
+  factory UserTest.fromMap(Map<String, dynamic> map) {
+    return UserTest(
       id: map['id'] ?? '',
       name: map['name'] ?? '',
       email: map['email'] ?? '',
@@ -89,18 +89,19 @@ class User {
 
   String toJson() => json.encode(toMap());
 
-  factory User.fromJson(String source) => User.fromMap(json.decode(source));
+  factory UserTest.fromJson(String source) =>
+      UserTest.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, role: $role, gander: $gander, region: $region, academicStage: $academicStage, password: $password, phoneNumber: $phoneNumber, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'UserTest(id: $id, name: $name, email: $email, role: $role, gander: $gander, region: $region, academicStage: $academicStage, password: $password, phoneNumber: $phoneNumber, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is User &&
+    return other is UserTest &&
         other.id == id &&
         other.name == name &&
         other.email == email &&
