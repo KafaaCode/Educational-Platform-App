@@ -20,6 +20,5 @@ class CheckAuthBloc extends Bloc<CheckAuthEvent, CheckAuthState> {
           started: (_Started value) {});
       //;
     });
-    //on<CheckAuthEvent>((event, emit) {});
   }
 }
