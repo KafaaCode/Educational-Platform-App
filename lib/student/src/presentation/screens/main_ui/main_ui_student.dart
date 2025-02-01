@@ -2,6 +2,7 @@ import 'package:educational_platform_app/student/src/presentation/screens/login/
 import 'package:educational_platform_app/student/src/presentation/widgets/app_scaffold.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -289,43 +290,60 @@ class CourseCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: Center(
-                child: Text(
-                  '30 ساعة',
-                  style: TextStyle(color: Colors.white),
+        child: LayoutBuilder(
+           builder: (context, constraints) {
+              double parentWidth = constraints.maxWidth;
+          return  Row(
+            children: [
+              Container(
+                  decoration: BoxDecoration(
+          // لون الخلفية
+              borderRadius: BorderRadius.circular(30), 
+               color: Colors.green,// تدوير الزوايا
+            ),
+                  width: parentWidth* 0.5, // 50% من عرض الشاشة
+                height:200, // 50% من ارتفاع الشاشة
+               
+                child: Center(
+                  child: Text(
+                    '30 ساعة',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(width: 12),
-            Expanded(
-              
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'برمجة مواقع الويب',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  Text('المدرس عادل خزوم'),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              SizedBox(width: 12),
+              Expanded(
+                
+                child: Container(
+                   width: parentWidth* 0.5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: List.generate(5, (index) => Icon(Icons.star, color: Colors.yellow, size: 16)),
+                      Text(
+                        'برمجة مواقع الويب',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      Text('25 \$', style: TextStyle(color: Colors.greenAccent))
+                     
+                      Text('المدرس عادل خزوم'),
+                       SizedBox(height: 15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: parentWidth*0.3,
+                            child: Row(
+                              children: List.generate(5, (index) => Icon(Icons.star, color: Color(0xFFDFB547),)),
+                            ),
+                          ),
+                          Text('25 \$', style: TextStyle(color: Colors.greenAccent))
+                        ],
+                      ),
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+            ],
+          );}
         ),
       ),
     );
