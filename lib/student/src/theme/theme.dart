@@ -24,6 +24,7 @@ class Themes {
 }
 
 final appTheme = ThemeData(
+  fontFamily: 'cairo',
   primarySwatch: Colors.blue,
   scaffoldBackgroundColor: AppColors.backgroundColor,
   appBarTheme: const AppBarTheme(

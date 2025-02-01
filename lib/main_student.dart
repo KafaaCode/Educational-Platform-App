@@ -41,6 +41,7 @@ class _MainApp extends State<MainApp> {
         splitScreenMode: true,
         builder: (context, child) {
           return MultiBlocProvider(
+            
             providers: [
               BlocProvider(
                 create: (context) => LanguageCubit(),
@@ -48,6 +49,10 @@ class _MainApp extends State<MainApp> {
               ),
             ],
             child: MaterialApp(
+ /*               theme: ThemeData(
+      
+        fontFamily: 'MyCustomFont',  
+      ), */
               debugShowCheckedModeBanner: false,
               localizationsDelegates: const [
                 Lang.delegate,
