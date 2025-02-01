@@ -51,6 +51,22 @@ class Teacher with _$Teacher {
 }
 
 @freezed
+class Student with _$Student {
+  const factory Student({
+    required int id,
+    required String gender,
+    required String phoneNumber,
+    required AcademicStage academicStage,
+    required Region region,
+    @JsonKey(name: 'is_banned') required int isBanned,
+    //required User user,
+  }) = _Student;
+
+  factory Student.fromJson(Map<String, dynamic> json) =>
+      _$StudentFromJson(json);
+}
+
+@freezed
 class Region with _$Region {
   const factory Region({
     required int id,
@@ -82,11 +98,7 @@ class User with _$User {
     required String name,
     required String email,
     required String role,
-    required String? gander,
-    required String? region,
-    Map<String, String>? academicStage,
     String? password,
-    String? phoneNumber,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) = _User;
@@ -98,8 +110,9 @@ class User with _$User {
 class Auth with _$Auth {
   const factory Auth({
     required User user,
-    required List<Course> courses,
-    required List<Course> eliteTeachers,
+    required Student student,
+    required List<Course?> courses,
+    required List<Teacher?> eliteTeachers,
     required String token,
     String? message,
   }) = _Auth;

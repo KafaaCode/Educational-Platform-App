@@ -914,6 +914,290 @@ abstract class _Teacher implements Teacher {
       throw _privateConstructorUsedError;
 }
 
+Student _$StudentFromJson(Map<String, dynamic> json) {
+  return _Student.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Student {
+  int get id => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  AcademicStage get academicStage => throw _privateConstructorUsedError;
+  Region get region => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_banned')
+  int get isBanned => throw _privateConstructorUsedError;
+
+  /// Serializes this Student to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $StudentCopyWith<Student> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StudentCopyWith<$Res> {
+  factory $StudentCopyWith(Student value, $Res Function(Student) then) =
+      _$StudentCopyWithImpl<$Res, Student>;
+  @useResult
+  $Res call(
+      {int id,
+      String gender,
+      String phoneNumber,
+      AcademicStage academicStage,
+      Region region,
+      @JsonKey(name: 'is_banned') int isBanned});
+
+  $AcademicStageCopyWith<$Res> get academicStage;
+  $RegionCopyWith<$Res> get region;
+}
+
+/// @nodoc
+class _$StudentCopyWithImpl<$Res, $Val extends Student>
+    implements $StudentCopyWith<$Res> {
+  _$StudentCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? gender = null,
+    Object? phoneNumber = null,
+    Object? academicStage = null,
+    Object? region = null,
+    Object? isBanned = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      academicStage: null == academicStage
+          ? _value.academicStage
+          : academicStage // ignore: cast_nullable_to_non_nullable
+              as AcademicStage,
+      region: null == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as Region,
+      isBanned: null == isBanned
+          ? _value.isBanned
+          : isBanned // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AcademicStageCopyWith<$Res> get academicStage {
+    return $AcademicStageCopyWith<$Res>(_value.academicStage, (value) {
+      return _then(_value.copyWith(academicStage: value) as $Val);
+    });
+  }
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RegionCopyWith<$Res> get region {
+    return $RegionCopyWith<$Res>(_value.region, (value) {
+      return _then(_value.copyWith(region: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$StudentImplCopyWith<$Res> implements $StudentCopyWith<$Res> {
+  factory _$$StudentImplCopyWith(
+          _$StudentImpl value, $Res Function(_$StudentImpl) then) =
+      __$$StudentImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {int id,
+      String gender,
+      String phoneNumber,
+      AcademicStage academicStage,
+      Region region,
+      @JsonKey(name: 'is_banned') int isBanned});
+
+  @override
+  $AcademicStageCopyWith<$Res> get academicStage;
+  @override
+  $RegionCopyWith<$Res> get region;
+}
+
+/// @nodoc
+class __$$StudentImplCopyWithImpl<$Res>
+    extends _$StudentCopyWithImpl<$Res, _$StudentImpl>
+    implements _$$StudentImplCopyWith<$Res> {
+  __$$StudentImplCopyWithImpl(
+      _$StudentImpl _value, $Res Function(_$StudentImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? gender = null,
+    Object? phoneNumber = null,
+    Object? academicStage = null,
+    Object? region = null,
+    Object? isBanned = null,
+  }) {
+    return _then(_$StudentImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      academicStage: null == academicStage
+          ? _value.academicStage
+          : academicStage // ignore: cast_nullable_to_non_nullable
+              as AcademicStage,
+      region: null == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as Region,
+      isBanned: null == isBanned
+          ? _value.isBanned
+          : isBanned // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$StudentImpl implements _Student {
+  const _$StudentImpl(
+      {required this.id,
+      required this.gender,
+      required this.phoneNumber,
+      required this.academicStage,
+      required this.region,
+      @JsonKey(name: 'is_banned') required this.isBanned});
+
+  factory _$StudentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StudentImplFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String gender;
+  @override
+  final String phoneNumber;
+  @override
+  final AcademicStage academicStage;
+  @override
+  final Region region;
+  @override
+  @JsonKey(name: 'is_banned')
+  final int isBanned;
+
+  @override
+  String toString() {
+    return 'Student(id: $id, gender: $gender, phoneNumber: $phoneNumber, academicStage: $academicStage, region: $region, isBanned: $isBanned)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StudentImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.academicStage, academicStage) ||
+                other.academicStage == academicStage) &&
+            (identical(other.region, region) || other.region == region) &&
+            (identical(other.isBanned, isBanned) ||
+                other.isBanned == isBanned));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, gender, phoneNumber, academicStage, region, isBanned);
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StudentImplCopyWith<_$StudentImpl> get copyWith =>
+      __$$StudentImplCopyWithImpl<_$StudentImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StudentImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Student implements Student {
+  const factory _Student(
+      {required final int id,
+      required final String gender,
+      required final String phoneNumber,
+      required final AcademicStage academicStage,
+      required final Region region,
+      @JsonKey(name: 'is_banned') required final int isBanned}) = _$StudentImpl;
+
+  factory _Student.fromJson(Map<String, dynamic> json) = _$StudentImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get gender;
+  @override
+  String get phoneNumber;
+  @override
+  AcademicStage get academicStage;
+  @override
+  Region get region;
+  @override
+  @JsonKey(name: 'is_banned')
+  int get isBanned;
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StudentImplCopyWith<_$StudentImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 Region _$RegionFromJson(Map<String, dynamic> json) {
   return _Region.fromJson(json);
 }
@@ -1332,11 +1616,7 @@ mixin _$User {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get role => throw _privateConstructorUsedError;
-  String get gander => throw _privateConstructorUsedError;
-  String get region => throw _privateConstructorUsedError;
-  Map<String, String> get academicStage => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
-  String? get phoneNumber => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
@@ -1359,11 +1639,7 @@ abstract class $UserCopyWith<$Res> {
       String name,
       String email,
       String role,
-      String gander,
-      String region,
-      Map<String, String> academicStage,
       String? password,
-      String? phoneNumber,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -1387,11 +1663,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? name = null,
     Object? email = null,
     Object? role = null,
-    Object? gander = null,
-    Object? region = null,
-    Object? academicStage = null,
     Object? password = freezed,
-    Object? phoneNumber = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -1412,25 +1684,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
-      gander: null == gander
-          ? _value.gander
-          : gander // ignore: cast_nullable_to_non_nullable
-              as String,
-      region: null == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String,
-      academicStage: null == academicStage
-          ? _value.academicStage
-          : academicStage // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
       password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -1456,11 +1712,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String name,
       String email,
       String role,
-      String gander,
-      String region,
-      Map<String, String> academicStage,
       String? password,
-      String? phoneNumber,
       DateTime? createdAt,
       DateTime? updatedAt});
 }
@@ -1481,11 +1733,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? role = null,
-    Object? gander = null,
-    Object? region = null,
-    Object? academicStage = null,
     Object? password = freezed,
-    Object? phoneNumber = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -1506,25 +1754,9 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
-      gander: null == gander
-          ? _value.gander
-          : gander // ignore: cast_nullable_to_non_nullable
-              as String,
-      region: null == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String,
-      academicStage: null == academicStage
-          ? _value._academicStage
-          : academicStage // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
       password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -1546,14 +1778,9 @@ class _$UserImpl implements _User {
       required this.name,
       required this.email,
       required this.role,
-      required this.gander,
-      required this.region,
-      required final Map<String, String> academicStage,
       this.password,
-      this.phoneNumber,
       this.createdAt,
-      this.updatedAt})
-      : _academicStage = academicStage;
+      this.updatedAt});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -1567,21 +1794,7 @@ class _$UserImpl implements _User {
   @override
   final String role;
   @override
-  final String gander;
-  @override
-  final String region;
-  final Map<String, String> _academicStage;
-  @override
-  Map<String, String> get academicStage {
-    if (_academicStage is EqualUnmodifiableMapView) return _academicStage;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_academicStage);
-  }
-
-  @override
   final String? password;
-  @override
-  final String? phoneNumber;
   @override
   final DateTime? createdAt;
   @override
@@ -1589,7 +1802,7 @@ class _$UserImpl implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, role: $role, gander: $gander, region: $region, academicStage: $academicStage, password: $password, phoneNumber: $phoneNumber, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'User(id: $id, name: $name, email: $email, role: $role, password: $password, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -1601,14 +1814,8 @@ class _$UserImpl implements _User {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.role, role) || other.role == role) &&
-            (identical(other.gander, gander) || other.gander == gander) &&
-            (identical(other.region, region) || other.region == region) &&
-            const DeepCollectionEquality()
-                .equals(other._academicStage, _academicStage) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -1618,18 +1825,7 @@ class _$UserImpl implements _User {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      email,
-      role,
-      gander,
-      region,
-      const DeepCollectionEquality().hash(_academicStage),
-      password,
-      phoneNumber,
-      createdAt,
-      updatedAt);
+      runtimeType, id, name, email, role, password, createdAt, updatedAt);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -1653,11 +1849,7 @@ abstract class _User implements User {
       required final String name,
       required final String email,
       required final String role,
-      required final String gander,
-      required final String region,
-      required final Map<String, String> academicStage,
       final String? password,
-      final String? phoneNumber,
       final DateTime? createdAt,
       final DateTime? updatedAt}) = _$UserImpl;
 
@@ -1672,15 +1864,7 @@ abstract class _User implements User {
   @override
   String get role;
   @override
-  String get gander;
-  @override
-  String get region;
-  @override
-  Map<String, String> get academicStage;
-  @override
   String? get password;
-  @override
-  String? get phoneNumber;
   @override
   DateTime? get createdAt;
   @override
@@ -1701,8 +1885,9 @@ Auth _$AuthFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Auth {
   User get user => throw _privateConstructorUsedError;
-  List<Course> get courses => throw _privateConstructorUsedError;
-  List<Course> get eliteTeachers => throw _privateConstructorUsedError;
+  Student get student => throw _privateConstructorUsedError;
+  List<Course?> get courses => throw _privateConstructorUsedError;
+  List<Teacher?> get eliteTeachers => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
@@ -1722,12 +1907,14 @@ abstract class $AuthCopyWith<$Res> {
   @useResult
   $Res call(
       {User user,
-      List<Course> courses,
-      List<Course> eliteTeachers,
+      Student student,
+      List<Course?> courses,
+      List<Teacher?> eliteTeachers,
       String token,
       String? message});
 
   $UserCopyWith<$Res> get user;
+  $StudentCopyWith<$Res> get student;
 }
 
 /// @nodoc
@@ -1746,6 +1933,7 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
   @override
   $Res call({
     Object? user = null,
+    Object? student = null,
     Object? courses = null,
     Object? eliteTeachers = null,
     Object? token = null,
@@ -1756,14 +1944,18 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      student: null == student
+          ? _value.student
+          : student // ignore: cast_nullable_to_non_nullable
+              as Student,
       courses: null == courses
           ? _value.courses
           : courses // ignore: cast_nullable_to_non_nullable
-              as List<Course>,
+              as List<Course?>,
       eliteTeachers: null == eliteTeachers
           ? _value.eliteTeachers
           : eliteTeachers // ignore: cast_nullable_to_non_nullable
-              as List<Course>,
+              as List<Teacher?>,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -1784,6 +1976,16 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
+
+  /// Create a copy of Auth
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StudentCopyWith<$Res> get student {
+    return $StudentCopyWith<$Res>(_value.student, (value) {
+      return _then(_value.copyWith(student: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1795,13 +1997,16 @@ abstract class _$$AuthImplCopyWith<$Res> implements $AuthCopyWith<$Res> {
   @useResult
   $Res call(
       {User user,
-      List<Course> courses,
-      List<Course> eliteTeachers,
+      Student student,
+      List<Course?> courses,
+      List<Teacher?> eliteTeachers,
       String token,
       String? message});
 
   @override
   $UserCopyWith<$Res> get user;
+  @override
+  $StudentCopyWith<$Res> get student;
 }
 
 /// @nodoc
@@ -1817,6 +2022,7 @@ class __$$AuthImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = null,
+    Object? student = null,
     Object? courses = null,
     Object? eliteTeachers = null,
     Object? token = null,
@@ -1827,14 +2033,18 @@ class __$$AuthImplCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      student: null == student
+          ? _value.student
+          : student // ignore: cast_nullable_to_non_nullable
+              as Student,
       courses: null == courses
           ? _value._courses
           : courses // ignore: cast_nullable_to_non_nullable
-              as List<Course>,
+              as List<Course?>,
       eliteTeachers: null == eliteTeachers
           ? _value._eliteTeachers
           : eliteTeachers // ignore: cast_nullable_to_non_nullable
-              as List<Course>,
+              as List<Teacher?>,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -1852,8 +2062,9 @@ class __$$AuthImplCopyWithImpl<$Res>
 class _$AuthImpl implements _Auth {
   const _$AuthImpl(
       {required this.user,
-      required final List<Course> courses,
-      required final List<Course> eliteTeachers,
+      required this.student,
+      required final List<Course?> courses,
+      required final List<Teacher?> eliteTeachers,
       required this.token,
       this.message})
       : _courses = courses,
@@ -1864,17 +2075,19 @@ class _$AuthImpl implements _Auth {
 
   @override
   final User user;
-  final List<Course> _courses;
   @override
-  List<Course> get courses {
+  final Student student;
+  final List<Course?> _courses;
+  @override
+  List<Course?> get courses {
     if (_courses is EqualUnmodifiableListView) return _courses;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_courses);
   }
 
-  final List<Course> _eliteTeachers;
+  final List<Teacher?> _eliteTeachers;
   @override
-  List<Course> get eliteTeachers {
+  List<Teacher?> get eliteTeachers {
     if (_eliteTeachers is EqualUnmodifiableListView) return _eliteTeachers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_eliteTeachers);
@@ -1887,7 +2100,7 @@ class _$AuthImpl implements _Auth {
 
   @override
   String toString() {
-    return 'Auth(user: $user, courses: $courses, eliteTeachers: $eliteTeachers, token: $token, message: $message)';
+    return 'Auth(user: $user, student: $student, courses: $courses, eliteTeachers: $eliteTeachers, token: $token, message: $message)';
   }
 
   @override
@@ -1896,6 +2109,7 @@ class _$AuthImpl implements _Auth {
         (other.runtimeType == runtimeType &&
             other is _$AuthImpl &&
             (identical(other.user, user) || other.user == user) &&
+            (identical(other.student, student) || other.student == student) &&
             const DeepCollectionEquality().equals(other._courses, _courses) &&
             const DeepCollectionEquality()
                 .equals(other._eliteTeachers, _eliteTeachers) &&
@@ -1908,6 +2122,7 @@ class _$AuthImpl implements _Auth {
   int get hashCode => Object.hash(
       runtimeType,
       user,
+      student,
       const DeepCollectionEquality().hash(_courses),
       const DeepCollectionEquality().hash(_eliteTeachers),
       token,
@@ -1932,8 +2147,9 @@ class _$AuthImpl implements _Auth {
 abstract class _Auth implements Auth {
   const factory _Auth(
       {required final User user,
-      required final List<Course> courses,
-      required final List<Course> eliteTeachers,
+      required final Student student,
+      required final List<Course?> courses,
+      required final List<Teacher?> eliteTeachers,
       required final String token,
       final String? message}) = _$AuthImpl;
 
@@ -1942,9 +2158,11 @@ abstract class _Auth implements Auth {
   @override
   User get user;
   @override
-  List<Course> get courses;
+  Student get student;
   @override
-  List<Course> get eliteTeachers;
+  List<Course?> get courses;
+  @override
+  List<Teacher?> get eliteTeachers;
   @override
   String get token;
   @override

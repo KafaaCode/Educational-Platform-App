@@ -73,6 +73,27 @@ Map<String, dynamic> _$$TeacherImplToJson(_$TeacherImpl instance) =>
       'user': instance.user,
     };
 
+_$StudentImpl _$$StudentImplFromJson(Map<String, dynamic> json) =>
+    _$StudentImpl(
+      id: (json['id'] as num).toInt(),
+      gender: json['gender'] as String,
+      phoneNumber: json['phoneNumber'] as String,
+      academicStage:
+          AcademicStage.fromJson(json['academicStage'] as Map<String, dynamic>),
+      region: Region.fromJson(json['region'] as Map<String, dynamic>),
+      isBanned: (json['is_banned'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$StudentImplToJson(_$StudentImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'gender': instance.gender,
+      'phoneNumber': instance.phoneNumber,
+      'academicStage': instance.academicStage,
+      'region': instance.region,
+      'is_banned': instance.isBanned,
+    };
+
 _$RegionImpl _$$RegionImplFromJson(Map<String, dynamic> json) => _$RegionImpl(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
@@ -114,11 +135,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       name: json['name'] as String,
       email: json['email'] as String,
       role: json['role'] as String,
-      gander: json['gander'] as String,
-      region: json['region'] as String,
-      academicStage: Map<String, String>.from(json['academicStage'] as Map),
       password: json['password'] as String?,
-      phoneNumber: json['phoneNumber'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
@@ -133,22 +150,21 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'name': instance.name,
       'email': instance.email,
       'role': instance.role,
-      'gander': instance.gander,
-      'region': instance.region,
-      'academicStage': instance.academicStage,
       'password': instance.password,
-      'phoneNumber': instance.phoneNumber,
       'createdAt': instance.createdAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
     };
 
 _$AuthImpl _$$AuthImplFromJson(Map<String, dynamic> json) => _$AuthImpl(
       user: User.fromJson(json['user'] as Map<String, dynamic>),
+      student: Student.fromJson(json['student'] as Map<String, dynamic>),
       courses: (json['courses'] as List<dynamic>)
-          .map((e) => Course.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              e == null ? null : Course.fromJson(e as Map<String, dynamic>))
           .toList(),
       eliteTeachers: (json['eliteTeachers'] as List<dynamic>)
-          .map((e) => Course.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              e == null ? null : Teacher.fromJson(e as Map<String, dynamic>))
           .toList(),
       token: json['token'] as String,
       message: json['message'] as String?,
@@ -157,6 +173,7 @@ _$AuthImpl _$$AuthImplFromJson(Map<String, dynamic> json) => _$AuthImpl(
 Map<String, dynamic> _$$AuthImplToJson(_$AuthImpl instance) =>
     <String, dynamic>{
       'user': instance.user,
+      'student': instance.student,
       'courses': instance.courses,
       'eliteTeachers': instance.eliteTeachers,
       'token': instance.token,
