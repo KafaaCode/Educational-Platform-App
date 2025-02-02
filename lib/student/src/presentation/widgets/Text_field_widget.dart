@@ -3,16 +3,20 @@ import 'package:flutter/material.dart';
 class TextInputField extends StatefulWidget {
   final TextEditingController? controller;
   final String labeltext;
+  final String? initialValue;
   final IconData icon;
   final TextInputType? textInputType;
-  final FormFieldValidator<String>? validator;
+  final String? Function(String?)? validator;
+  final Function(String vlaue)? onChanged;
   final bool isPassword;
 
   const TextInputField({
     super.key,
     required this.labeltext,
     required this.icon,
+    this.onChanged,
     this.textInputType,
+    this.initialValue,
     this.controller,
     this.validator,
     this.isPassword = false,
@@ -30,12 +34,15 @@ class _TextInputFieldState extends State<TextInputField> {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: TextFormField(
+        initialValue: null, // إزالة initialValue لأننا نستخدم controller
+        onChanged: widget.onChanged,
         controller: widget.controller,
-        textDirection: TextDirection.rtl,
+        textDirection: TextDirection.ltr, // تغيير اتجاه النص
+        textAlign: TextAlign.right, // محاذاة النص إلى اليمين
         obscureText: widget.isPassword ? _obscureText : false,
         decoration: InputDecoration(
           contentPadding:
-              const EdgeInsets.symmetric(vertical: 25, horizontal: 0),
+              const EdgeInsets.symmetric(vertical: 20, horizontal: 0),
           labelText: widget.labeltext,
           labelStyle: TextStyle(
             fontFamily: 'Cairo',
@@ -64,18 +71,27 @@ class _TextInputFieldState extends State<TextInputField> {
               width: 2,
             ),
           ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: const BorderSide(
+              style: BorderStyle.solid,
+              color: Color.fromRGBO(223, 181, 71, 1),
+              width: 1,
+            ),
+          ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: const BorderSide(
-              color: Colors.blue,
-              width: 2,
+              style: BorderStyle.solid,
+              color: Color.fromRGBO(223, 181, 71, 1),
+              width: 1,
             ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: const BorderSide(
               color: Colors.red,
-              width: 2,
+              width: 1,
             ),
           ),
         ),

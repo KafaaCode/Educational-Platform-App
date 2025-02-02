@@ -1,8 +1,10 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/student/src/presentation/widgets/background.dart';
+import 'package:educational_platform_app/core/utils/toast.dart';
+import 'package:educational_platform_app/student/core/routes/routes_name.dart';
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:lottie/lottie.dart';
 
 class LoadingPage extends StatelessWidget {
@@ -11,27 +13,62 @@ class LoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Lang lang = Lang.of(context);
-    return Background(child: _loaingWidget(lang));
+    final authBloc = context.read<CheckAuthBloc>();
+    authBloc.add(const CheckAuthEvent.started());
+
+    return BlocListener<CheckAuthBloc, CheckAuthState>(
+      // listenWhen: (previous, current) => previous != current,
+      listener: (context, state) {
+        print(state.isAuth);
+        print(state.loading);
+        print(state.error);
+        print("-----------");
+        if (!state.isAuth && !state.loading && !state.error) {
+          if (state.user.name == '') {
+            Navigator.of(context).popAndPushNamed(RoutesNames.registerRoute);
+          } else {
+            Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
+          }
+        } else if (state.isAuth && !state.loading && !state.error) {
+          Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
+        } else if (!state.isAuth && !state.loading && state.error) {
+          Toast().error(context, state.errorMessage);
+        }
+      },
+      child: BlocBuilder<CheckAuthBloc, CheckAuthState>(
+        builder: (context, state) {
+          return _loadingWidget(lang);
+        },
+      ),
+    );
   }
 
-  Widget _loaingWidget(lang) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset('assets/images/logo.png',
-              width: 150.w, height: 200.h, fit: BoxFit.fitWidth),
-          // Lottie Loading Animation
-          Lottie.asset(
-            'assets/lottie/loading.json',
-            width: 150.w, // Responsive width
-            height: 50.h, // Responsive height
-            fit: BoxFit.fitWidth,
+  Widget _loadingWidget(Lang lang) {
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Image.asset(
+          'assets/images/bg_things.png',
+          fit: BoxFit.fill,
+        ),
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/logo.png',
+                  width: 150.w, height: 200.h, fit: BoxFit.fitWidth),
+              Lottie.asset(
+                'assets/lottie/loading.json',
+                width: 150.w,
+                height: 50.h,
+                fit: BoxFit.fitWidth,
+              ),
+              SizedBox(height: 20.h),
+            ],
           ),
-          SizedBox(height: 20.h), // Responsive spacing
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

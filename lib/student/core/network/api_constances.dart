@@ -1,6 +1,6 @@
 class ApiConstances {
-  static const String _baseUrl = "";
-  // static const String _baseUrl = "http://127.0.0.1:8000/api";
+  //static const String _baseUrl = "";
+  static const String _baseUrl = "http://127.0.0.1:8000/api";
 
   static Map<String, dynamic> headers(String token) {
     if (token == '') {
@@ -11,13 +11,9 @@ class ApiConstances {
   }
 
   // Authentication
-  static const String checkAuthUrl = "$_baseUrl/authCheck";
-  static const String sendBotUrl = "$_baseUrl/sendBot";
-
-  static const String getRecords = "$_baseUrl/records";
-  static const String search = "$_baseUrl/search";
-  static const String getFilters = "$_baseUrl/getFilters";
-  static String getRecord(int id) => "$_baseUrl/getRecords/$id";
+  static const String registerUrl = "$_baseUrl/auth/register";
+  static const String loginUrl = "$_baseUrl/auth/login";
+  static const String getRegionUrl = "$_baseUrl/Region";
 
   static String getToken() {
     return ""; //sl.get<CheckAuthBloc>().state.token;
