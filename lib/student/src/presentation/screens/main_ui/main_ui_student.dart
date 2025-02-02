@@ -122,130 +122,159 @@ class Main_ui_scrren extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         toolbarHeight:150,
-        backgroundColor: Color(0xFF588760),
-        title: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-             
-                Text('مرحبًا بك في عالم جديد من التعلم!',style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Cairo',
-                  fontWeight: FontWeight.bold
-                
-                ),),
-                 SvgPicture.asset(
-                  'images/star.svg',
-                  fit: BoxFit.contain,
-                  width: 40,
-                  height: 40,
-                ),
-              ],
+          toolbarHeight: 150,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/backgroundAppbar.png"),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
             ),
-            SizedBox(height: 15,),
-            Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SvgPicture.asset(
-                  'images/logo_option.svg',
-                  fit: BoxFit.contain,
-                  width: 40,
-                  height: 40,
-                ),
-                SizedBox(width: 350,
-                 child:  TextField(
-                    decoration: InputDecoration(
-                      hintText: "ابحث عن مستخدم هنا",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      prefixIcon: Icon(Icons.search),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(color: Colors.yellow, width: 2),
+          ),
+          title: Column(
+            children: [
+              // سطر النص والأيقونة
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start, // توسيط العناصر
+                children: [
+                  Flexible(
+                    child: Text(
+                      'مرحبًا بك في عالم جديد من التعلم!',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Cairo',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18, // ضبط الحجم ليكون متناسقًا مع الشاشات الصغيرة
                       ),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                      
-                    ),)  ,),
-                            ClipOval(
-  child: Image.asset(
-    'assets/images/21.png', // استبدل بمسار الصورة الصحيح
-    width: 70,  // عرض الدائرة
-    height: 70, // ارتفاع الدائرة
-    fit: BoxFit.cover, // يضمن ملء الدائرة بالكامل دون ترك فراغات
-  ),
-),
-                  
-
-               
-                    
-              ],
-            )
-      
-          ],
-        ),
-      ),
-      body: Padding(
-        
-        padding: const EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Container(
-              decoration: BoxDecoration(
-    image: DecorationImage(
-      image: AssetImage("images/bg_things.png"),
-      fit: BoxFit.cover, // تغطية كاملة للخلفية
-    ),),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              /*   TextField(
-                  decoration: InputDecoration(
-                    hintText: 'ابحث عن مستخدم هنا...',
-                    prefixIcon: Icon(Icons.search),
-                    filled: true,
-                    fillColor: Colors.grey[800],
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25),
-                      borderSide: BorderSide.none,
+                      textAlign: TextAlign.center, // جعل النص متناسقًا في المنتصف
+                      overflow: TextOverflow.ellipsis, // تقليل الحجم في حال الشاشة صغيرة جدًا
+                      maxLines: 1, // منع تجاوز النص لسطر واحد
                     ),
                   ),
-                ), */
-                SizedBox(height: 20),
-                SectionTitle(title: 'الدورات الأكثر شيوعًا'),
-                CourseCard(),
-                SectionTitle(title: 'نخبة المدربين'),
-                TrainerGrid(),
-                SectionTitle(title: 'العروض والمحتوى المميز'),
-                CourseCard(),
-              ],
-            ),
+                  SizedBox(width: 10), // إضافة مسافة بين النص والأيقونة
+                  SvgPicture.asset(
+                    'assets/images/star.svg',
+                    width: 30, // تقليل الحجم ليكون متجاوبًا
+                    height: 30,
+                  ),
+                ],
+              ),
+              SizedBox(height: 15),
+              // سطر البحث والصور
+              Row(
+                children: [
+                  // الصورة على اليسار
+                 SvgPicture.asset(
+                    'assets/images/logo_option.svg',
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
+                  ),
+                 
+                  SizedBox(width: 10),
+                  // حقل البحث يأخذ المساحة المتاحة
+                  Expanded(
+                    child: TextField(
+  decoration: InputDecoration(
+    hintText: "ابحث عن مستخدم هنا",
+    hintStyle: TextStyle(color: Colors.grey),
+    prefixIcon: Icon(Icons.search), // أيقونة البحث صفراء
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30), // زوايا دائرية للحقل
+      borderSide: BorderSide(color: Color(0xFFDFB547), width: 2), // الإطار الأصفر
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide(color: Color(0xFFDFB547), width: 2), // الإطار عند عدم التحديد
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30),
+      borderSide: BorderSide(color: Color(0xFFDFB547), width: 2.5), // لون مختلف عند التحديد
+    ),
+    contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10), // تصغير الارتفاع
+  ),
+)
+
+                  ),
+               SizedBox(width: 10),
+                  // الصورة على اليمين
+                 ClipOval(
+                    child: Image.asset(
+                      'assets/images/bg_intro_page1.png',
+                      width: 50,
+                      height:50,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
+
+      body:Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: SingleChildScrollView(
+    child: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/bg_things.png"),
+          fit: BoxFit.cover, // تغطية كاملة للخلفية
+        ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor:  Color(0xFF588760),
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white70,
-        items: [
-          BottomNavigationBarItem(
-            backgroundColor:  Color(0xFF588760),
-            icon: Icon(Icons.home),
-            label: 'الرئيسية',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: 'الرسائل',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'الدورات',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'الملف الشخصي',
-          ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // تم تعليق TextField لأغراض التنظيم
+          SizedBox(height: 20),
+          SectionTitle(title: 'الدورات الأكثر شيوعًا'),
+          CourseCard(),
+          SectionTitle(title: 'نخبة المدربين'),
+          TrainerGrid(),
+          SectionTitle(title: 'العروض والمحتوى المميز'),
+          CourseCard(),
         ],
       ),
+    ),
+  ),
+),
+bottomNavigationBar: ClipRRect(
+  borderRadius: BorderRadius.only(
+    topLeft: Radius.circular(20), // الزاوية العليا اليسرى
+    topRight: Radius.circular(20), // الزاوية العليا اليمنى
+  ),
+  child: BottomNavigationBar(
+    backgroundColor: Color(0xFF588760),
+    selectedItemColor: Colors.white,
+    unselectedItemColor: Colors.white70,
+    items: [
+      BottomNavigationBarItem(
+        backgroundColor: Color(0xFF588760),
+        icon: Icon(Icons.home),
+        label: 'الرئيسية',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.message),
+        label: 'الرسائل',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.book),
+        label: 'الدورات',
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.person),
+        label: 'الملف الشخصي',
+      ),
+    ],
+  ),
+)
+
     );
   }
 }
@@ -271,7 +300,7 @@ class SectionTitle extends StatelessWidget {
           ),
           Text(
             'عرض الكل',
-            style: TextStyle(color: Colors.greenAccent,
+            style: TextStyle(color: Colors.black,
             fontFamily: 'Cairo',
             )
             ,
@@ -286,105 +315,167 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      
-      color: Color(0xFFFFFFFF),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+  color: Color(0xFFFFFFFF),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.only(
+      topLeft: Radius.circular(10), // الزاوية العليا اليسرى مدورة
+      topRight: Radius.circular(10), // الزاوية العليا اليمنى مدورة
+      bottomLeft: Radius.circular(10), // الزاوية السفلى اليسرى بدون دوران
+      bottomRight: Radius.circular(10), // الزاوية السفلى اليمنى بدون دوران
+    ),
+  ),
+  child: Stack(
+    children: [
+      Padding(
+        padding: const EdgeInsets.all(10), // إضافة padding للكارد
         child: LayoutBuilder(
-           builder: (context, constraints) {
-              double parentWidth = constraints.maxWidth;
-         double availableHeight = constraints.maxHeight * 0.2;
-             
-              
-          return  Container(
-            
-            child: Row(
-              children: [
-                Container(
-                  
+          builder: (context, constraints) {
+            double parentWidth = constraints.maxWidth;
+            double availableHeight = 150;
+
+            return Container(
+              height: availableHeight,
+              child: Row(
+                children: [
+                  Container(
+                    width: parentWidth * 0.50,
+                    height: 300,
                     decoration: BoxDecoration(
-            // لون الخلفية
-                borderRadius: BorderRadius.circular(30), 
-                 color: Colors.green,// تدوير الزوايا
-              ),
-                    width: parentWidth* 0.60, // 50% من عرض الشاشة
-                 // 50% من ارتفاع الشاشة
-                 height:300, 
-                  child: Center(
-                    child: Text(
-                      '30 ساعة',
-                      style: TextStyle(color: Colors.white),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(5),
+                        topRight: Radius.circular(5),
+                        bottomLeft: Radius.circular(5),
+                        bottomRight: Radius.circular(5),
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage('images/backgroundAppbar.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-            
-                Container(
-                   width: parentWidth* 0.40,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          right: 17,
-                          top: 50,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'برمجة مواقع الويب',
-                              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                            ),
-                                               
-                            Text('المدرس عادل خزوم',
-                              style: TextStyle(fontSize: 18),),
-                              
-                                               
-                            Text('16 ساعه تدريبية',
-                              style: TextStyle(fontSize: 18),),
-                          ],
-                        ),
-                      ),
-                       SizedBox(height: 10),
-                      Container(
-                        width: parentWidth*0.5,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(right: 10),
-                                width: parentWidth*0.5*0.40,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: List.generate(5, (index) => Icon(Icons.star, color: Color(0xFFDFB547), size:  parentWidth*0.5*0.40*0.2)),
+                  Container(
+                    width: parentWidth * 0.50,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 17, top: 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                               SizedBox(height: 20),
+                              Text(
+                                'برمجة مواقع الويب',
+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                               ),
-                            ),
-                     SizedBox(
-              width:parentWidth*0.5*0.30,  // عرض الزر
-              height: 70, // ارتفاع الزر
-              child: FloatingActionButton(
-                onPressed: () {},
-                backgroundColor:   Color(0xFFDFB547),
-                shape: CircleBorder(), // تأكيد أن الزر يبقى دائريًا
-                child: Icon(Icons.add,  color: Colors.black),
-              ),
-            )
-                          ],
+                              Text(
+                                'المدرس عادل خزوم',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                '16 ساعه تدريبية',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 0),
+                        Container(
+                          width: parentWidth * 0.5,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 10),
+                                width: parentWidth * 0.5 * 0.50,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: List.generate(
+                                    5,
+                                    (index) => Icon(
+                                      Icons.star,
+                                      color: Color(0xFFDFB547),
+                                      size: parentWidth * 0.5 * 0.50 * 0.2,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: parentWidth * 0.5 * 0.30,
+                                height: 40,
+                                child: FloatingActionButton(
+                                  onPressed: () {},
+                                  backgroundColor: Color(0xFFDFB547),
+                                  shape: CircleBorder(),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          );}
+                ],
+              ),
+            );
+          },
         ),
       ),
-    );
+      
+      // إضافة الأيقونة "قلب حب" في أعلى اليسار (سيظل الـ Positioned في المكان الصحيح)
+      Positioned(
+        top: 10,
+        left: 10,
+        child: Container(
+          width: 30,
+          height: 30,
+          decoration: BoxDecoration(
+            color: Color(0xFF588760),
+            shape: BoxShape.circle,
+          ),
+          child: Center(
+            child: Icon(
+              Icons.favorite,
+              color: Colors.white,
+              size: 20,
+            ),
+          ),
+        ),
+      ),
+
+      // إضافة النص "30$" داخل شكل مستطيل مع زوايا مدورة في الجهة العليا اليمنى
+      Positioned(
+        top: 0,
+        right:0,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+          decoration: BoxDecoration(
+            color: Color(0xFFDFB547),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(5),
+              topLeft: Radius.circular(20),
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(0),
+            ),
+          ),
+          child: Text(
+            '30', 
+            style: TextStyle(
+              color: Colors.white, 
+              fontSize: 20, 
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+    ],
+  ),
+);
+
   }
 }
 
@@ -392,63 +483,70 @@ class TrainerGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 2.1 / 2,
-        crossAxisSpacing: 8,
-        mainAxisSpacing: 8,
-      ),
-      itemCount: 4,
-      itemBuilder: (context, index) {
-        return ClipPath(
-           clipper: RoundedTopEdgeClipper(),
-          child: Card(
-            
-            color: Color(0xFFFFFFFF),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                   SizedBox(height: 30),
-                ClipOval(
-  child: Image.asset(
-    'assets/images/21.png', // استبدل بمسار الصورة الصحيح
-    width: 100,  // عرض الدائرة
-    height: 100, // ارتفاع الدائرة
-    fit: BoxFit.cover, // يضمن ملء الدائرة بالكامل دون ترك فراغات
+  shrinkWrap: true,
+  physics: NeverScrollableScrollPhysics(),
+  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+    maxCrossAxisExtent: 180, // تحديد الحد الأقصى لعرض العنصر
+    childAspectRatio: 1 / 1.23, // تحسين الأبعاد ليناسب المحتوى
+    crossAxisSpacing: 8,
+    mainAxisSpacing: 8,
   ),
-),
-                
-                  Text('عادل حسين خزوم', style: TextStyle(
-                  fontSize: 17,
-                  
-                  )),
-                  
-                 
-                  Text('برمجة وتصميم', style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  
-                  )),
-                    
-                  Text('طالب 500', style: TextStyle(
-                  fontSize: 17,
-              
-                  
-                  ))
-
-                ],
+  itemCount: 10, // عدد العناصر الكلي
+  itemBuilder: (context, index) {
+    return ClipPath(
+      clipper: RoundedTopEdgeClipper(),
+      child: Card(
+        color: Color(0xFFFFFFFF),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Padding( // إضافة هوامش داخلية
+          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // منع الـ Column من التمدد أكثر من اللازم
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 3),
+              ClipOval(
+                child: Image.asset(
+                  'assets/images/bg_intro_page1.png', // استبدل بمسار الصورة الصحيح
+                  width: 60, // تقليل عرض الصورة
+                  height: 60,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
+              
+              Flexible( // جعل النصوص تتكيف مع المساحة المتاحة
+                child: Text(
+                  'عادل حسين خزوم',
+                  style: TextStyle(fontSize: 14),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            
+              Flexible(
+                child: Text(
+                  'برمجة وتصميم',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+         
+              Flexible(
+                child: Text(
+                  'طالب 500',
+                  style: TextStyle(fontSize: 15, color: Colors.grey[700]),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
           ),
-        );
-      },
+        ),
+      ),
     );
+  },
+);
+
   }
 }
  
