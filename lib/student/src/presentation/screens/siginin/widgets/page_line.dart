@@ -16,19 +16,20 @@ class _PageLineState extends State<PageLine> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
-      child: Column(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(text[widget.pageIndex],
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w800,
-                decoration: TextDecoration.none,
-                color: Colors.black,
-              )),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+          Column(
             children: [
+              if (widget.pageIndex == 0)
+                Text(text[widget.pageIndex],
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                      decoration: TextDecoration.none,
+                      color: Colors.black,
+                    )),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
@@ -48,6 +49,18 @@ class _PageLineState extends State<PageLine> {
                   ),
                 ),
               ),
+            ],
+          ),
+          Column(
+            children: [
+              if (widget.pageIndex == 1)
+                Text(text[widget.pageIndex],
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                      decoration: TextDecoration.none,
+                      color: Colors.black,
+                    )),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
@@ -67,6 +80,18 @@ class _PageLineState extends State<PageLine> {
                   ),
                 ),
               ),
+            ],
+          ),
+          Column(
+            children: [
+              if (widget.pageIndex == 2)
+                Text(text[widget.pageIndex],
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                      decoration: TextDecoration.none,
+                      color: Colors.black,
+                    )),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
@@ -87,7 +112,7 @@ class _PageLineState extends State<PageLine> {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

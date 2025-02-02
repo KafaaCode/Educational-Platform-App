@@ -12,11 +12,11 @@ class Course with _$Course {
     required double price,
     required double discount,
     required String details,
-    required AcademicStage academicStage,
+    required AcademicStage academic_stage,
     required Teacher teacher,
     required int countVideos,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    required DateTime created_at,
+    required DateTime updated_at,
   }) = _Course;
 
   factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
@@ -37,12 +37,12 @@ class AcademicStage with _$AcademicStage {
 class Teacher with _$Teacher {
   const factory Teacher({
     required int id,
-    required String gender,
+    required String gander,
     required String phoneNumber,
     required Region region,
     required Specialization specialization,
     required double evaluationRate,
-    @JsonKey(name: 'is_banned') required int isBanned,
+    required int is_banned,
     required User user,
   }) = _Teacher;
 
@@ -54,11 +54,11 @@ class Teacher with _$Teacher {
 class Student with _$Student {
   const factory Student({
     required int id,
-    required String gender,
+    required String gander,
     required String phoneNumber,
-    required AcademicStage academicStage,
+    required AcademicStage academic_stage,
     required Region region,
-    @JsonKey(name: 'is_banned') required int isBanned,
+    required int is_banned,
     //required User user,
   }) = _Student;
 
@@ -71,8 +71,8 @@ class Region with _$Region {
   const factory Region({
     required int id,
     required String name,
-    DateTime? createdAt,
-    DateTime? updatedAt,
+    DateTime? created_at,
+    DateTime? updated_at,
   }) = _Region;
 
   factory Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
@@ -83,8 +83,8 @@ class Specialization with _$Specialization {
   const factory Specialization({
     required int id,
     required String name,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    required DateTime created_at,
+    required DateTime updated_at,
   }) = _Specialization;
 
   factory Specialization.fromJson(Map<String, dynamic> json) =>
@@ -94,13 +94,17 @@ class Specialization with _$Specialization {
 @freezed
 class User with _$User {
   const factory User({
-    required String id,
+    required int id,
     required String name,
     required String email,
     required String role,
+    String? gander,
+    String? phoneNumber,
+    Map<String, String>? academic_stage,
+    String? region,
     String? password,
-    DateTime? createdAt,
-    DateTime? updatedAt,
+    DateTime? created_at,
+    DateTime? updated_at,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -112,7 +116,7 @@ class Auth with _$Auth {
     required User user,
     required Student student,
     required List<Course?> courses,
-    required List<Teacher?> eliteTeachers,
+    required List<Teacher?> elite_teachers,
     required String token,
     String? message,
   }) = _Auth;

@@ -45,4 +45,15 @@ class AuthRepository extends BaseAuthRepository {
           ServerFailure.fromResponse(statusCode: failure.statusCode ?? 404));
     }
   }
+
+  @override
+  ResultFuture<List<Region>> getRegions() async {
+    try {
+      final response = await baseAuthRemoteDataSource.getRegions();
+      return Right(response);
+    } on AuthException catch (failure) {
+      return Left(
+          ServerFailure.fromResponse(statusCode: failure.statusCode ?? 404));
+    }
+  }
 }

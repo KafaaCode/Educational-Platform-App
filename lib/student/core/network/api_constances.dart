@@ -13,6 +13,7 @@ class ApiConstances {
   // Authentication
   static const String registerUrl = "$_baseUrl/auth/register";
   static const String loginUrl = "$_baseUrl/auth/login";
+  static const String getRegionUrl = "$_baseUrl/Region";
 
   static String getToken() {
     return ""; //sl.get<CheckAuthBloc>().state.token;

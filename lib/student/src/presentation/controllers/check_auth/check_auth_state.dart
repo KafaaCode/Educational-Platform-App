@@ -7,16 +7,17 @@ class CheckAuthState with _$CheckAuthState {
     @Default(false) bool error,
     @Default(false) bool isAuth,
     @Default(User(
-      id: '0',
+      id: 0,
       name: '',
       email: '',
       role: '',
       gander: '',
       region: '',
-      academicStage: {'stage': '', 'type': ""},
+      academic_stage: {'stage': '', 'type': ""},
     ))
     User user,
+    List<Region>? regions,
     @Default('') String errorMessage,
   }) = _Initial;
-  // const factory CheckAuthState({required User user}) = _UpdateInfo;
+  // const factory CheckAuthState.getRegion({required User user}) = _GetRegion;
 }

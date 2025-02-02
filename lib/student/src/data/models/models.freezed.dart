@@ -26,11 +26,11 @@ mixin _$Course {
   double get price => throw _privateConstructorUsedError;
   double get discount => throw _privateConstructorUsedError;
   String get details => throw _privateConstructorUsedError;
-  AcademicStage get academicStage => throw _privateConstructorUsedError;
+  AcademicStage get academic_stage => throw _privateConstructorUsedError;
   Teacher get teacher => throw _privateConstructorUsedError;
   int get countVideos => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime get created_at => throw _privateConstructorUsedError;
+  DateTime get updated_at => throw _privateConstructorUsedError;
 
   /// Serializes this Course to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -53,13 +53,13 @@ abstract class $CourseCopyWith<$Res> {
       double price,
       double discount,
       String details,
-      AcademicStage academicStage,
+      AcademicStage academic_stage,
       Teacher teacher,
       int countVideos,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime created_at,
+      DateTime updated_at});
 
-  $AcademicStageCopyWith<$Res> get academicStage;
+  $AcademicStageCopyWith<$Res> get academic_stage;
   $TeacherCopyWith<$Res> get teacher;
 }
 
@@ -84,11 +84,11 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
     Object? price = null,
     Object? discount = null,
     Object? details = null,
-    Object? academicStage = null,
+    Object? academic_stage = null,
     Object? teacher = null,
     Object? countVideos = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
+    Object? created_at = null,
+    Object? updated_at = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -115,9 +115,9 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
               as String,
-      academicStage: null == academicStage
-          ? _value.academicStage
-          : academicStage // ignore: cast_nullable_to_non_nullable
+      academic_stage: null == academic_stage
+          ? _value.academic_stage
+          : academic_stage // ignore: cast_nullable_to_non_nullable
               as AcademicStage,
       teacher: null == teacher
           ? _value.teacher
@@ -127,13 +127,13 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
           ? _value.countVideos
           : countVideos // ignore: cast_nullable_to_non_nullable
               as int,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: null == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: null == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ) as $Val);
   }
@@ -142,9 +142,9 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AcademicStageCopyWith<$Res> get academicStage {
-    return $AcademicStageCopyWith<$Res>(_value.academicStage, (value) {
-      return _then(_value.copyWith(academicStage: value) as $Val);
+  $AcademicStageCopyWith<$Res> get academic_stage {
+    return $AcademicStageCopyWith<$Res>(_value.academic_stage, (value) {
+      return _then(_value.copyWith(academic_stage: value) as $Val);
     });
   }
 
@@ -173,14 +173,14 @@ abstract class _$$CourseImplCopyWith<$Res> implements $CourseCopyWith<$Res> {
       double price,
       double discount,
       String details,
-      AcademicStage academicStage,
+      AcademicStage academic_stage,
       Teacher teacher,
       int countVideos,
-      DateTime createdAt,
-      DateTime updatedAt});
+      DateTime created_at,
+      DateTime updated_at});
 
   @override
-  $AcademicStageCopyWith<$Res> get academicStage;
+  $AcademicStageCopyWith<$Res> get academic_stage;
   @override
   $TeacherCopyWith<$Res> get teacher;
 }
@@ -204,11 +204,11 @@ class __$$CourseImplCopyWithImpl<$Res>
     Object? price = null,
     Object? discount = null,
     Object? details = null,
-    Object? academicStage = null,
+    Object? academic_stage = null,
     Object? teacher = null,
     Object? countVideos = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
+    Object? created_at = null,
+    Object? updated_at = null,
   }) {
     return _then(_$CourseImpl(
       id: null == id
@@ -235,9 +235,9 @@ class __$$CourseImplCopyWithImpl<$Res>
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
               as String,
-      academicStage: null == academicStage
-          ? _value.academicStage
-          : academicStage // ignore: cast_nullable_to_non_nullable
+      academic_stage: null == academic_stage
+          ? _value.academic_stage
+          : academic_stage // ignore: cast_nullable_to_non_nullable
               as AcademicStage,
       teacher: null == teacher
           ? _value.teacher
@@ -247,13 +247,13 @@ class __$$CourseImplCopyWithImpl<$Res>
           ? _value.countVideos
           : countVideos // ignore: cast_nullable_to_non_nullable
               as int,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: null == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: null == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -269,11 +269,11 @@ class _$CourseImpl implements _Course {
       required this.price,
       required this.discount,
       required this.details,
-      required this.academicStage,
+      required this.academic_stage,
       required this.teacher,
       required this.countVideos,
-      required this.createdAt,
-      required this.updatedAt});
+      required this.created_at,
+      required this.updated_at});
 
   factory _$CourseImpl.fromJson(Map<String, dynamic> json) =>
       _$$CourseImplFromJson(json);
@@ -291,19 +291,19 @@ class _$CourseImpl implements _Course {
   @override
   final String details;
   @override
-  final AcademicStage academicStage;
+  final AcademicStage academic_stage;
   @override
   final Teacher teacher;
   @override
   final int countVideos;
   @override
-  final DateTime createdAt;
+  final DateTime created_at;
   @override
-  final DateTime updatedAt;
+  final DateTime updated_at;
 
   @override
   String toString() {
-    return 'Course(id: $id, name: $name, evaluationRate: $evaluationRate, price: $price, discount: $discount, details: $details, academicStage: $academicStage, teacher: $teacher, countVideos: $countVideos, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Course(id: $id, name: $name, evaluationRate: $evaluationRate, price: $price, discount: $discount, details: $details, academic_stage: $academic_stage, teacher: $teacher, countVideos: $countVideos, created_at: $created_at, updated_at: $updated_at)';
   }
 
   @override
@@ -319,15 +319,15 @@ class _$CourseImpl implements _Course {
             (identical(other.discount, discount) ||
                 other.discount == discount) &&
             (identical(other.details, details) || other.details == details) &&
-            (identical(other.academicStage, academicStage) ||
-                other.academicStage == academicStage) &&
+            (identical(other.academic_stage, academic_stage) ||
+                other.academic_stage == academic_stage) &&
             (identical(other.teacher, teacher) || other.teacher == teacher) &&
             (identical(other.countVideos, countVideos) ||
                 other.countVideos == countVideos) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.updated_at, updated_at) ||
+                other.updated_at == updated_at));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -340,11 +340,11 @@ class _$CourseImpl implements _Course {
       price,
       discount,
       details,
-      academicStage,
+      academic_stage,
       teacher,
       countVideos,
-      createdAt,
-      updatedAt);
+      created_at,
+      updated_at);
 
   /// Create a copy of Course
   /// with the given fields replaced by the non-null parameter values.
@@ -370,11 +370,11 @@ abstract class _Course implements Course {
       required final double price,
       required final double discount,
       required final String details,
-      required final AcademicStage academicStage,
+      required final AcademicStage academic_stage,
       required final Teacher teacher,
       required final int countVideos,
-      required final DateTime createdAt,
-      required final DateTime updatedAt}) = _$CourseImpl;
+      required final DateTime created_at,
+      required final DateTime updated_at}) = _$CourseImpl;
 
   factory _Course.fromJson(Map<String, dynamic> json) = _$CourseImpl.fromJson;
 
@@ -391,15 +391,15 @@ abstract class _Course implements Course {
   @override
   String get details;
   @override
-  AcademicStage get academicStage;
+  AcademicStage get academic_stage;
   @override
   Teacher get teacher;
   @override
   int get countVideos;
   @override
-  DateTime get createdAt;
+  DateTime get created_at;
   @override
-  DateTime get updatedAt;
+  DateTime get updated_at;
 
   /// Create a copy of Course
   /// with the given fields replaced by the non-null parameter values.
@@ -583,13 +583,12 @@ Teacher _$TeacherFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Teacher {
   int get id => throw _privateConstructorUsedError;
-  String get gender => throw _privateConstructorUsedError;
+  String get gander => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   Region get region => throw _privateConstructorUsedError;
   Specialization get specialization => throw _privateConstructorUsedError;
   double get evaluationRate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'is_banned')
-  int get isBanned => throw _privateConstructorUsedError;
+  int get is_banned => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
 
   /// Serializes this Teacher to a JSON map.
@@ -608,12 +607,12 @@ abstract class $TeacherCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String gender,
+      String gander,
       String phoneNumber,
       Region region,
       Specialization specialization,
       double evaluationRate,
-      @JsonKey(name: 'is_banned') int isBanned,
+      int is_banned,
       User user});
 
   $RegionCopyWith<$Res> get region;
@@ -637,12 +636,12 @@ class _$TeacherCopyWithImpl<$Res, $Val extends Teacher>
   @override
   $Res call({
     Object? id = null,
-    Object? gender = null,
+    Object? gander = null,
     Object? phoneNumber = null,
     Object? region = null,
     Object? specialization = null,
     Object? evaluationRate = null,
-    Object? isBanned = null,
+    Object? is_banned = null,
     Object? user = null,
   }) {
     return _then(_value.copyWith(
@@ -650,9 +649,9 @@ class _$TeacherCopyWithImpl<$Res, $Val extends Teacher>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+      gander: null == gander
+          ? _value.gander
+          : gander // ignore: cast_nullable_to_non_nullable
               as String,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
@@ -670,9 +669,9 @@ class _$TeacherCopyWithImpl<$Res, $Val extends Teacher>
           ? _value.evaluationRate
           : evaluationRate // ignore: cast_nullable_to_non_nullable
               as double,
-      isBanned: null == isBanned
-          ? _value.isBanned
-          : isBanned // ignore: cast_nullable_to_non_nullable
+      is_banned: null == is_banned
+          ? _value.is_banned
+          : is_banned // ignore: cast_nullable_to_non_nullable
               as int,
       user: null == user
           ? _value.user
@@ -721,12 +720,12 @@ abstract class _$$TeacherImplCopyWith<$Res> implements $TeacherCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String gender,
+      String gander,
       String phoneNumber,
       Region region,
       Specialization specialization,
       double evaluationRate,
-      @JsonKey(name: 'is_banned') int isBanned,
+      int is_banned,
       User user});
 
   @override
@@ -751,12 +750,12 @@ class __$$TeacherImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? gender = null,
+    Object? gander = null,
     Object? phoneNumber = null,
     Object? region = null,
     Object? specialization = null,
     Object? evaluationRate = null,
-    Object? isBanned = null,
+    Object? is_banned = null,
     Object? user = null,
   }) {
     return _then(_$TeacherImpl(
@@ -764,9 +763,9 @@ class __$$TeacherImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+      gander: null == gander
+          ? _value.gander
+          : gander // ignore: cast_nullable_to_non_nullable
               as String,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
@@ -784,9 +783,9 @@ class __$$TeacherImplCopyWithImpl<$Res>
           ? _value.evaluationRate
           : evaluationRate // ignore: cast_nullable_to_non_nullable
               as double,
-      isBanned: null == isBanned
-          ? _value.isBanned
-          : isBanned // ignore: cast_nullable_to_non_nullable
+      is_banned: null == is_banned
+          ? _value.is_banned
+          : is_banned // ignore: cast_nullable_to_non_nullable
               as int,
       user: null == user
           ? _value.user
@@ -801,12 +800,12 @@ class __$$TeacherImplCopyWithImpl<$Res>
 class _$TeacherImpl implements _Teacher {
   const _$TeacherImpl(
       {required this.id,
-      required this.gender,
+      required this.gander,
       required this.phoneNumber,
       required this.region,
       required this.specialization,
       required this.evaluationRate,
-      @JsonKey(name: 'is_banned') required this.isBanned,
+      required this.is_banned,
       required this.user});
 
   factory _$TeacherImpl.fromJson(Map<String, dynamic> json) =>
@@ -815,7 +814,7 @@ class _$TeacherImpl implements _Teacher {
   @override
   final int id;
   @override
-  final String gender;
+  final String gander;
   @override
   final String phoneNumber;
   @override
@@ -825,14 +824,13 @@ class _$TeacherImpl implements _Teacher {
   @override
   final double evaluationRate;
   @override
-  @JsonKey(name: 'is_banned')
-  final int isBanned;
+  final int is_banned;
   @override
   final User user;
 
   @override
   String toString() {
-    return 'Teacher(id: $id, gender: $gender, phoneNumber: $phoneNumber, region: $region, specialization: $specialization, evaluationRate: $evaluationRate, isBanned: $isBanned, user: $user)';
+    return 'Teacher(id: $id, gander: $gander, phoneNumber: $phoneNumber, region: $region, specialization: $specialization, evaluationRate: $evaluationRate, is_banned: $is_banned, user: $user)';
   }
 
   @override
@@ -841,7 +839,7 @@ class _$TeacherImpl implements _Teacher {
         (other.runtimeType == runtimeType &&
             other is _$TeacherImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.gander, gander) || other.gander == gander) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
             (identical(other.region, region) || other.region == region) &&
@@ -849,15 +847,15 @@ class _$TeacherImpl implements _Teacher {
                 other.specialization == specialization) &&
             (identical(other.evaluationRate, evaluationRate) ||
                 other.evaluationRate == evaluationRate) &&
-            (identical(other.isBanned, isBanned) ||
-                other.isBanned == isBanned) &&
+            (identical(other.is_banned, is_banned) ||
+                other.is_banned == is_banned) &&
             (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, gender, phoneNumber, region,
-      specialization, evaluationRate, isBanned, user);
+  int get hashCode => Object.hash(runtimeType, id, gander, phoneNumber, region,
+      specialization, evaluationRate, is_banned, user);
 
   /// Create a copy of Teacher
   /// with the given fields replaced by the non-null parameter values.
@@ -878,12 +876,12 @@ class _$TeacherImpl implements _Teacher {
 abstract class _Teacher implements Teacher {
   const factory _Teacher(
       {required final int id,
-      required final String gender,
+      required final String gander,
       required final String phoneNumber,
       required final Region region,
       required final Specialization specialization,
       required final double evaluationRate,
-      @JsonKey(name: 'is_banned') required final int isBanned,
+      required final int is_banned,
       required final User user}) = _$TeacherImpl;
 
   factory _Teacher.fromJson(Map<String, dynamic> json) = _$TeacherImpl.fromJson;
@@ -891,7 +889,7 @@ abstract class _Teacher implements Teacher {
   @override
   int get id;
   @override
-  String get gender;
+  String get gander;
   @override
   String get phoneNumber;
   @override
@@ -901,8 +899,7 @@ abstract class _Teacher implements Teacher {
   @override
   double get evaluationRate;
   @override
-  @JsonKey(name: 'is_banned')
-  int get isBanned;
+  int get is_banned;
   @override
   User get user;
 
@@ -921,12 +918,11 @@ Student _$StudentFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Student {
   int get id => throw _privateConstructorUsedError;
-  String get gender => throw _privateConstructorUsedError;
+  String get gander => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
-  AcademicStage get academicStage => throw _privateConstructorUsedError;
+  AcademicStage get academic_stage => throw _privateConstructorUsedError;
   Region get region => throw _privateConstructorUsedError;
-  @JsonKey(name: 'is_banned')
-  int get isBanned => throw _privateConstructorUsedError;
+  int get is_banned => throw _privateConstructorUsedError;
 
   /// Serializes this Student to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -944,13 +940,13 @@ abstract class $StudentCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String gender,
+      String gander,
       String phoneNumber,
-      AcademicStage academicStage,
+      AcademicStage academic_stage,
       Region region,
-      @JsonKey(name: 'is_banned') int isBanned});
+      int is_banned});
 
-  $AcademicStageCopyWith<$Res> get academicStage;
+  $AcademicStageCopyWith<$Res> get academic_stage;
   $RegionCopyWith<$Res> get region;
 }
 
@@ -970,36 +966,36 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
   @override
   $Res call({
     Object? id = null,
-    Object? gender = null,
+    Object? gander = null,
     Object? phoneNumber = null,
-    Object? academicStage = null,
+    Object? academic_stage = null,
     Object? region = null,
-    Object? isBanned = null,
+    Object? is_banned = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+      gander: null == gander
+          ? _value.gander
+          : gander // ignore: cast_nullable_to_non_nullable
               as String,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      academicStage: null == academicStage
-          ? _value.academicStage
-          : academicStage // ignore: cast_nullable_to_non_nullable
+      academic_stage: null == academic_stage
+          ? _value.academic_stage
+          : academic_stage // ignore: cast_nullable_to_non_nullable
               as AcademicStage,
       region: null == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
               as Region,
-      isBanned: null == isBanned
-          ? _value.isBanned
-          : isBanned // ignore: cast_nullable_to_non_nullable
+      is_banned: null == is_banned
+          ? _value.is_banned
+          : is_banned // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -1008,9 +1004,9 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AcademicStageCopyWith<$Res> get academicStage {
-    return $AcademicStageCopyWith<$Res>(_value.academicStage, (value) {
-      return _then(_value.copyWith(academicStage: value) as $Val);
+  $AcademicStageCopyWith<$Res> get academic_stage {
+    return $AcademicStageCopyWith<$Res>(_value.academic_stage, (value) {
+      return _then(_value.copyWith(academic_stage: value) as $Val);
     });
   }
 
@@ -1034,14 +1030,14 @@ abstract class _$$StudentImplCopyWith<$Res> implements $StudentCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String gender,
+      String gander,
       String phoneNumber,
-      AcademicStage academicStage,
+      AcademicStage academic_stage,
       Region region,
-      @JsonKey(name: 'is_banned') int isBanned});
+      int is_banned});
 
   @override
-  $AcademicStageCopyWith<$Res> get academicStage;
+  $AcademicStageCopyWith<$Res> get academic_stage;
   @override
   $RegionCopyWith<$Res> get region;
 }
@@ -1060,36 +1056,36 @@ class __$$StudentImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? gender = null,
+    Object? gander = null,
     Object? phoneNumber = null,
-    Object? academicStage = null,
+    Object? academic_stage = null,
     Object? region = null,
-    Object? isBanned = null,
+    Object? is_banned = null,
   }) {
     return _then(_$StudentImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+      gander: null == gander
+          ? _value.gander
+          : gander // ignore: cast_nullable_to_non_nullable
               as String,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      academicStage: null == academicStage
-          ? _value.academicStage
-          : academicStage // ignore: cast_nullable_to_non_nullable
+      academic_stage: null == academic_stage
+          ? _value.academic_stage
+          : academic_stage // ignore: cast_nullable_to_non_nullable
               as AcademicStage,
       region: null == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
               as Region,
-      isBanned: null == isBanned
-          ? _value.isBanned
-          : isBanned // ignore: cast_nullable_to_non_nullable
+      is_banned: null == is_banned
+          ? _value.is_banned
+          : is_banned // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -1100,11 +1096,11 @@ class __$$StudentImplCopyWithImpl<$Res>
 class _$StudentImpl implements _Student {
   const _$StudentImpl(
       {required this.id,
-      required this.gender,
+      required this.gander,
       required this.phoneNumber,
-      required this.academicStage,
+      required this.academic_stage,
       required this.region,
-      @JsonKey(name: 'is_banned') required this.isBanned});
+      required this.is_banned});
 
   factory _$StudentImpl.fromJson(Map<String, dynamic> json) =>
       _$$StudentImplFromJson(json);
@@ -1112,20 +1108,19 @@ class _$StudentImpl implements _Student {
   @override
   final int id;
   @override
-  final String gender;
+  final String gander;
   @override
   final String phoneNumber;
   @override
-  final AcademicStage academicStage;
+  final AcademicStage academic_stage;
   @override
   final Region region;
   @override
-  @JsonKey(name: 'is_banned')
-  final int isBanned;
+  final int is_banned;
 
   @override
   String toString() {
-    return 'Student(id: $id, gender: $gender, phoneNumber: $phoneNumber, academicStage: $academicStage, region: $region, isBanned: $isBanned)';
+    return 'Student(id: $id, gander: $gander, phoneNumber: $phoneNumber, academic_stage: $academic_stage, region: $region, is_banned: $is_banned)';
   }
 
   @override
@@ -1134,20 +1129,20 @@ class _$StudentImpl implements _Student {
         (other.runtimeType == runtimeType &&
             other is _$StudentImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.gander, gander) || other.gander == gander) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            (identical(other.academicStage, academicStage) ||
-                other.academicStage == academicStage) &&
+            (identical(other.academic_stage, academic_stage) ||
+                other.academic_stage == academic_stage) &&
             (identical(other.region, region) || other.region == region) &&
-            (identical(other.isBanned, isBanned) ||
-                other.isBanned == isBanned));
+            (identical(other.is_banned, is_banned) ||
+                other.is_banned == is_banned));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, gender, phoneNumber, academicStage, region, isBanned);
+      runtimeType, id, gander, phoneNumber, academic_stage, region, is_banned);
 
   /// Create a copy of Student
   /// with the given fields replaced by the non-null parameter values.
@@ -1168,27 +1163,26 @@ class _$StudentImpl implements _Student {
 abstract class _Student implements Student {
   const factory _Student(
       {required final int id,
-      required final String gender,
+      required final String gander,
       required final String phoneNumber,
-      required final AcademicStage academicStage,
+      required final AcademicStage academic_stage,
       required final Region region,
-      @JsonKey(name: 'is_banned') required final int isBanned}) = _$StudentImpl;
+      required final int is_banned}) = _$StudentImpl;
 
   factory _Student.fromJson(Map<String, dynamic> json) = _$StudentImpl.fromJson;
 
   @override
   int get id;
   @override
-  String get gender;
+  String get gander;
   @override
   String get phoneNumber;
   @override
-  AcademicStage get academicStage;
+  AcademicStage get academic_stage;
   @override
   Region get region;
   @override
-  @JsonKey(name: 'is_banned')
-  int get isBanned;
+  int get is_banned;
 
   /// Create a copy of Student
   /// with the given fields replaced by the non-null parameter values.
@@ -1206,8 +1200,8 @@ Region _$RegionFromJson(Map<String, dynamic> json) {
 mixin _$Region {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get created_at => throw _privateConstructorUsedError;
+  DateTime? get updated_at => throw _privateConstructorUsedError;
 
   /// Serializes this Region to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1223,7 +1217,7 @@ abstract class $RegionCopyWith<$Res> {
   factory $RegionCopyWith(Region value, $Res Function(Region) then) =
       _$RegionCopyWithImpl<$Res, Region>;
   @useResult
-  $Res call({int id, String name, DateTime? createdAt, DateTime? updatedAt});
+  $Res call({int id, String name, DateTime? created_at, DateTime? updated_at});
 }
 
 /// @nodoc
@@ -1243,8 +1237,8 @@ class _$RegionCopyWithImpl<$Res, $Val extends Region>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
+    Object? created_at = freezed,
+    Object? updated_at = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1255,13 +1249,13 @@ class _$RegionCopyWithImpl<$Res, $Val extends Region>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: freezed == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ) as $Val);
   }
@@ -1274,7 +1268,7 @@ abstract class _$$RegionImplCopyWith<$Res> implements $RegionCopyWith<$Res> {
       __$$RegionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String name, DateTime? createdAt, DateTime? updatedAt});
+  $Res call({int id, String name, DateTime? created_at, DateTime? updated_at});
 }
 
 /// @nodoc
@@ -1292,8 +1286,8 @@ class __$$RegionImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
+    Object? created_at = freezed,
+    Object? updated_at = freezed,
   }) {
     return _then(_$RegionImpl(
       id: null == id
@@ -1304,13 +1298,13 @@ class __$$RegionImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: freezed == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
@@ -1320,7 +1314,7 @@ class __$$RegionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RegionImpl implements _Region {
   const _$RegionImpl(
-      {required this.id, required this.name, this.createdAt, this.updatedAt});
+      {required this.id, required this.name, this.created_at, this.updated_at});
 
   factory _$RegionImpl.fromJson(Map<String, dynamic> json) =>
       _$$RegionImplFromJson(json);
@@ -1330,13 +1324,13 @@ class _$RegionImpl implements _Region {
   @override
   final String name;
   @override
-  final DateTime? createdAt;
+  final DateTime? created_at;
   @override
-  final DateTime? updatedAt;
+  final DateTime? updated_at;
 
   @override
   String toString() {
-    return 'Region(id: $id, name: $name, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Region(id: $id, name: $name, created_at: $created_at, updated_at: $updated_at)';
   }
 
   @override
@@ -1346,15 +1340,16 @@ class _$RegionImpl implements _Region {
             other is _$RegionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.updated_at, updated_at) ||
+                other.updated_at == updated_at));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, createdAt, updatedAt);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, created_at, updated_at);
 
   /// Create a copy of Region
   /// with the given fields replaced by the non-null parameter values.
@@ -1376,8 +1371,8 @@ abstract class _Region implements Region {
   const factory _Region(
       {required final int id,
       required final String name,
-      final DateTime? createdAt,
-      final DateTime? updatedAt}) = _$RegionImpl;
+      final DateTime? created_at,
+      final DateTime? updated_at}) = _$RegionImpl;
 
   factory _Region.fromJson(Map<String, dynamic> json) = _$RegionImpl.fromJson;
 
@@ -1386,9 +1381,9 @@ abstract class _Region implements Region {
   @override
   String get name;
   @override
-  DateTime? get createdAt;
+  DateTime? get created_at;
   @override
-  DateTime? get updatedAt;
+  DateTime? get updated_at;
 
   /// Create a copy of Region
   /// with the given fields replaced by the non-null parameter values.
@@ -1406,8 +1401,8 @@ Specialization _$SpecializationFromJson(Map<String, dynamic> json) {
 mixin _$Specialization {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+  DateTime get created_at => throw _privateConstructorUsedError;
+  DateTime get updated_at => throw _privateConstructorUsedError;
 
   /// Serializes this Specialization to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1425,7 +1420,7 @@ abstract class $SpecializationCopyWith<$Res> {
           Specialization value, $Res Function(Specialization) then) =
       _$SpecializationCopyWithImpl<$Res, Specialization>;
   @useResult
-  $Res call({int id, String name, DateTime createdAt, DateTime updatedAt});
+  $Res call({int id, String name, DateTime created_at, DateTime updated_at});
 }
 
 /// @nodoc
@@ -1445,8 +1440,8 @@ class _$SpecializationCopyWithImpl<$Res, $Val extends Specialization>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
+    Object? created_at = null,
+    Object? updated_at = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1457,13 +1452,13 @@ class _$SpecializationCopyWithImpl<$Res, $Val extends Specialization>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: null == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: null == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ) as $Val);
   }
@@ -1477,7 +1472,7 @@ abstract class _$$SpecializationImplCopyWith<$Res>
       __$$SpecializationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String name, DateTime createdAt, DateTime updatedAt});
+  $Res call({int id, String name, DateTime created_at, DateTime updated_at});
 }
 
 /// @nodoc
@@ -1495,8 +1490,8 @@ class __$$SpecializationImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
+    Object? created_at = null,
+    Object? updated_at = null,
   }) {
     return _then(_$SpecializationImpl(
       id: null == id
@@ -1507,13 +1502,13 @@ class __$$SpecializationImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: null == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: null == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -1525,8 +1520,8 @@ class _$SpecializationImpl implements _Specialization {
   const _$SpecializationImpl(
       {required this.id,
       required this.name,
-      required this.createdAt,
-      required this.updatedAt});
+      required this.created_at,
+      required this.updated_at});
 
   factory _$SpecializationImpl.fromJson(Map<String, dynamic> json) =>
       _$$SpecializationImplFromJson(json);
@@ -1536,13 +1531,13 @@ class _$SpecializationImpl implements _Specialization {
   @override
   final String name;
   @override
-  final DateTime createdAt;
+  final DateTime created_at;
   @override
-  final DateTime updatedAt;
+  final DateTime updated_at;
 
   @override
   String toString() {
-    return 'Specialization(id: $id, name: $name, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Specialization(id: $id, name: $name, created_at: $created_at, updated_at: $updated_at)';
   }
 
   @override
@@ -1552,15 +1547,16 @@ class _$SpecializationImpl implements _Specialization {
             other is _$SpecializationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.updated_at, updated_at) ||
+                other.updated_at == updated_at));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, createdAt, updatedAt);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, created_at, updated_at);
 
   /// Create a copy of Specialization
   /// with the given fields replaced by the non-null parameter values.
@@ -1583,8 +1579,8 @@ abstract class _Specialization implements Specialization {
   const factory _Specialization(
       {required final int id,
       required final String name,
-      required final DateTime createdAt,
-      required final DateTime updatedAt}) = _$SpecializationImpl;
+      required final DateTime created_at,
+      required final DateTime updated_at}) = _$SpecializationImpl;
 
   factory _Specialization.fromJson(Map<String, dynamic> json) =
       _$SpecializationImpl.fromJson;
@@ -1594,9 +1590,9 @@ abstract class _Specialization implements Specialization {
   @override
   String get name;
   @override
-  DateTime get createdAt;
+  DateTime get created_at;
   @override
-  DateTime get updatedAt;
+  DateTime get updated_at;
 
   /// Create a copy of Specialization
   /// with the given fields replaced by the non-null parameter values.
@@ -1612,13 +1608,17 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get role => throw _privateConstructorUsedError;
+  String? get gander => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  Map<String, String>? get academic_stage => throw _privateConstructorUsedError;
+  String? get region => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get created_at => throw _privateConstructorUsedError;
+  DateTime? get updated_at => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1635,13 +1635,17 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String name,
       String email,
       String role,
+      String? gander,
+      String? phoneNumber,
+      Map<String, String>? academic_stage,
+      String? region,
       String? password,
-      DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime? created_at,
+      DateTime? updated_at});
 }
 
 /// @nodoc
@@ -1663,15 +1667,19 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? name = null,
     Object? email = null,
     Object? role = null,
+    Object? gander = freezed,
+    Object? phoneNumber = freezed,
+    Object? academic_stage = freezed,
+    Object? region = freezed,
     Object? password = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
+    Object? created_at = freezed,
+    Object? updated_at = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1684,17 +1692,33 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
+      gander: freezed == gander
+          ? _value.gander
+          : gander // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      academic_stage: freezed == academic_stage
+          ? _value.academic_stage
+          : academic_stage // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      region: freezed == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
       password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: freezed == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ) as $Val);
   }
@@ -1708,13 +1732,17 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String name,
       String email,
       String role,
+      String? gander,
+      String? phoneNumber,
+      Map<String, String>? academic_stage,
+      String? region,
       String? password,
-      DateTime? createdAt,
-      DateTime? updatedAt});
+      DateTime? created_at,
+      DateTime? updated_at});
 }
 
 /// @nodoc
@@ -1733,15 +1761,19 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? role = null,
+    Object? gander = freezed,
+    Object? phoneNumber = freezed,
+    Object? academic_stage = freezed,
+    Object? region = freezed,
     Object? password = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
+    Object? created_at = freezed,
+    Object? updated_at = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1754,17 +1786,33 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String,
+      gander: freezed == gander
+          ? _value.gander
+          : gander // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      academic_stage: freezed == academic_stage
+          ? _value._academic_stage
+          : academic_stage // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
+      region: freezed == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
       password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
+      created_at: freezed == created_at
+          ? _value.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: freezed == updated_at
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
@@ -1778,15 +1826,20 @@ class _$UserImpl implements _User {
       required this.name,
       required this.email,
       required this.role,
+      this.gander,
+      this.phoneNumber,
+      final Map<String, String>? academic_stage,
+      this.region,
       this.password,
-      this.createdAt,
-      this.updatedAt});
+      this.created_at,
+      this.updated_at})
+      : _academic_stage = academic_stage;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String name;
   @override
@@ -1794,15 +1847,31 @@ class _$UserImpl implements _User {
   @override
   final String role;
   @override
+  final String? gander;
+  @override
+  final String? phoneNumber;
+  final Map<String, String>? _academic_stage;
+  @override
+  Map<String, String>? get academic_stage {
+    final value = _academic_stage;
+    if (value == null) return null;
+    if (_academic_stage is EqualUnmodifiableMapView) return _academic_stage;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  final String? region;
+  @override
   final String? password;
   @override
-  final DateTime? createdAt;
+  final DateTime? created_at;
   @override
-  final DateTime? updatedAt;
+  final DateTime? updated_at;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, role: $role, password: $password, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'User(id: $id, name: $name, email: $email, role: $role, gander: $gander, phoneNumber: $phoneNumber, academic_stage: $academic_stage, region: $region, password: $password, created_at: $created_at, updated_at: $updated_at)';
   }
 
   @override
@@ -1814,18 +1883,35 @@ class _$UserImpl implements _User {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.role, role) || other.role == role) &&
+            (identical(other.gander, gander) || other.gander == gander) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            const DeepCollectionEquality()
+                .equals(other._academic_stage, _academic_stage) &&
+            (identical(other.region, region) || other.region == region) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.updated_at, updated_at) ||
+                other.updated_at == updated_at));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, email, role, password, createdAt, updatedAt);
+      runtimeType,
+      id,
+      name,
+      email,
+      role,
+      gander,
+      phoneNumber,
+      const DeepCollectionEquality().hash(_academic_stage),
+      region,
+      password,
+      created_at,
+      updated_at);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -1845,18 +1931,22 @@ class _$UserImpl implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required final String id,
+      {required final int id,
       required final String name,
       required final String email,
       required final String role,
+      final String? gander,
+      final String? phoneNumber,
+      final Map<String, String>? academic_stage,
+      final String? region,
       final String? password,
-      final DateTime? createdAt,
-      final DateTime? updatedAt}) = _$UserImpl;
+      final DateTime? created_at,
+      final DateTime? updated_at}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get name;
   @override
@@ -1864,11 +1954,19 @@ abstract class _User implements User {
   @override
   String get role;
   @override
+  String? get gander;
+  @override
+  String? get phoneNumber;
+  @override
+  Map<String, String>? get academic_stage;
+  @override
+  String? get region;
+  @override
   String? get password;
   @override
-  DateTime? get createdAt;
+  DateTime? get created_at;
   @override
-  DateTime? get updatedAt;
+  DateTime? get updated_at;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -1887,7 +1985,7 @@ mixin _$Auth {
   User get user => throw _privateConstructorUsedError;
   Student get student => throw _privateConstructorUsedError;
   List<Course?> get courses => throw _privateConstructorUsedError;
-  List<Teacher?> get eliteTeachers => throw _privateConstructorUsedError;
+  List<Teacher?> get elite_teachers => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
@@ -1909,7 +2007,7 @@ abstract class $AuthCopyWith<$Res> {
       {User user,
       Student student,
       List<Course?> courses,
-      List<Teacher?> eliteTeachers,
+      List<Teacher?> elite_teachers,
       String token,
       String? message});
 
@@ -1935,7 +2033,7 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
     Object? user = null,
     Object? student = null,
     Object? courses = null,
-    Object? eliteTeachers = null,
+    Object? elite_teachers = null,
     Object? token = null,
     Object? message = freezed,
   }) {
@@ -1952,9 +2050,9 @@ class _$AuthCopyWithImpl<$Res, $Val extends Auth>
           ? _value.courses
           : courses // ignore: cast_nullable_to_non_nullable
               as List<Course?>,
-      eliteTeachers: null == eliteTeachers
-          ? _value.eliteTeachers
-          : eliteTeachers // ignore: cast_nullable_to_non_nullable
+      elite_teachers: null == elite_teachers
+          ? _value.elite_teachers
+          : elite_teachers // ignore: cast_nullable_to_non_nullable
               as List<Teacher?>,
       token: null == token
           ? _value.token
@@ -1999,7 +2097,7 @@ abstract class _$$AuthImplCopyWith<$Res> implements $AuthCopyWith<$Res> {
       {User user,
       Student student,
       List<Course?> courses,
-      List<Teacher?> eliteTeachers,
+      List<Teacher?> elite_teachers,
       String token,
       String? message});
 
@@ -2024,7 +2122,7 @@ class __$$AuthImplCopyWithImpl<$Res>
     Object? user = null,
     Object? student = null,
     Object? courses = null,
-    Object? eliteTeachers = null,
+    Object? elite_teachers = null,
     Object? token = null,
     Object? message = freezed,
   }) {
@@ -2041,9 +2139,9 @@ class __$$AuthImplCopyWithImpl<$Res>
           ? _value._courses
           : courses // ignore: cast_nullable_to_non_nullable
               as List<Course?>,
-      eliteTeachers: null == eliteTeachers
-          ? _value._eliteTeachers
-          : eliteTeachers // ignore: cast_nullable_to_non_nullable
+      elite_teachers: null == elite_teachers
+          ? _value._elite_teachers
+          : elite_teachers // ignore: cast_nullable_to_non_nullable
               as List<Teacher?>,
       token: null == token
           ? _value.token
@@ -2064,11 +2162,11 @@ class _$AuthImpl implements _Auth {
       {required this.user,
       required this.student,
       required final List<Course?> courses,
-      required final List<Teacher?> eliteTeachers,
+      required final List<Teacher?> elite_teachers,
       required this.token,
       this.message})
       : _courses = courses,
-        _eliteTeachers = eliteTeachers;
+        _elite_teachers = elite_teachers;
 
   factory _$AuthImpl.fromJson(Map<String, dynamic> json) =>
       _$$AuthImplFromJson(json);
@@ -2085,12 +2183,12 @@ class _$AuthImpl implements _Auth {
     return EqualUnmodifiableListView(_courses);
   }
 
-  final List<Teacher?> _eliteTeachers;
+  final List<Teacher?> _elite_teachers;
   @override
-  List<Teacher?> get eliteTeachers {
-    if (_eliteTeachers is EqualUnmodifiableListView) return _eliteTeachers;
+  List<Teacher?> get elite_teachers {
+    if (_elite_teachers is EqualUnmodifiableListView) return _elite_teachers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_eliteTeachers);
+    return EqualUnmodifiableListView(_elite_teachers);
   }
 
   @override
@@ -2100,7 +2198,7 @@ class _$AuthImpl implements _Auth {
 
   @override
   String toString() {
-    return 'Auth(user: $user, student: $student, courses: $courses, eliteTeachers: $eliteTeachers, token: $token, message: $message)';
+    return 'Auth(user: $user, student: $student, courses: $courses, elite_teachers: $elite_teachers, token: $token, message: $message)';
   }
 
   @override
@@ -2112,7 +2210,7 @@ class _$AuthImpl implements _Auth {
             (identical(other.student, student) || other.student == student) &&
             const DeepCollectionEquality().equals(other._courses, _courses) &&
             const DeepCollectionEquality()
-                .equals(other._eliteTeachers, _eliteTeachers) &&
+                .equals(other._elite_teachers, _elite_teachers) &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.message, message) || other.message == message));
   }
@@ -2124,7 +2222,7 @@ class _$AuthImpl implements _Auth {
       user,
       student,
       const DeepCollectionEquality().hash(_courses),
-      const DeepCollectionEquality().hash(_eliteTeachers),
+      const DeepCollectionEquality().hash(_elite_teachers),
       token,
       message);
 
@@ -2149,7 +2247,7 @@ abstract class _Auth implements Auth {
       {required final User user,
       required final Student student,
       required final List<Course?> courses,
-      required final List<Teacher?> eliteTeachers,
+      required final List<Teacher?> elite_teachers,
       required final String token,
       final String? message}) = _$AuthImpl;
 
@@ -2162,7 +2260,7 @@ abstract class _Auth implements Auth {
   @override
   List<Course?> get courses;
   @override
-  List<Teacher?> get eliteTeachers;
+  List<Teacher?> get elite_teachers;
   @override
   String get token;
   @override

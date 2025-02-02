@@ -5,5 +5,6 @@ abstract class BaseAuthRepository {
   ResultFuture<Auth> register({required User user});
   ResultFuture<Auth> login({required String email, required String password});
   ResultFuture<Auth> refreshToken();
+  ResultFuture<List<Region>> getRegions();
   ResultFuture<bool> logout();
 }

@@ -22,6 +22,7 @@ class _SignInScreenState extends State<SignInScreen> {
   late TextEditingController nameController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  late TextEditingController phoneNumberController;
   String? selectedValue;
   final _formKey = GlobalKey<FormState>();
 
@@ -29,51 +30,53 @@ class _SignInScreenState extends State<SignInScreen> {
   void initState() {
     nameController = TextEditingController(text: widget.state.user.name);
     emailController = TextEditingController(text: widget.state.user.email);
+    phoneNumberController =
+        TextEditingController(text: widget.state.user.phoneNumber);
     passwordController = TextEditingController(text: '');
     selectedValue =
-        widget.state.user.region.isEmpty ? null : widget.state.user.region;
+        widget.state.user.region!.isEmpty ? null : widget.state.user.region;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          PageLine(
-            pageIndex: 0,
-            onTap: (value) {
-              widget.pageController.jumpToPage(value);
-            },
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Expanded(
-            flex: 5,
-            child: Form(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            PageLine(
+              pageIndex: 0,
+              onTap: (value) => widget.pageController.jumpToPage(value),
+            ),
+            const SizedBox(height: 20),
+            Form(
               key: _formKey,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   TextInputField(
-                      controller: nameController,
-                      labeltext: "الاسم الكامل",
-                      icon: Icons.person,
-                      validator: AppValidators.validateFirstName),
-                  const SizedBox(
-                    height: 20,
+                    controller: nameController,
+                    labeltext: "الاسم الكامل",
+                    icon: Icons.person,
+                    validator: AppValidators.validateFirstName,
                   ),
+                  const SizedBox(height: 20),
                   TextInputField(
                     controller: emailController,
                     labeltext: "البريد الألكتروني",
                     icon: Icons.email_rounded,
                     validator: AppValidators.emailValidation,
                   ),
-                  const SizedBox(
-                    height: 20,
+                  const SizedBox(height: 20),
+                  TextInputField(
+                    controller: phoneNumberController,
+                    labeltext: "رقم الهاتف",
+                    icon: Icons.phone,
+                    validator: AppValidators.validatePhone,
                   ),
+                  const SizedBox(height: 20),
                   TextInputField(
                     icon: Icons.lock,
                     labeltext: "كلمة المرور",
@@ -81,13 +84,11 @@ class _SignInScreenState extends State<SignInScreen> {
                     controller: passwordController,
                     validator: AppValidators.passwordValidation,
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   DropdownFieldWidget(
                     labelText: 'بلد الاقامة',
                     icon: Icons.flag_rounded,
-                    items: const ['اعزاز', 'الباب', 'جرابلس'],
+                    items: widget.state.regions ?? [],
                     value: selectedValue,
                     onChanged: (newValue) {
                       setState(() {
@@ -105,41 +106,46 @@ class _SignInScreenState extends State<SignInScreen> {
                           );
                           return;
                         }
+
+                        final updatedUser = widget.state.user.copyWith(
+                          name: nameController.text,
+                          email: emailController.text,
+                          password: passwordController.text,
+                          phoneNumber: phoneNumberController.text,
+                          region: selectedValue,
+                        );
+
                         BlocProvider.of<CheckAuthBloc>(context).add(
-                            CheckAuthEvent.updateInfo(
-                                user: widget.state.user.copyWith(
-                                    name: nameController.text,
-                                    email: emailController.text,
-                                    password: passwordController.text,
-                                    region: selectedValue!)));
+                          CheckAuthEvent.updateInfo(user: updatedUser),
+                        );
                         widget.pageController.jumpToPage(1);
                       }
                     },
                     text: 'استمر',
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("لديك حساب؟"),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RoutesNames.loginRoute);
+                    },
+                    child: const Text(
+                      'سجل دخول الان',
+                      style: TextStyle(color: Color.fromRGBO(88, 135, 96, 1)),
+                    ),
                   )
                 ],
               ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("لديك حساب؟"),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).pushNamed(RoutesNames.loginRoute);
-                  },
-                  child: const Text(
-                    'سجل دخول الان',
-                    style: TextStyle(color: Color.fromRGBO(88, 135, 96, 1)),
-                  ),
-                )
-              ],
-            ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

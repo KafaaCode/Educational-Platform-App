@@ -21,13 +21,15 @@ class _Question1State extends State<Question1> {
 
   @override
   void initState() {
-    selectedFilter ??= widget.state.user.academicStage['stage'] ?? 'basic';
+    selectedFilter ??=
+        widget.state.user.academic_stage?['stage'] ?? 'secondary';
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    selectedFilter ??= widget.state.user.academicStage['stage'] ?? 'basic';
+    selectedFilter ??=
+        widget.state.user.academic_stage?['stage'] ?? 'secondary';
     Lang lang = Lang.of(context);
     return Column(
       children: [
@@ -49,15 +51,16 @@ class _Question1State extends State<Question1> {
                 children: [
                   QuestionsButton(
                     label: lang.basic,
-                    isSelected: selectedFilter == 'basic',
+                    isSelected: selectedFilter == 'preparatory',
                     onTap: () {
                       setState(() {
-                        selectedFilter = 'basic';
+                        selectedFilter = 'preparatory';
                         context.read<CheckAuthBloc>().add(
                                 CheckAuthEvent.updateInfo(
                                     user: widget.state.user.copyWith(
-                                        academicStage: {
-                                  'stage': selectedFilter!
+                                        academic_stage: {
+                                  'stage': selectedFilter!,
+                                  'type': 'scientific'
                                 })));
                       });
                     },
@@ -72,8 +75,9 @@ class _Question1State extends State<Question1> {
                         context.read<CheckAuthBloc>().add(
                                 CheckAuthEvent.updateInfo(
                                     user: widget.state.user.copyWith(
-                                        academicStage: {
-                                  'stage': selectedFilter!
+                                        academic_stage: {
+                                  'stage': selectedFilter!,
+                                  'type': 'scientific'
                                 })));
                       });
                     },

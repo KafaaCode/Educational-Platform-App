@@ -71,18 +71,27 @@ class _TextInputFieldState extends State<TextInputField> {
               width: 2,
             ),
           ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: const BorderSide(
+              style: BorderStyle.solid,
+              color: Color.fromRGBO(223, 181, 71, 1),
+              width: 1,
+            ),
+          ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: const BorderSide(
-              color: Colors.blue,
-              width: 2,
+              style: BorderStyle.solid,
+              color: Color.fromRGBO(223, 181, 71, 1),
+              width: 1,
             ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: const BorderSide(
               color: Colors.red,
-              width: 2,
+              width: 1,
             ),
           ),
         ),

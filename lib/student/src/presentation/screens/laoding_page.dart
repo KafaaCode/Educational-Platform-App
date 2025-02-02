@@ -17,14 +17,20 @@ class LoadingPage extends StatelessWidget {
     authBloc.add(const CheckAuthEvent.started());
 
     return BlocListener<CheckAuthBloc, CheckAuthState>(
+      // listenWhen: (previous, current) => previous != current,
       listener: (context, state) {
+        print(state.isAuth);
+        print(state.loading);
+        print(state.error);
+        print("-----------");
         if (!state.isAuth && !state.loading && !state.error) {
           if (state.user.name == '') {
-            Navigator.of(context)
-                .pushReplacementNamed(RoutesNames.registerRoute);
+            Navigator.of(context).popAndPushNamed(RoutesNames.registerRoute);
+          } else {
+            Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
           }
         } else if (state.isAuth && !state.loading && !state.error) {
-          Navigator.of(context).pushReplacementNamed(RoutesNames.mainRoute);
+          Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
         } else if (!state.isAuth && !state.loading && state.error) {
           Toast().error(context, state.errorMessage);
         }
