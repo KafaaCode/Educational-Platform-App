@@ -861,25 +861,26 @@ mixin _$CheckAuthState {
   bool get isAuth => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
   List<Region>? get regions => throw _privateConstructorUsedError;
+  Auth? get auth => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, String errorMessage)
+            List<Region>? regions, Auth? auth, String errorMessage)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, String errorMessage)?
+            List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, String errorMessage)?
+            List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
     required TResult orElse(),
   }) =>
@@ -920,9 +921,11 @@ abstract class $CheckAuthStateCopyWith<$Res> {
       bool isAuth,
       User user,
       List<Region>? regions,
+      Auth? auth,
       String errorMessage});
 
   $UserCopyWith<$Res> get user;
+  $AuthCopyWith<$Res>? get auth;
 }
 
 /// @nodoc
@@ -945,6 +948,7 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
     Object? isAuth = null,
     Object? user = null,
     Object? regions = freezed,
+    Object? auth = freezed,
     Object? errorMessage = null,
   }) {
     return _then(_value.copyWith(
@@ -968,6 +972,10 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
           ? _value.regions
           : regions // ignore: cast_nullable_to_non_nullable
               as List<Region>?,
+      auth: freezed == auth
+          ? _value.auth
+          : auth // ignore: cast_nullable_to_non_nullable
+              as Auth?,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -982,6 +990,20 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
   $UserCopyWith<$Res> get user {
     return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
+    });
+  }
+
+  /// Create a copy of CheckAuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AuthCopyWith<$Res>? get auth {
+    if (_value.auth == null) {
+      return null;
+    }
+
+    return $AuthCopyWith<$Res>(_value.auth!, (value) {
+      return _then(_value.copyWith(auth: value) as $Val);
     });
   }
 }
@@ -1000,10 +1022,13 @@ abstract class _$$InitialImplCopyWith<$Res>
       bool isAuth,
       User user,
       List<Region>? regions,
+      Auth? auth,
       String errorMessage});
 
   @override
   $UserCopyWith<$Res> get user;
+  @override
+  $AuthCopyWith<$Res>? get auth;
 }
 
 /// @nodoc
@@ -1024,6 +1049,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? isAuth = null,
     Object? user = null,
     Object? regions = freezed,
+    Object? auth = freezed,
     Object? errorMessage = null,
   }) {
     return _then(_$InitialImpl(
@@ -1047,6 +1073,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value._regions
           : regions // ignore: cast_nullable_to_non_nullable
               as List<Region>?,
+      auth: freezed == auth
+          ? _value.auth
+          : auth // ignore: cast_nullable_to_non_nullable
+              as Auth?,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1071,6 +1101,7 @@ class _$InitialImpl implements _Initial {
           region: '',
           academic_stage: {'stage': '', 'type': ""}),
       final List<Region>? regions,
+      this.auth,
       this.errorMessage = ''})
       : _regions = regions;
 
@@ -1097,12 +1128,14 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
+  final Auth? auth;
+  @override
   @JsonKey()
   final String errorMessage;
 
   @override
   String toString() {
-    return 'CheckAuthState.initial(loading: $loading, error: $error, isAuth: $isAuth, user: $user, regions: $regions, errorMessage: $errorMessage)';
+    return 'CheckAuthState.initial(loading: $loading, error: $error, isAuth: $isAuth, user: $user, regions: $regions, auth: $auth, errorMessage: $errorMessage)';
   }
 
   @override
@@ -1115,13 +1148,14 @@ class _$InitialImpl implements _Initial {
             (identical(other.isAuth, isAuth) || other.isAuth == isAuth) &&
             (identical(other.user, user) || other.user == user) &&
             const DeepCollectionEquality().equals(other._regions, _regions) &&
+            (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, loading, error, isAuth, user,
-      const DeepCollectionEquality().hash(_regions), errorMessage);
+      const DeepCollectionEquality().hash(_regions), auth, errorMessage);
 
   /// Create a copy of CheckAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1135,32 +1169,33 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, String errorMessage)
+            List<Region>? regions, Auth? auth, String errorMessage)
         initial,
   }) {
-    return initial(loading, error, isAuth, user, regions, errorMessage);
+    return initial(loading, error, isAuth, user, regions, auth, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, String errorMessage)?
+            List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
   }) {
-    return initial?.call(loading, error, isAuth, user, regions, errorMessage);
+    return initial?.call(
+        loading, error, isAuth, user, regions, auth, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, String errorMessage)?
+            List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(loading, error, isAuth, user, regions, errorMessage);
+      return initial(loading, error, isAuth, user, regions, auth, errorMessage);
     }
     return orElse();
   }
@@ -1201,6 +1236,7 @@ abstract class _Initial implements CheckAuthState {
       final bool isAuth,
       final User user,
       final List<Region>? regions,
+      final Auth? auth,
       final String errorMessage}) = _$InitialImpl;
 
   @override
@@ -1213,6 +1249,8 @@ abstract class _Initial implements CheckAuthState {
   User get user;
   @override
   List<Region>? get regions;
+  @override
+  Auth? get auth;
   @override
   String get errorMessage;
 

@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:educational_platform_app/student/src/data/models/models.dart';
 import 'package:educational_platform_app/student/src/domain/repository/auth_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -58,11 +57,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
             },
             (r) async {
               emit(state.copyWith(
-                isAuth: true,
-                loading: false,
-                error: false,
-                user: r.user,
-              ));
+                  isAuth: true, loading: false, error: false, auth: r));
             },
           );
         },
@@ -80,11 +75,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
             },
             (r) async {
               emit(state.copyWith(
-                isAuth: true,
-                loading: false,
-                error: false,
-                user: r.user,
-              ));
+                  isAuth: true, loading: false, error: false, auth: r));
             },
           );
         },
@@ -98,7 +89,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
       return CheckAuthState.initial(
         isAuth: json['isAuth'] as bool? ?? false,
         loading: json['loading'] as bool? ?? false,
-        user: User.fromJson(json['user'] as Map<String, dynamic>),
+        auth: Auth.fromJson(json['auth'] as Map<String, dynamic>),
         regions: json['regions'] != null
             ? List<Region>.from(
                 (json['regions'] as List).map((x) => Region.fromJson(x)))
@@ -114,7 +105,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
     return {
       'isAuth': state.isAuth,
       'loading': state.loading,
-      'user': state.user.toJson(),
+      'auth': state.auth!.toJson(),
       'regions': state.regions?.map((region) => region.toJson()).toList(),
     };
   }

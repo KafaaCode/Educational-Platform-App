@@ -17,6 +17,7 @@ class CheckAuthState with _$CheckAuthState {
     ))
     User user,
     List<Region>? regions,
+    Auth? auth,
     @Default('') String errorMessage,
   }) = _Initial;
   // const factory CheckAuthState.getRegion({required User user}) = _GetRegion;
