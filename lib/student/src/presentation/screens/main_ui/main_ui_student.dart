@@ -167,12 +167,14 @@ class Main_ui_scrren extends StatelessWidget {
                       contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                       
                     ),)  ,),
-                        SvgPicture.asset(
-                  'images/logo_option.svg',
-                  fit: BoxFit.contain,
-                  width: 40,
-                  height: 40,
-                ),
+                            ClipOval(
+  child: Image.asset(
+    'assets/images/21.png', // استبدل بمسار الصورة الصحيح
+    width: 70,  // عرض الدائرة
+    height: 70, // ارتفاع الدائرة
+    fit: BoxFit.cover, // يضمن ملء الدائرة بالكامل دون ترك فراغات
+  ),
+),
                   
 
                
@@ -284,6 +286,7 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      
       color: Color(0xFFFFFFFF),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -293,56 +296,91 @@ class CourseCard extends StatelessWidget {
         child: LayoutBuilder(
            builder: (context, constraints) {
               double parentWidth = constraints.maxWidth;
-          return  Row(
-            children: [
-              Container(
-                  decoration: BoxDecoration(
-          // لون الخلفية
-              borderRadius: BorderRadius.circular(30), 
-               color: Colors.green,// تدوير الزوايا
-            ),
-                  width: parentWidth* 0.5, // 50% من عرض الشاشة
-                height:200, // 50% من ارتفاع الشاشة
-               
-                child: Center(
-                  child: Text(
-                    '30 ساعة',
-                    style: TextStyle(color: Colors.white),
+         double availableHeight = constraints.maxHeight * 0.2;
+             
+              
+          return  Container(
+            
+            child: Row(
+              children: [
+                Container(
+                  
+                    decoration: BoxDecoration(
+            // لون الخلفية
+                borderRadius: BorderRadius.circular(30), 
+                 color: Colors.green,// تدوير الزوايا
+              ),
+                    width: parentWidth* 0.60, // 50% من عرض الشاشة
+                 // 50% من ارتفاع الشاشة
+                 height:300, 
+                  child: Center(
+                    child: Text(
+                      '30 ساعة',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(width: 12),
-              Expanded(
-                
-                child: Container(
-                   width: parentWidth* 0.5,
+            
+                Container(
+                   width: parentWidth* 0.40,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'برمجة مواقع الويب',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                     
-                      Text('المدرس عادل خزوم'),
-                       SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: parentWidth*0.3,
-                            child: Row(
-                              children: List.generate(5, (index) => Icon(Icons.star, color: Color(0xFFDFB547),)),
+                      
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          right: 17,
+                          top: 50,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'برمجة مواقع الويب',
+                              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                             ),
-                          ),
-                          Text('25 \$', style: TextStyle(color: Colors.greenAccent))
-                        ],
+                                               
+                            Text('المدرس عادل خزوم',
+                              style: TextStyle(fontSize: 18),),
+                              
+                                               
+                            Text('16 ساعه تدريبية',
+                              style: TextStyle(fontSize: 18),),
+                          ],
+                        ),
+                      ),
+                       SizedBox(height: 10),
+                      Container(
+                        width: parentWidth*0.5,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(right: 10),
+                                width: parentWidth*0.5*0.40,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: List.generate(5, (index) => Icon(Icons.star, color: Color(0xFFDFB547), size:  parentWidth*0.5*0.40*0.2)),
+                              ),
+                            ),
+                     SizedBox(
+              width:parentWidth*0.5*0.30,  // عرض الزر
+              height: 70, // ارتفاع الزر
+              child: FloatingActionButton(
+                onPressed: () {},
+                backgroundColor:   Color(0xFFDFB547),
+                shape: CircleBorder(), // تأكيد أن الزر يبقى دائريًا
+                child: Icon(Icons.add,  color: Colors.black),
+              ),
+            )
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );}
         ),
       ),
@@ -376,24 +414,28 @@ class TrainerGrid extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   SizedBox(height: 10),
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/logo.png'),
-                    
-                  ),
-                  SizedBox(height: 8),
+                   SizedBox(height: 30),
+                ClipOval(
+  child: Image.asset(
+    'assets/images/21.png', // استبدل بمسار الصورة الصحيح
+    width: 100,  // عرض الدائرة
+    height: 100, // ارتفاع الدائرة
+    fit: BoxFit.cover, // يضمن ملء الدائرة بالكامل دون ترك فراغات
+  ),
+),
+                
                   Text('عادل حسين خزوم', style: TextStyle(
                   fontSize: 17,
                   
                   )),
                   
-                  SizedBox(height: 9),
+                 
                   Text('برمجة وتصميم', style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   
                   )),
-                     SizedBox(height: 9),
+                    
                   Text('طالب 500', style: TextStyle(
                   fontSize: 17,
               
