@@ -7,6 +7,8 @@ class AppColors {
 
 final appTheme = ThemeData(
   primaryColor: Color.fromRGBO(88, 135, 96, 1),
+  fontFamily: 'cairo',
+
   primarySwatch: Colors.blue,
   scaffoldBackgroundColor: AppColors.backgroundColor,
   appBarTheme: const AppBarTheme(

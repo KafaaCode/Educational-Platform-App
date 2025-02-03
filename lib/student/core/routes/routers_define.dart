@@ -2,8 +2,10 @@ import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/404page.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/laoding_page.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/login/login_screen.dart';
+
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/sigin_screen.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/main/main_page.dart';
+
 
 import 'package:fluro/fluro.dart';
 
