@@ -1,8 +1,8 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/account_widget.dart';
-import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/courses_widget.dart';
-import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/main_widget.dart';
-import 'package:educational_platform_app/teacher/src/presentation/screens/main/widgets/tests_widget.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/courses_widget.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/main_widget.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/tests_widget.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/settings/setting_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -14,9 +14,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPage extends State<MainPage> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
   final List<Widget> _pages = [
-    AccountWidget(),
+    SettingPage(),
     TestsWidget(),
     CoursesWidget(),
     MainWidget(),
@@ -33,7 +33,7 @@ class _MainPage extends State<MainPage> {
     Lang lang = Lang.of(context);
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 250,
+        toolbarHeight: 200,
         elevation: 10, // إضافة ظل
         shadowColor: Colors.black.withOpacity(0.5), // لون الظل
         flexibleSpace: Container(
@@ -98,6 +98,7 @@ class _MainPage extends State<MainPage> {
             )),
       ),
       body: IndexedStack(
+        sizing: StackFit.passthrough,
         index: _selectedIndex,
         children: _pages,
       ),

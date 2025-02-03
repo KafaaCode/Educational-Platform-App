@@ -4,7 +4,7 @@ import 'package:educational_platform_app/student/src/presentation/screens/laodin
 import 'package:educational_platform_app/student/src/presentation/screens/login/login_screen.dart';
 
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/sigin_screen.dart';
-import 'package:educational_platform_app/teacher/src/presentation/screens/main/main_page.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/main_page.dart';
 
 
 import 'package:fluro/fluro.dart';

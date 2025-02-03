@@ -24,7 +24,7 @@ class LoadingPage extends StatelessWidget {
         print(state.error);
         print("-----------");
         if (!state.isAuth && !state.loading && !state.error) {
-          if (state.user.name == '') {
+          if (state.auth == null) {
             Navigator.of(context).popAndPushNamed(RoutesNames.registerRoute);
           } else {
             Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);

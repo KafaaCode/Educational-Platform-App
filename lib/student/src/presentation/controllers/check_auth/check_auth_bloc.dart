@@ -1,3 +1,4 @@
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:educational_platform_app/student/src/data/models/models.dart';
 import 'package:educational_platform_app/student/src/domain/repository/auth_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -56,6 +57,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
               ));
             },
             (r) async {
+              //print(r.toString());
               emit(state.copyWith(
                   isAuth: true, loading: false, error: false, auth: r));
             },
@@ -80,7 +82,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
           );
         },
       );
-    });
+    }, transformer: droppable());
   }
 
   @override
@@ -105,7 +107,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
     return {
       'isAuth': state.isAuth,
       'loading': state.loading,
-      'auth': state.auth!.toJson(),
+      'auth': state.auth?.toJson(),
       'regions': state.regions?.map((region) => region.toJson()).toList(),
     };
   }
