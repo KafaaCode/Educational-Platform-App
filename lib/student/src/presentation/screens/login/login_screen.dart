@@ -1,10 +1,18 @@
-import 'package:educational_platform_app/student/src/presentation/screens/login/widgets/Text_field_widget.dart';
+import 'package:educational_platform_app/student/core/routes/routes_name.dart';
+import 'package:educational_platform_app/student/core/validations/app_validations.dart';
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/sigin.dart';
+import 'package:educational_platform_app/student/src/presentation/widgets/Text_field_widget.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/app_scaffold.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
+  late TextEditingController emailController = TextEditingController(text: '');
+  late TextEditingController passController = TextEditingController(text: '');
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
@@ -70,30 +78,46 @@ class LoginScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 5,
-              child: Column(
-                children: [
-                  TextInputField(
-                    controller: TextEditingController(text: ""),
-                    labeltext: "البريد الألكتروني",
-                    icon: Icons.email_rounded,
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextInputField(
-                    icon: Icons.lock,
-                    labeltext: "كلمة المرور",
-                    isPassword: true,
-                    controller: TextEditingController(text: ""),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Button(
-                    onPressed: () {},
-                    text: 'تسجيل دخول',
-                  )
-                ],
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextInputField(
+                      controller: emailController,
+                      labeltext: "البريد الألكتروني",
+                      icon: Icons.email_rounded,
+                      initialValue: emailController.text,
+                      validator: AppValidators.emailValidation,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TextInputField(
+                      icon: Icons.lock,
+                      initialValue: passController.text,
+                      labeltext: "كلمة المرور",
+                      isPassword: true,
+                      controller: passController,
+                      validator: AppValidators.passwordValidation,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Button(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          context.read<CheckAuthBloc>().add(
+                              CheckAuthEvent.login(
+                                  eamil: emailController.text,
+                                  password: passController.text));
+                        } else {
+                          return;
+                        }
+                      },
+                      text: 'تسجيل دخول',
+                    )
+                  ],
+                ),
               ),
             ),
             Expanded(
@@ -104,7 +128,8 @@ class LoginScreen extends StatelessWidget {
                   const Text("ليس لديك حساب؟"),
                   InkWell(
                     onTap: () {
-                      print("stooop");
+                      Navigator.of(context)
+                          .pushNamed(RoutesNames.registerRoute);
                     },
                     child: const Text(
                       'اشترك الان',

@@ -6,20 +6,30 @@ import 'package:educational_platform_app/student/core/routes/router_screens.dart
 import 'package:educational_platform_app/student/core/routes/routers_define.dart';
 import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/core/services/services_locator.dart';
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/theme/theme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 // import 'package:url_strategy/url_strategy.dart';
 
-void main() {
+Future<void> main() async {
   // setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: kIsWeb
+        ? HydratedStorageDirectory.web
+        : HydratedStorageDirectory((await getTemporaryDirectory()).path),
+  );
   Bloc.observer = AppBlocObserver();
   ServicesLocator().init();
   configureRoutes(AppRouter.router);
   configureStudentFlavors();
+
   runApp(const MainApp());
 }
 
@@ -47,6 +57,7 @@ class _MainApp extends State<MainApp> {
                 create: (context) => LanguageCubit(),
                 lazy: false,
               ),
+              BlocProvider(create: (context) => CheckAuthBloc(sl()))
             ],
             child: MaterialApp(
  /*               theme: ThemeData(
