@@ -36,7 +36,7 @@ void configureRoutes(FluroRouter router) {
     RoutesNames.mainRoute,
     handler: Handler(
       handlerFunc: (context, parameters) {
-        return const Main_ui_scrren();
+        return const MainUiScreen();
       },
     ),
   );

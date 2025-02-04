@@ -1,112 +1,62 @@
-import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/courseCard.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/courses_widget.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/customAppBar.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/sectionTitle.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/trainerGrid.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/main_widget.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/tests_widget.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/settings/setting_page.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/settings/widgets/appbar_account.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/settings/widgets/body_settings.dart';
 import 'package:flutter/material.dart';
 
-class Main_ui_scrren extends StatelessWidget {
-  const Main_ui_scrren({super.key});
+class MainUiScreen extends StatefulWidget {
+  const MainUiScreen({super.key});
+
+  @override
+  State<MainUiScreen> createState() => _MainUiScreenState();
+}
+
+class _MainUiScreenState extends State<MainUiScreen> {
+  int _selectedIndex = 3;
+  final List<Widget> _pages = [
+    MainWidget(),
+    TestsWidget(),
+    CoursesWidget(),
+    SettingPage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    bool isWideScreen = screenWidth >= 650;
     return Scaffold(
-        appBar: CustomAppBar(path: 'assets/images/bg_intro_page1.png'),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("images/bg_things.png"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 20),
-                  SectionTitle(title: 'الدورات الأكثر شيوعًا'),
-                  isWideScreen
-                      ? Row(
-                          children: [
-                            Expanded(
-                                child: CourseCard(
-                                    name: 'Ali sheakho',
-                                    time_triner: 10,
-                                    path: 'images/backgroundAppbar.png',
-                                    spaczaltion: 'التسويق الرقمي',
-                                    parce: 100,
-                                    evaluation: 5)),
-                            const SizedBox(width: 10),
-                            Expanded(
-                                child: CourseCard(
-                                    name: 'Ali sheakho',
-                                    time_triner: 10,
-                                    path: 'images/backgroundAppbar.png',
-                                    spaczaltion: 'التسويق الرقمي',
-                                    parce: 100,
-                                    evaluation: 5)),
-                          ],
-                        )
-                      : CourseCard(
-                          name: 'Ali sheakho',
-                          time_triner: 10,
-                          path: 'images/backgroundAppbar.png',
-                          spaczaltion: 'التسويق الرقمي',
-                          parce: 100,
-                          evaluation: 5),
-                  SectionTitle(title: 'نخبة المدربين'),
-                  TrainerGrid(
-                      name: 'Adel kharzom',
-                      count_Student: '1000',
-                      path: 'assets/images/bg_intro_page1.png',
-                      spaczaltion: 'التسويق الرقمي'),
-                  SectionTitle(title: 'العروض والمحتوى المميز'),
-                  isWideScreen
-                      ? Row(
-                          children: [
-                            Expanded(
-                                child: CourseCard(
-                                    name: 'Ali sheakho',
-                                    time_triner: 10,
-                                    path: 'images/backgroundAppbar.png',
-                                    spaczaltion: 'التسويق الرقمي',
-                                    parce: 100,
-                                    evaluation: 5)),
-                            const SizedBox(width: 10),
-                            Expanded(
-                                child: CourseCard(
-                                    name: 'Ali sheakho',
-                                    time_triner: 10,
-                                    path: 'images/backgroundAppbar.png',
-                                    spaczaltion: 'التسويق الرقمي',
-                                    parce: 100,
-                                    evaluation: 5)),
-                          ],
-                        )
-                      : CourseCard(
-                          name: 'Ali sheakho',
-                          time_triner: 10,
-                          path: 'images/backgroundAppbar.png',
-                          spaczaltion: 'التسويق الرقمي',
-                          parce: 100,
-                          evaluation: 5),
-                ],
-              ),
-            ),
-          ),
+        appBar: CustomAppBar(
+            preferredSize: _selectedIndex == 3
+                ? const Size.fromHeight(190)
+                : const Size.fromHeight(150),
+            path: 'assets/images/bg_intro_page1.png',
+            isCustom: _selectedIndex == 3,
+            child: _selectedIndex == 3 ? const AppbarAccount() : null),
+        body: IndexedStack(
+          sizing: StackFit.passthrough,
+          index: _selectedIndex,
+          children: _pages,
         ),
-        bottomNavigationBar: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
+        bottomNavigationBar: Container(
+          decoration: const BoxDecoration(
+              color: Color(0xFF588760),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              )),
           child: BottomNavigationBar(
-            backgroundColor: const Color(0xFF588760),
+            currentIndex: _selectedIndex,
+            // backgroundColor: Color.fromRGBO(85, 148, 92, 1),
+            onTap: _onItemTapped,
             selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.white70,
+            unselectedItemColor: Colors.white60,
             items: const [
               BottomNavigationBarItem(
                 backgroundColor: Color(0xFF588760),
@@ -114,14 +64,17 @@ class Main_ui_scrren extends StatelessWidget {
                 label: 'الرئيسية',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Color(0xFF588760),
                 icon: Icon(Icons.message),
                 label: 'الرسائل',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Color(0xFF588760),
                 icon: Icon(Icons.book),
                 label: 'الدورات',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Color(0xFF588760),
                 icon: Icon(Icons.person),
                 label: 'الملف الشخصي',
               ),

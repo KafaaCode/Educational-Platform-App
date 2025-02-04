@@ -16,10 +16,10 @@ class BodySettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       child: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: 10.h),
             _buildSettingsGroup(

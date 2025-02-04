@@ -5,27 +5,6 @@ import 'package:flutter/material.dart';
 class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 70.0),
-                child: BodySettings(),
-              ),
-              Positioned(
-                top: -100,
-                left: 0,
-                right: 0,
-                child: AppbarAccount(),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+    return const BodySettings();
   }
 }

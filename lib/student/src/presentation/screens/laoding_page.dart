@@ -25,12 +25,26 @@ class LoadingPage extends StatelessWidget {
         print("-----------");
         if (!state.isAuth && !state.loading && !state.error) {
           if (state.auth == null) {
-            Navigator.of(context).popAndPushNamed(RoutesNames.registerRoute);
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RoutesNames.registerRoute,
+              (route) => false,
+            );
           } else {
-            Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              RoutesNames.mainRoute,
+              (route) => false,
+            );
+            //Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
           }
         } else if (state.isAuth && !state.loading && !state.error) {
-          Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            RoutesNames.mainRoute,
+            (route) => false,
+          );
+          // Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
         } else if (!state.isAuth && !state.loading && state.error) {
           Toast().error(context, state.errorMessage);
         }

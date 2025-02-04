@@ -47,8 +47,8 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
           emit(state.copyWith(isAuth: false, loading: true, error: false));
           final response = await baseAuthRepository.login(
               email: value.eamil, password: value.password);
-          await response.fold(
-            (l) async {
+          response.fold(
+            (l) {
               emit(state.copyWith(
                 isAuth: false,
                 loading: false,
@@ -56,7 +56,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
                 errorMessage: l.message,
               ));
             },
-            (r) async {
+            (r) {
               //print(r.toString());
               emit(state.copyWith(
                   isAuth: true, loading: false, error: false, auth: r));
@@ -66,8 +66,8 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
         resgiter: (_ResgiterEvent value) async {
           emit(state.copyWith(isAuth: false, loading: true, error: false));
           final response = await baseAuthRepository.register(user: value.user);
-          await response.fold(
-            (l) async {
+          response.fold(
+            (l) {
               emit(state.copyWith(
                 isAuth: false,
                 loading: false,
@@ -75,7 +75,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
                 errorMessage: l.message,
               ));
             },
-            (r) async {
+            (r) {
               emit(state.copyWith(
                   isAuth: true, loading: false, error: false, auth: r));
             },
