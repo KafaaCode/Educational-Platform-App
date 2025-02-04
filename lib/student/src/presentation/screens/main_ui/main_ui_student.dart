@@ -4,7 +4,6 @@ import 'package:educational_platform_app/student/src/presentation/screens/main/w
 import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/tests_widget.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/settings/setting_page.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/settings/widgets/appbar_account.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/settings/widgets/body_settings.dart';
 import 'package:flutter/material.dart';
 
 class MainUiScreen extends StatefulWidget {
@@ -15,7 +14,7 @@ class MainUiScreen extends StatefulWidget {
 }
 
 class _MainUiScreenState extends State<MainUiScreen> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 0;
   final List<Widget> _pages = [
     MainWidget(),
     TestsWidget(),

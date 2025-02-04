@@ -7,14 +7,18 @@ class CourseCard extends StatelessWidget {
   final String spaczaltion;
   final int parce;
   final int evaluation;
+  final int index;
 
-  CourseCard(
-      {required this.name,
-      required this.time_triner,
-      required this.path,
-      required this.spaczaltion,
-      required this.parce,
-      required this.evaluation});
+  CourseCard({
+    required this.name,
+    required this.time_triner,
+    required this.path,
+    required this.spaczaltion,
+    required this.parce,
+    required this.evaluation,
+    required this.index,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -112,6 +116,7 @@ class CourseCard extends StatelessWidget {
                                     width: parentWidth * 0.5 * 0.30,
                                     height: 40,
                                     child: FloatingActionButton(
+                                      heroTag: 'btn_${spaczaltion}_$index',
                                       onPressed: () {},
                                       backgroundColor: const Color(0xFFDFB547),
                                       shape: const CircleBorder(),

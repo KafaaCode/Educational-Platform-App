@@ -28,6 +28,7 @@ class MainWidget extends StatelessWidget {
                       children: [
                         Expanded(
                             child: CourseCard(
+                                index: 0,
                                 name: 'Ali sheakho',
                                 time_triner: 10,
                                 path: 'images/backgroundAppbar.png',
@@ -37,6 +38,7 @@ class MainWidget extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(
                             child: CourseCard(
+                                index: 1,
                                 name: 'Ali sheakho',
                                 time_triner: 10,
                                 path: 'images/backgroundAppbar.png',
@@ -46,6 +48,7 @@ class MainWidget extends StatelessWidget {
                       ],
                     )
                   : CourseCard(
+                      index: 2,
                       name: 'Ali sheakho',
                       time_triner: 10,
                       path: 'images/backgroundAppbar.png',
@@ -64,6 +67,7 @@ class MainWidget extends StatelessWidget {
                       children: [
                         Expanded(
                             child: CourseCard(
+                                index: 3,
                                 name: 'Ali sheakho',
                                 time_triner: 10,
                                 path: 'images/backgroundAppbar.png',
@@ -73,6 +77,7 @@ class MainWidget extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(
                             child: CourseCard(
+                                index: 4,
                                 name: 'Ali sheakho',
                                 time_triner: 10,
                                 path: 'images/backgroundAppbar.png',
@@ -82,6 +87,7 @@ class MainWidget extends StatelessWidget {
                       ],
                     )
                   : CourseCard(
+                      index: 5,
                       name: 'Ali sheakho',
                       time_triner: 10,
                       path: 'images/backgroundAppbar.png',
