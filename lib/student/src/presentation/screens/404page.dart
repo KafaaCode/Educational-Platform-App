@@ -1,5 +1,7 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
 class NotFoundPage extends StatelessWidget {
@@ -41,6 +43,13 @@ class NotFoundPage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             // Back to Home Button
+            IconButton(
+                onPressed: () {
+                  context
+                      .read<CheckAuthBloc>()
+                      .add(const CheckAuthEvent.started());
+                },
+                icon: const Icon(Icons.refresh_rounded))
           ],
         ),
       ),

@@ -17,7 +17,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
         getRegion: (_getRegion value) async {},
         started: (_Started value) async {
           emit(state.copyWith(isAuth: false, loading: true, error: false));
-          if (state.user.name == '') {
+          if (state.auth == null) {
             final response = await baseAuthRepository.getRegions();
             await response.fold(
               (l) async {
@@ -33,15 +33,38 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
                     isAuth: false, loading: false, error: false, regions: r));
               },
             );
+          } else {
+            User user = User(
+                id: 0,
+                name: state.auth!.user.name,
+                email: state.auth!.user.email,
+                role: state.auth!.user.role,
+                phoneNumber: state.auth!.student.phoneNumber,
+                academic_stage: Map<String, String>.from(
+                    state.auth!.student.academic_stage.toJson()),
+                region: state.auth!.student.region.name,
+                gander: state.auth!.student.gander);
+
+            emit(state.copyWith(
+                isAuth: false,
+                loading: false,
+                error: false,
+                auth: state.auth,
+                user: user,
+                isEnpty: true));
           }
         },
         updateInfo: (_UpdateInfoEvent updateInfo) async {
-          emit(state.copyWith(
-            user: updateInfo.user,
-            isAuth: false,
-            error: false,
-            loading: false,
-          ));
+          if (updateInfo.isSend) {
+            print('updaeeeeeeeee');
+          } else {
+            emit(state.copyWith(
+              user: updateInfo.user,
+              isAuth: false,
+              error: false,
+              loading: false,
+            ));
+          }
         },
         login: (_LoginEvent value) async {
           emit(state.copyWith(isAuth: false, loading: true, error: false));
@@ -57,7 +80,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
               ));
             },
             (r) {
-              //print(r.toString());
+              print(r.toString());
               emit(state.copyWith(
                   isAuth: true, loading: false, error: false, auth: r));
             },

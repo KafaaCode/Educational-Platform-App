@@ -5,7 +5,7 @@ class DropdownFieldWidget extends StatelessWidget {
   final String labelText;
   final IconData icon;
   final List<Region> items;
-  final String? value;
+  final String? value; // Make value nullable
   final Function(String?)? onChanged;
 
   const DropdownFieldWidget({
@@ -19,10 +19,15 @@ class DropdownFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Ensure value exists in items before using it
+    final validValue =
+        items.any((region) => region.name.toString() == value) ? value : null;
+
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: DropdownButtonFormField<String>(
-        value: value?.isEmpty ?? true ? null : value,
+        value: validValue,
+        hint: Text(labelText),
         items: items.map((Region region) {
           return DropdownMenuItem<String>(
             value: region.id.toString(),

@@ -1,3 +1,4 @@
+import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -68,7 +69,9 @@ class AppbarAccount extends StatelessWidget {
             Icons.keyboard_arrow_left_rounded,
             size: 18.sp,
           ),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, RoutesNames.profileRoute);
+          },
         ),
       ),
     );

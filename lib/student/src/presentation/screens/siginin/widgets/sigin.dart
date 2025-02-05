@@ -11,8 +11,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SignInScreen extends StatefulWidget {
   final PageController pageController;
   final CheckAuthState state;
+  final bool isPassValid;
   const SignInScreen(
-      {super.key, required this.pageController, required this.state});
+      {super.key,
+      required this.pageController,
+      required this.state,
+      this.isPassValid = true});
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -28,18 +32,24 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   void initState() {
+    print(widget.state.user);
     nameController = TextEditingController(text: widget.state.user.name);
     emailController = TextEditingController(text: widget.state.user.email);
     phoneNumberController =
         TextEditingController(text: widget.state.user.phoneNumber);
     passwordController = TextEditingController(text: '');
-    selectedValue =
-        widget.state.user.region!.isEmpty ? null : widget.state.user.region;
+    // Initialize selectedValue only if it matches an existing region
+    selectedValue = widget.state.regions
+                ?.any((r) => r.id.toString() == widget.state.user.region) ==
+            true
+        ? widget.state.user.region
+        : null;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    // print((selectedValue != null || widget.state.regions!.isEmpty));
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -82,20 +92,25 @@ class _SignInScreenState extends State<SignInScreen> {
                     labeltext: "كلمة المرور",
                     isPassword: true,
                     controller: passwordController,
-                    validator: AppValidators.passwordValidation,
+                    validator: widget.isPassValid
+                        ? AppValidators.passwordValidation
+                        : null,
                   ),
                   const SizedBox(height: 20),
-                  DropdownFieldWidget(
-                    labelText: 'بلد الاقامة',
-                    icon: Icons.flag_rounded,
-                    items: widget.state.regions ?? [],
-                    value: selectedValue,
-                    onChanged: (newValue) {
-                      setState(() {
-                        selectedValue = newValue!;
-                      });
-                    },
-                  ),
+                  widget.state.regions != null &&
+                          widget.state.regions!.isNotEmpty
+                      ? DropdownFieldWidget(
+                          labelText: 'بلد الاقامة',
+                          icon: Icons.flag_rounded,
+                          items: widget.state.regions!,
+                          value: selectedValue,
+                          onChanged: (newValue) {
+                            setState(() {
+                              selectedValue = newValue;
+                            });
+                          },
+                        )
+                      : const SizedBox(),
                   Button(
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
