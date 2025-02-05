@@ -19,7 +19,7 @@ mixin _$CheckAuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(User user) updateInfo,
+    required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
     required TResult Function() getRegion,
@@ -28,7 +28,7 @@ mixin _$CheckAuthEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
     TResult? Function()? getRegion,
@@ -37,7 +37,7 @@ mixin _$CheckAuthEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(User user)? updateInfo,
+    TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
     TResult Function()? getRegion,
@@ -137,7 +137,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(User user) updateInfo,
+    required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
     required TResult Function() getRegion,
@@ -149,7 +149,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
     TResult? Function()? getRegion,
@@ -161,7 +161,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(User user)? updateInfo,
+    TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
     TResult Function()? getRegion,
@@ -224,7 +224,7 @@ abstract class _$$UpdateInfoEventImplCopyWith<$Res> {
           $Res Function(_$UpdateInfoEventImpl) then) =
       __$$UpdateInfoEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({User user});
+  $Res call({User user, bool isSend});
 
   $UserCopyWith<$Res> get user;
 }
@@ -243,12 +243,17 @@ class __$$UpdateInfoEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = null,
+    Object? isSend = null,
   }) {
     return _then(_$UpdateInfoEventImpl(
       user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      isSend: null == isSend
+          ? _value.isSend
+          : isSend // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -266,14 +271,17 @@ class __$$UpdateInfoEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
-  const _$UpdateInfoEventImpl({required this.user});
+  const _$UpdateInfoEventImpl({required this.user, this.isSend = false});
 
   @override
   final User user;
+  @override
+  @JsonKey()
+  final bool isSend;
 
   @override
   String toString() {
-    return 'CheckAuthEvent.updateInfo(user: $user)';
+    return 'CheckAuthEvent.updateInfo(user: $user, isSend: $isSend)';
   }
 
   @override
@@ -281,11 +289,12 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateInfoEventImpl &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.isSend, isSend) || other.isSend == isSend));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user);
+  int get hashCode => Object.hash(runtimeType, user, isSend);
 
   /// Create a copy of CheckAuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -300,38 +309,38 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(User user) updateInfo,
+    required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
     required TResult Function() getRegion,
   }) {
-    return updateInfo(user);
+    return updateInfo(user, isSend);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
     TResult? Function()? getRegion,
   }) {
-    return updateInfo?.call(user);
+    return updateInfo?.call(user, isSend);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(User user)? updateInfo,
+    TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
     TResult Function()? getRegion,
     required TResult orElse(),
   }) {
     if (updateInfo != null) {
-      return updateInfo(user);
+      return updateInfo(user, isSend);
     }
     return orElse();
   }
@@ -378,10 +387,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
 }
 
 abstract class _UpdateInfoEvent implements CheckAuthEvent {
-  const factory _UpdateInfoEvent({required final User user}) =
-      _$UpdateInfoEventImpl;
+  const factory _UpdateInfoEvent(
+      {required final User user, final bool isSend}) = _$UpdateInfoEventImpl;
 
   User get user;
+  bool get isSend;
 
   /// Create a copy of CheckAuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -471,7 +481,7 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(User user) updateInfo,
+    required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
     required TResult Function() getRegion,
@@ -483,7 +493,7 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
     TResult? Function()? getRegion,
@@ -495,7 +505,7 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(User user)? updateInfo,
+    TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
     TResult Function()? getRegion,
@@ -639,7 +649,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(User user) updateInfo,
+    required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
     required TResult Function() getRegion,
@@ -651,7 +661,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
     TResult? Function()? getRegion,
@@ -663,7 +673,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(User user)? updateInfo,
+    TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
     TResult Function()? getRegion,
@@ -773,7 +783,7 @@ class _$getRegionImpl implements _getRegion {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(User user) updateInfo,
+    required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
     required TResult Function() getRegion,
@@ -785,7 +795,7 @@ class _$getRegionImpl implements _getRegion {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(User user)? updateInfo,
+    TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
     TResult? Function()? getRegion,
@@ -797,7 +807,7 @@ class _$getRegionImpl implements _getRegion {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(User user)? updateInfo,
+    TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
     TResult Function()? getRegion,
@@ -859,28 +869,36 @@ mixin _$CheckAuthState {
   bool get loading => throw _privateConstructorUsedError;
   bool get error => throw _privateConstructorUsedError;
   bool get isAuth => throw _privateConstructorUsedError;
+  bool get isEnpty => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
   List<Region>? get regions => throw _privateConstructorUsedError;
   Auth? get auth => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, Auth? auth, String errorMessage)
+    required TResult Function(
+            bool loading,
+            bool error,
+            bool isAuth,
+            bool isEnpty,
+            User user,
+            List<Region>? regions,
+            Auth? auth,
+            String errorMessage)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, Auth? auth, String errorMessage)?
+    TResult? Function(bool loading, bool error, bool isAuth, bool isEnpty,
+            User user, List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, Auth? auth, String errorMessage)?
+    TResult Function(bool loading, bool error, bool isAuth, bool isEnpty,
+            User user, List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
     required TResult orElse(),
   }) =>
@@ -919,6 +937,7 @@ abstract class $CheckAuthStateCopyWith<$Res> {
       {bool loading,
       bool error,
       bool isAuth,
+      bool isEnpty,
       User user,
       List<Region>? regions,
       Auth? auth,
@@ -946,6 +965,7 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
     Object? loading = null,
     Object? error = null,
     Object? isAuth = null,
+    Object? isEnpty = null,
     Object? user = null,
     Object? regions = freezed,
     Object? auth = freezed,
@@ -963,6 +983,10 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
       isAuth: null == isAuth
           ? _value.isAuth
           : isAuth // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEnpty: null == isEnpty
+          ? _value.isEnpty
+          : isEnpty // ignore: cast_nullable_to_non_nullable
               as bool,
       user: null == user
           ? _value.user
@@ -1020,6 +1044,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       {bool loading,
       bool error,
       bool isAuth,
+      bool isEnpty,
       User user,
       List<Region>? regions,
       Auth? auth,
@@ -1047,6 +1072,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? loading = null,
     Object? error = null,
     Object? isAuth = null,
+    Object? isEnpty = null,
     Object? user = null,
     Object? regions = freezed,
     Object? auth = freezed,
@@ -1064,6 +1090,10 @@ class __$$InitialImplCopyWithImpl<$Res>
       isAuth: null == isAuth
           ? _value.isAuth
           : isAuth // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isEnpty: null == isEnpty
+          ? _value.isEnpty
+          : isEnpty // ignore: cast_nullable_to_non_nullable
               as bool,
       user: null == user
           ? _value.user
@@ -1092,6 +1122,7 @@ class _$InitialImpl implements _Initial {
       {this.loading = false,
       this.error = false,
       this.isAuth = false,
+      this.isEnpty = false,
       this.user = const User(
           id: 0,
           name: '',
@@ -1116,6 +1147,9 @@ class _$InitialImpl implements _Initial {
   final bool isAuth;
   @override
   @JsonKey()
+  final bool isEnpty;
+  @override
+  @JsonKey()
   final User user;
   final List<Region>? _regions;
   @override
@@ -1135,7 +1169,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CheckAuthState.initial(loading: $loading, error: $error, isAuth: $isAuth, user: $user, regions: $regions, auth: $auth, errorMessage: $errorMessage)';
+    return 'CheckAuthState.initial(loading: $loading, error: $error, isAuth: $isAuth, isEnpty: $isEnpty, user: $user, regions: $regions, auth: $auth, errorMessage: $errorMessage)';
   }
 
   @override
@@ -1146,6 +1180,7 @@ class _$InitialImpl implements _Initial {
             (identical(other.loading, loading) || other.loading == loading) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.isAuth, isAuth) || other.isAuth == isAuth) &&
+            (identical(other.isEnpty, isEnpty) || other.isEnpty == isEnpty) &&
             (identical(other.user, user) || other.user == user) &&
             const DeepCollectionEquality().equals(other._regions, _regions) &&
             (identical(other.auth, auth) || other.auth == auth) &&
@@ -1154,8 +1189,8 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loading, error, isAuth, user,
-      const DeepCollectionEquality().hash(_regions), auth, errorMessage);
+  int get hashCode => Object.hash(runtimeType, loading, error, isAuth, isEnpty,
+      user, const DeepCollectionEquality().hash(_regions), auth, errorMessage);
 
   /// Create a copy of CheckAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1168,34 +1203,43 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, Auth? auth, String errorMessage)
+    required TResult Function(
+            bool loading,
+            bool error,
+            bool isAuth,
+            bool isEnpty,
+            User user,
+            List<Region>? regions,
+            Auth? auth,
+            String errorMessage)
         initial,
   }) {
-    return initial(loading, error, isAuth, user, regions, auth, errorMessage);
+    return initial(
+        loading, error, isAuth, isEnpty, user, regions, auth, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, Auth? auth, String errorMessage)?
+    TResult? Function(bool loading, bool error, bool isAuth, bool isEnpty,
+            User user, List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
   }) {
     return initial?.call(
-        loading, error, isAuth, user, regions, auth, errorMessage);
+        loading, error, isAuth, isEnpty, user, regions, auth, errorMessage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool loading, bool error, bool isAuth, User user,
-            List<Region>? regions, Auth? auth, String errorMessage)?
+    TResult Function(bool loading, bool error, bool isAuth, bool isEnpty,
+            User user, List<Region>? regions, Auth? auth, String errorMessage)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(loading, error, isAuth, user, regions, auth, errorMessage);
+      return initial(
+          loading, error, isAuth, isEnpty, user, regions, auth, errorMessage);
     }
     return orElse();
   }
@@ -1234,6 +1278,7 @@ abstract class _Initial implements CheckAuthState {
       {final bool loading,
       final bool error,
       final bool isAuth,
+      final bool isEnpty,
       final User user,
       final List<Region>? regions,
       final Auth? auth,
@@ -1245,6 +1290,8 @@ abstract class _Initial implements CheckAuthState {
   bool get error;
   @override
   bool get isAuth;
+  @override
+  bool get isEnpty;
   @override
   User get user;
   @override

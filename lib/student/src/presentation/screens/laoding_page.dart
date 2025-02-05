@@ -1,9 +1,5 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/core/utils/toast.dart';
-import 'package:educational_platform_app/student/core/routes/routes_name.dart';
-import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
@@ -13,51 +9,6 @@ class LoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Lang lang = Lang.of(context);
-    final authBloc = context.read<CheckAuthBloc>();
-    authBloc.add(const CheckAuthEvent.started());
-
-    return BlocListener<CheckAuthBloc, CheckAuthState>(
-      // listenWhen: (previous, current) => previous != current,
-      listener: (context, state) {
-        print(state.isAuth);
-        print(state.loading);
-        print(state.error);
-        print("-----------");
-        if (!state.isAuth && !state.loading && !state.error) {
-          if (state.auth == null) {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              RoutesNames.registerRoute,
-              (route) => false,
-            );
-          } else {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              RoutesNames.mainRoute,
-              (route) => false,
-            );
-            //Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
-          }
-        } else if (state.isAuth && !state.loading && !state.error) {
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            RoutesNames.mainRoute,
-            (route) => false,
-          );
-          // Navigator.of(context).popAndPushNamed(RoutesNames.mainRoute);
-        } else if (!state.isAuth && !state.loading && state.error) {
-          Toast().error(context, state.errorMessage);
-        }
-      },
-      child: BlocBuilder<CheckAuthBloc, CheckAuthState>(
-        builder: (context, state) {
-          return _loadingWidget(lang);
-        },
-      ),
-    );
-  }
-
-  Widget _loadingWidget(Lang lang) {
     return Stack(
       fit: StackFit.expand,
       children: [

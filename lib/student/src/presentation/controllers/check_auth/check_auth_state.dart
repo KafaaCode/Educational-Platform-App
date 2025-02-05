@@ -6,6 +6,7 @@ class CheckAuthState with _$CheckAuthState {
     @Default(false) bool loading,
     @Default(false) bool error,
     @Default(false) bool isAuth,
+    @Default(false) bool isEnpty,
     @Default(User(
       id: 0,
       name: '',

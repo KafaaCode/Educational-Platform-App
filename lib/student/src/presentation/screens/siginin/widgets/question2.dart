@@ -9,8 +9,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Question2 extends StatefulWidget {
   const Question2(
-      {super.key, required this.pageController, required this.state});
+      {super.key,
+      required this.pageController,
+      required this.state,
+      this.isUpdate = false});
   final PageController pageController;
+  final bool isUpdate;
   final CheckAuthState state;
   @override
   State<Question2> createState() => _Question1State();
@@ -82,11 +86,16 @@ class _Question1State extends State<Question2> {
               ),
               Button(
                   onPressed: () {
-                    context
-                        .read<CheckAuthBloc>()
-                        .add(CheckAuthEvent.resgiter(user: widget.state.user));
+                    if (widget.isUpdate) {
+                      context.read<CheckAuthBloc>().add(
+                          CheckAuthEvent.updateInfo(
+                              isSend: true, user: widget.state.user));
+                    } else {
+                      context.read<CheckAuthBloc>().add(
+                          CheckAuthEvent.resgiter(user: widget.state.user));
+                    }
                   },
-                  text: lang.continueRegistration)
+                  text: !widget.isUpdate ? lang.continueRegistration : "تحديث")
             ],
           ),
         ),

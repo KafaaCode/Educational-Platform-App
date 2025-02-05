@@ -91,7 +91,7 @@ class _Question1State extends State<Question1> {
                   onPressed: () {
                     widget.pageController.jumpToPage(2);
                   },
-                  text: lang.continueRegistration)
+                  text: "استمر")
             ],
           ),
         ),
