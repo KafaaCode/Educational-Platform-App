@@ -1,6 +1,5 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
 import 'package:educational_platform_app/core/localization/language/language_cubit.dart';
-import 'package:educational_platform_app/core/utils/toast.dart';
 import 'package:educational_platform_app/flavors.dart';
 import 'package:educational_platform_app/student/core/observer/app_observer.dart';
 import 'package:educational_platform_app/student/core/routes/router_screens.dart';
@@ -80,52 +79,6 @@ class _MainApp extends State<MainApp> {
               initialRoute: RoutesNames.chechAuthRoute,
               onGenerateRoute: AppRouter.router.generator,
               navigatorKey: SingleInstanceService.navigatorKey,
-              home: BlocListener<CheckAuthBloc, CheckAuthState>(
-                // listenWhen: (previous, current) => previous != current,
-                listener: (context, state) {
-                  print(state.isAuth);
-                  print(state.loading);
-                  print(state.error);
-                  print("-----------");
-                  if (!state.isAuth && !state.loading && !state.error) {
-                    if (state.auth == null) {
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        RoutesNames.registerRoute,
-                        (route) => false,
-                      );
-                    } else {
-                      if (!state.isEnpty) {
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          RoutesNames.mainRoute,
-                          (route) => false,
-                        );
-                      }
-                    }
-                  } else if (state.isAuth && !state.loading && !state.error) {
-                    Navigator.pushNamedAndRemoveUntil(
-                      context,
-                      RoutesNames.mainRoute,
-                      (route) => false,
-                    );
-                  } else if (!state.isAuth && !state.loading && state.error) {
-                    Toast().error(context, state.errorMessage);
-                    Navigator.pushNamedAndRemoveUntil(
-                      context,
-                      RoutesNames.notFoundRoute,
-                      (route) => false,
-                    );
-                  } else if (state.isAuth && !state.loading && !state.error) {
-                    Navigator.pushNamedAndRemoveUntil(
-                      context,
-                      RoutesNames.lodingRoute,
-                      (route) => false,
-                    );
-                  }
-                },
-                child: Container(),
-              ),
             ),
           );
         });

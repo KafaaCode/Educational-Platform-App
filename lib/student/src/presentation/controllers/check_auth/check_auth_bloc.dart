@@ -11,28 +11,42 @@ part 'check_auth_bloc.freezed.dart';
 class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
   final BaseAuthRepository baseAuthRepository;
 
-  CheckAuthBloc(this.baseAuthRepository) : super(_Initial()) {
+  CheckAuthBloc(this.baseAuthRepository) : super(_CheckAuthState()) {
     on<CheckAuthEvent>((event, emit) async {
       await event.map(
-        getRegion: (_getRegion value) async {},
-        started: (_Started value) async {
-          emit(state.copyWith(isAuth: false, loading: true, error: false));
+        logout: (_Logout logout) async {
+          emit(state.copyWith(
+              isAuth: false,
+              auth: null,
+              error: false,
+              user: const User(id: 0, email: '', name: '', role: ''),
+              regions: null,
+              loading: false,
+              isEnpty: false,
+              errorMessage: ''));
+          await HydratedBloc.storage.clear();
+        },
+        refreshToken: (_RefreshToken v) async {},
+        started: (_Started v) async {
           if (state.auth == null) {
+            emit(state.copyWith(
+                isAuth: false, loading: true, error: false, isEnpty: false));
             final response = await baseAuthRepository.getRegions();
-            await response.fold(
-              (l) async {
-                emit(state.copyWith(
+
+            response.fold(
+                (l) => emit(state.copyWith(
+                      isAuth: false,
+                      loading: false,
+                      error: true,
+                      errorMessage: l.message,
+                    )), (r) {
+              emit(state.copyWith(
                   isAuth: false,
                   loading: false,
-                  error: true,
-                  errorMessage: l.message,
-                ));
-              },
-              (r) async {
-                emit(state.copyWith(
-                    isAuth: false, loading: false, error: false, regions: r));
-              },
-            );
+                  error: false,
+                  isEnpty: false,
+                  regions: r));
+            });
           } else {
             User user = User(
                 id: 0,
@@ -45,63 +59,64 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
                 region: state.auth!.student.region.name,
                 gander: state.auth!.student.gander);
 
-            emit(state.copyWith(
-                isAuth: false,
-                loading: false,
-                error: false,
-                auth: state.auth,
-                user: user,
-                isEnpty: true));
+            if (!emit.isDone) {
+              emit(state.copyWith(
+                  isAuth: true,
+                  loading: false,
+                  error: false,
+                  auth: state.auth,
+                  user: user,
+                  isEnpty: false));
+            }
           }
         },
-        updateInfo: (_UpdateInfoEvent updateInfo) async {
-          if (updateInfo.isSend) {
+        updateInfo: (_UpdateInfoEvent v) async {
+          if (v.isSend) {
             print('updaeeeeeeeee');
           } else {
             emit(state.copyWith(
-              user: updateInfo.user,
-              isAuth: false,
-              error: false,
-              loading: false,
-            ));
+                user: v.user,
+                isAuth: false,
+                error: false,
+                loading: false,
+                isEnpty: true));
           }
         },
-        login: (_LoginEvent value) async {
-          emit(state.copyWith(isAuth: false, loading: true, error: false));
+        login: (_LoginEvent v) async {
+          emit(state.copyWith(
+              isAuth: false, loading: true, error: false, isEnpty: false));
           final response = await baseAuthRepository.login(
-              email: value.eamil, password: value.password);
+              email: v.eamil, password: v.password);
+
           response.fold(
-            (l) {
-              emit(state.copyWith(
-                isAuth: false,
+            (l) => emit(state.copyWith(
+              isAuth: false,
+              loading: false,
+              error: true,
+              errorMessage: l.message,
+            )),
+            (r) => emit(state.copyWith(
+                isAuth: true,
                 loading: false,
-                error: true,
-                errorMessage: l.message,
-              ));
-            },
-            (r) {
-              print(r.toString());
-              emit(state.copyWith(
-                  isAuth: true, loading: false, error: false, auth: r));
-            },
+                error: false,
+                isEnpty: false,
+                auth: r)),
           );
         },
-        resgiter: (_ResgiterEvent value) async {
-          emit(state.copyWith(isAuth: false, loading: true, error: false));
-          final response = await baseAuthRepository.register(user: value.user);
+        resgiter: (_ResgiterEvent v) async {
+          emit(state.copyWith(
+              isAuth: false, loading: true, error: false, isEnpty: false));
+          final response = await baseAuthRepository.register(user: v.user);
+
           response.fold(
-            (l) {
-              emit(state.copyWith(
-                isAuth: false,
-                loading: false,
-                error: true,
-                errorMessage: l.message,
-              ));
-            },
-            (r) {
-              emit(state.copyWith(
-                  isAuth: true, loading: false, error: false, auth: r));
-            },
+            (l) => emit(state.copyWith(
+              isAuth: false,
+              loading: false,
+              error: true,
+              errorMessage: l.message,
+            )),
+            (r) => emit(state.copyWith(
+                isAuth: true, loading: false, error: false, auth: r)),
           );
         },
       );
@@ -111,7 +126,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
   @override
   CheckAuthState? fromJson(Map<String, dynamic> json) {
     try {
-      return CheckAuthState.initial(
+      return CheckAuthState(
         isAuth: json['isAuth'] as bool? ?? false,
         loading: json['loading'] as bool? ?? false,
         auth: Auth.fromJson(json['auth'] as Map<String, dynamic>),

@@ -110,7 +110,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             });
                           },
                         )
-                      : const SizedBox(),
+                      : _loadTheRegion(context),
                   Button(
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
@@ -163,5 +163,10 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
       ),
     );
+  }
+
+  Widget _loadTheRegion(BuildContext context) {
+    context.read<CheckAuthBloc>().add(CheckAuthEvent.started());
+    return Container();
   }
 }

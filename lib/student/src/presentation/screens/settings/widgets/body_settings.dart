@@ -1,4 +1,6 @@
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BodySettings extends StatelessWidget {
@@ -8,7 +10,7 @@ class BodySettings extends StatelessWidget {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return LogoutDialog();
+        return const LogoutDialog();
       },
     );
   }
@@ -206,7 +208,9 @@ class LogoutDialog extends StatelessWidget {
                 SizedBox(width: 20.w),
                 ElevatedButton(
                   onPressed: () {
-                    // Add logout logic here
+                    context
+                        .read<CheckAuthBloc>()
+                        .add(const CheckAuthEvent.logout());
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(

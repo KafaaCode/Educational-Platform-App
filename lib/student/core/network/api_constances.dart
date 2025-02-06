@@ -1,3 +1,6 @@
+import 'package:educational_platform_app/student/core/services/services_locator.dart';
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
+
 class ApiConstances {
   //static const String _baseUrl = "";
   static const String _baseUrl = "http://127.0.0.1:8000/api";
@@ -16,7 +19,10 @@ class ApiConstances {
   static const String getRegionUrl = "$_baseUrl/Region";
 
   static String getToken() {
-    return ""; //sl.get<CheckAuthBloc>().state.token;
+    if (sl.get<CheckAuthBloc>().state.auth == null) {
+      sl.get<CheckAuthBloc>().add(const CheckAuthEvent.logout());
+    }
+    return sl.get<CheckAuthBloc>().state.auth!.token;
   }
 
   // static Filtera? getFilter() {

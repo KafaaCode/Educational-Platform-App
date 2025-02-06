@@ -1,4 +1,7 @@
+import 'package:educational_platform_app/student/core/observer/app_auth_checker.dart';
+import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../theme/theme.dart';
 
@@ -20,61 +23,64 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.backgroundColor,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Scaffold(
-        appBar: AppBar(
-          leading: Container(
-            width: 100,
-            padding: const EdgeInsets.all(15.0),
-            child: leading,
-            alignment: Alignment.topRight,
+    return BlocListener<CheckAuthBloc, CheckAuthState>(
+        // listenWhen: (previous, current) => previous != current,
+        listener: AppAuthChecker().listener,
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors.backgroundColor,
+            borderRadius: BorderRadius.circular(20),
           ),
-          toolbarHeight: appBarHeight.h,
-          flexibleSpace: SizedBox(
-            height: appBarHeight.h,
-            child: Stack(
+          child: Scaffold(
+            appBar: AppBar(
+              leading: Container(
+                width: 100,
+                padding: const EdgeInsets.all(15.0),
+                child: leading,
+                alignment: Alignment.topRight,
+              ),
+              toolbarHeight: appBarHeight.h,
+              flexibleSpace: SizedBox(
+                height: appBarHeight.h,
+                child: Stack(
+                  children: [
+                    // Top points background
+                    Positioned.fill(
+                      child: Image.asset(
+                        'assets/images/bg_top_points.png',
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    // Bottom points background
+                    Positioned.fill(
+                      top: 120,
+                      bottom: 0,
+                      child: Image.asset(
+                        'assets/images/bg_buttom_points.png',
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    // AppBar content
+                    if (appBarContent != null)
+                      Padding(
+                        padding: EdgeInsets.all(20.0.sp),
+                        child: appBarContent!,
+                      ),
+                  ],
+                ),
+              ),
+            ),
+            body: Stack(
+              fit: StackFit.expand,
               children: [
-                // Top points background
-                Positioned.fill(
-                  child: Image.asset(
-                    'assets/images/bg_top_points.png',
-                    fit: BoxFit.fill,
-                  ),
+                Image.asset(
+                  'assets/images/bg_things.png',
+                  fit: BoxFit.cover,
                 ),
-                // Bottom points background
-                Positioned.fill(
-                  top: 120,
-                  bottom: 0,
-                  child: Image.asset(
-                    'assets/images/bg_buttom_points.png',
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                // AppBar content
-                if (appBarContent != null)
-                  Padding(
-                    padding: EdgeInsets.all(20.0.sp),
-                    child: appBarContent!,
-                  ),
+                body,
               ],
             ),
           ),
-        ),
-        body: Stack(
-          fit: StackFit.expand,
-          children: [
-            Image.asset(
-              'assets/images/bg_things.png',
-              fit: BoxFit.cover,
-            ),
-            body,
-          ],
-        ),
-      ),
-    );
+        ));
   }
 }

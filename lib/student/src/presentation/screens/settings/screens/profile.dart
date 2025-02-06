@@ -1,5 +1,3 @@
-import 'package:educational_platform_app/student/core/services/services_locator.dart';
-import 'package:educational_platform_app/student/src/data/models/models.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/question1.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/question2.dart';

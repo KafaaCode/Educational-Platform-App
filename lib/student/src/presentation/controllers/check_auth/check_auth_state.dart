@@ -2,7 +2,7 @@ part of 'check_auth_bloc.dart';
 
 @freezed
 class CheckAuthState with _$CheckAuthState {
-  factory CheckAuthState.initial({
+  factory CheckAuthState({
     @Default(false) bool loading,
     @Default(false) bool error,
     @Default(false) bool isAuth,
@@ -20,6 +20,6 @@ class CheckAuthState with _$CheckAuthState {
     List<Region>? regions,
     Auth? auth,
     @Default('') String errorMessage,
-  }) = _Initial;
+  }) = _CheckAuthState;
   // const factory CheckAuthState.getRegion({required User user}) = _GetRegion;
 }

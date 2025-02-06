@@ -1,7 +1,6 @@
 import 'package:educational_platform_app/student/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/core/validations/app_validations.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
-import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/sigin.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/Text_field_widget.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/app_scaffold.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/button.dart';

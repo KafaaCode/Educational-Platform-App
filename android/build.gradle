@@ -18,18 +18,3 @@ tasks.register("clean", Delete) {
 }
 
 
-android {
-    flavorDimensions "default"
-    productFlavors {
-        teacher {
-            dimension "default"
-            applicationIdSuffix ".teacher"
-            versionNameSuffix "-teacher"
-        }
-        student {
-            dimension "default"
-            applicationIdSuffix ".student"
-            versionNameSuffix "-student"
-        }
-    }
-}

@@ -19,56 +19,62 @@ mixin _$CheckAuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
     required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
-    required TResult Function() getRegion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
     TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
-    TResult? Function()? getRegion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
     TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
-    TResult Function()? getRegion,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
-    required TResult Function(_getRegion value) getRegion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_getRegion value)? getRegion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
-    TResult Function(_getRegion value)? getRegion,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,10 +143,11 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
     required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
-    required TResult Function() getRegion,
   }) {
     return started();
   }
@@ -149,10 +156,11 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
     TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
-    TResult? Function()? getRegion,
   }) {
     return started?.call();
   }
@@ -161,10 +169,11 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
     TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
-    TResult Function()? getRegion,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -177,10 +186,11 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
-    required TResult Function(_getRegion value) getRegion,
   }) {
     return started(this);
   }
@@ -189,10 +199,11 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_getRegion value)? getRegion,
   }) {
     return started?.call(this);
   }
@@ -201,10 +212,11 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
-    TResult Function(_getRegion value)? getRegion,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -216,6 +228,264 @@ class _$StartedImpl implements _Started {
 
 abstract class _Started implements CheckAuthEvent {
   const factory _Started() = _$StartedImpl;
+}
+
+/// @nodoc
+abstract class _$$LogoutImplCopyWith<$Res> {
+  factory _$$LogoutImplCopyWith(
+          _$LogoutImpl value, $Res Function(_$LogoutImpl) then) =
+      __$$LogoutImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$LogoutImpl>
+    implements _$$LogoutImplCopyWith<$Res> {
+  __$$LogoutImplCopyWithImpl(
+      _$LogoutImpl _value, $Res Function(_$LogoutImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LogoutImpl implements _Logout {
+  const _$LogoutImpl();
+
+  @override
+  String toString() {
+    return 'CheckAuthEvent.logout()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
+    required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String eamil, String password) login,
+  }) {
+    return logout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
+    TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String eamil, String password)? login,
+  }) {
+    return logout?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
+    TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(User user)? resgiter,
+    TResult Function(String eamil, String password)? login,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_ResgiterEvent value) resgiter,
+    required TResult Function(_LoginEvent value) login,
+  }) {
+    return logout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_ResgiterEvent value)? resgiter,
+    TResult? Function(_LoginEvent value)? login,
+  }) {
+    return logout?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_ResgiterEvent value)? resgiter,
+    TResult Function(_LoginEvent value)? login,
+    required TResult orElse(),
+  }) {
+    if (logout != null) {
+      return logout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Logout implements CheckAuthEvent {
+  const factory _Logout() = _$LogoutImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshTokenImplCopyWith<$Res> {
+  factory _$$RefreshTokenImplCopyWith(
+          _$RefreshTokenImpl value, $Res Function(_$RefreshTokenImpl) then) =
+      __$$RefreshTokenImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefreshTokenImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$RefreshTokenImpl>
+    implements _$$RefreshTokenImplCopyWith<$Res> {
+  __$$RefreshTokenImplCopyWithImpl(
+      _$RefreshTokenImpl _value, $Res Function(_$RefreshTokenImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RefreshTokenImpl implements _RefreshToken {
+  const _$RefreshTokenImpl();
+
+  @override
+  String toString() {
+    return 'CheckAuthEvent.refreshToken()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RefreshTokenImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
+    required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String eamil, String password) login,
+  }) {
+    return refreshToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
+    TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String eamil, String password)? login,
+  }) {
+    return refreshToken?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
+    TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(User user)? resgiter,
+    TResult Function(String eamil, String password)? login,
+    required TResult orElse(),
+  }) {
+    if (refreshToken != null) {
+      return refreshToken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_ResgiterEvent value) resgiter,
+    required TResult Function(_LoginEvent value) login,
+  }) {
+    return refreshToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_ResgiterEvent value)? resgiter,
+    TResult? Function(_LoginEvent value)? login,
+  }) {
+    return refreshToken?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_ResgiterEvent value)? resgiter,
+    TResult Function(_LoginEvent value)? login,
+    required TResult orElse(),
+  }) {
+    if (refreshToken != null) {
+      return refreshToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RefreshToken implements CheckAuthEvent {
+  const factory _RefreshToken() = _$RefreshTokenImpl;
 }
 
 /// @nodoc
@@ -309,10 +579,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
     required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
-    required TResult Function() getRegion,
   }) {
     return updateInfo(user, isSend);
   }
@@ -321,10 +592,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
     TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
-    TResult? Function()? getRegion,
   }) {
     return updateInfo?.call(user, isSend);
   }
@@ -333,10 +605,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
     TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
-    TResult Function()? getRegion,
     required TResult orElse(),
   }) {
     if (updateInfo != null) {
@@ -349,10 +622,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
-    required TResult Function(_getRegion value) getRegion,
   }) {
     return updateInfo(this);
   }
@@ -361,10 +635,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_getRegion value)? getRegion,
   }) {
     return updateInfo?.call(this);
   }
@@ -373,10 +648,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
-    TResult Function(_getRegion value)? getRegion,
     required TResult orElse(),
   }) {
     if (updateInfo != null) {
@@ -481,10 +757,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
     required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
-    required TResult Function() getRegion,
   }) {
     return resgiter(user);
   }
@@ -493,10 +770,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
     TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
-    TResult? Function()? getRegion,
   }) {
     return resgiter?.call(user);
   }
@@ -505,10 +783,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
     TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
-    TResult Function()? getRegion,
     required TResult orElse(),
   }) {
     if (resgiter != null) {
@@ -521,10 +800,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
-    required TResult Function(_getRegion value) getRegion,
   }) {
     return resgiter(this);
   }
@@ -533,10 +813,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_getRegion value)? getRegion,
   }) {
     return resgiter?.call(this);
   }
@@ -545,10 +826,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
-    TResult Function(_getRegion value)? getRegion,
     required TResult orElse(),
   }) {
     if (resgiter != null) {
@@ -649,10 +931,11 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
     required TResult Function(User user, bool isSend) updateInfo,
     required TResult Function(User user) resgiter,
     required TResult Function(String eamil, String password) login,
-    required TResult Function() getRegion,
   }) {
     return login(eamil, password);
   }
@@ -661,10 +944,11 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
     TResult? Function(User user, bool isSend)? updateInfo,
     TResult? Function(User user)? resgiter,
     TResult? Function(String eamil, String password)? login,
-    TResult? Function()? getRegion,
   }) {
     return login?.call(eamil, password);
   }
@@ -673,10 +957,11 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
     TResult Function(User user, bool isSend)? updateInfo,
     TResult Function(User user)? resgiter,
     TResult Function(String eamil, String password)? login,
-    TResult Function()? getRegion,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -689,10 +974,11 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
-    required TResult Function(_getRegion value) getRegion,
   }) {
     return login(this);
   }
@@ -701,10 +987,11 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_getRegion value)? getRegion,
   }) {
     return login?.call(this);
   }
@@ -713,10 +1000,11 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
-    TResult Function(_getRegion value)? getRegion,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -742,129 +1030,6 @@ abstract class _LoginEvent implements CheckAuthEvent {
 }
 
 /// @nodoc
-abstract class _$$getRegionImplCopyWith<$Res> {
-  factory _$$getRegionImplCopyWith(
-          _$getRegionImpl value, $Res Function(_$getRegionImpl) then) =
-      __$$getRegionImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$getRegionImplCopyWithImpl<$Res>
-    extends _$CheckAuthEventCopyWithImpl<$Res, _$getRegionImpl>
-    implements _$$getRegionImplCopyWith<$Res> {
-  __$$getRegionImplCopyWithImpl(
-      _$getRegionImpl _value, $Res Function(_$getRegionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CheckAuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$getRegionImpl implements _getRegion {
-  const _$getRegionImpl();
-
-  @override
-  String toString() {
-    return 'CheckAuthEvent.getRegion()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$getRegionImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(User user, bool isSend) updateInfo,
-    required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
-    required TResult Function() getRegion,
-  }) {
-    return getRegion();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(User user, bool isSend)? updateInfo,
-    TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
-    TResult? Function()? getRegion,
-  }) {
-    return getRegion?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(User user, bool isSend)? updateInfo,
-    TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
-    TResult Function()? getRegion,
-    required TResult orElse(),
-  }) {
-    if (getRegion != null) {
-      return getRegion();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_UpdateInfoEvent value) updateInfo,
-    required TResult Function(_ResgiterEvent value) resgiter,
-    required TResult Function(_LoginEvent value) login,
-    required TResult Function(_getRegion value) getRegion,
-  }) {
-    return getRegion(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateInfoEvent value)? updateInfo,
-    TResult? Function(_ResgiterEvent value)? resgiter,
-    TResult? Function(_LoginEvent value)? login,
-    TResult? Function(_getRegion value)? getRegion,
-  }) {
-    return getRegion?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_UpdateInfoEvent value)? updateInfo,
-    TResult Function(_ResgiterEvent value)? resgiter,
-    TResult Function(_LoginEvent value)? login,
-    TResult Function(_getRegion value)? getRegion,
-    required TResult orElse(),
-  }) {
-    if (getRegion != null) {
-      return getRegion(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _getRegion implements CheckAuthEvent {
-  const factory _getRegion() = _$getRegionImpl;
-}
-
-/// @nodoc
 mixin _$CheckAuthState {
   bool get loading => throw _privateConstructorUsedError;
   bool get error => throw _privateConstructorUsedError;
@@ -874,51 +1039,6 @@ mixin _$CheckAuthState {
   List<Region>? get regions => throw _privateConstructorUsedError;
   Auth? get auth => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool loading,
-            bool error,
-            bool isAuth,
-            bool isEnpty,
-            User user,
-            List<Region>? regions,
-            Auth? auth,
-            String errorMessage)
-        initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool loading, bool error, bool isAuth, bool isEnpty,
-            User user, List<Region>? regions, Auth? auth, String errorMessage)?
-        initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool loading, bool error, bool isAuth, bool isEnpty,
-            User user, List<Region>? regions, Auth? auth, String errorMessage)?
-        initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
 
   /// Create a copy of CheckAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1033,11 +1153,11 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res>
+abstract class _$$CheckAuthStateImplCopyWith<$Res>
     implements $CheckAuthStateCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+  factory _$$CheckAuthStateImplCopyWith(_$CheckAuthStateImpl value,
+          $Res Function(_$CheckAuthStateImpl) then) =
+      __$$CheckAuthStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1057,11 +1177,11 @@ abstract class _$$InitialImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CheckAuthStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$CheckAuthStateImplCopyWithImpl<$Res>
+    extends _$CheckAuthStateCopyWithImpl<$Res, _$CheckAuthStateImpl>
+    implements _$$CheckAuthStateImplCopyWith<$Res> {
+  __$$CheckAuthStateImplCopyWithImpl(
+      _$CheckAuthStateImpl _value, $Res Function(_$CheckAuthStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of CheckAuthState
@@ -1078,7 +1198,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? auth = freezed,
     Object? errorMessage = null,
   }) {
-    return _then(_$InitialImpl(
+    return _then(_$CheckAuthStateImpl(
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -1117,8 +1237,8 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  _$InitialImpl(
+class _$CheckAuthStateImpl implements _CheckAuthState {
+  _$CheckAuthStateImpl(
       {this.loading = false,
       this.error = false,
       this.isAuth = false,
@@ -1169,14 +1289,14 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CheckAuthState.initial(loading: $loading, error: $error, isAuth: $isAuth, isEnpty: $isEnpty, user: $user, regions: $regions, auth: $auth, errorMessage: $errorMessage)';
+    return 'CheckAuthState(loading: $loading, error: $error, isAuth: $isAuth, isEnpty: $isEnpty, user: $user, regions: $regions, auth: $auth, errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitialImpl &&
+            other is _$CheckAuthStateImpl &&
             (identical(other.loading, loading) || other.loading == loading) &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.isAuth, isAuth) || other.isAuth == isAuth) &&
@@ -1197,84 +1317,13 @@ class _$InitialImpl implements _Initial {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            bool loading,
-            bool error,
-            bool isAuth,
-            bool isEnpty,
-            User user,
-            List<Region>? regions,
-            Auth? auth,
-            String errorMessage)
-        initial,
-  }) {
-    return initial(
-        loading, error, isAuth, isEnpty, user, regions, auth, errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool loading, bool error, bool isAuth, bool isEnpty,
-            User user, List<Region>? regions, Auth? auth, String errorMessage)?
-        initial,
-  }) {
-    return initial?.call(
-        loading, error, isAuth, isEnpty, user, regions, auth, errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool loading, bool error, bool isAuth, bool isEnpty,
-            User user, List<Region>? regions, Auth? auth, String errorMessage)?
-        initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(
-          loading, error, isAuth, isEnpty, user, regions, auth, errorMessage);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  _$$CheckAuthStateImplCopyWith<_$CheckAuthStateImpl> get copyWith =>
+      __$$CheckAuthStateImplCopyWithImpl<_$CheckAuthStateImpl>(
+          this, _$identity);
 }
 
-abstract class _Initial implements CheckAuthState {
-  factory _Initial(
+abstract class _CheckAuthState implements CheckAuthState {
+  factory _CheckAuthState(
       {final bool loading,
       final bool error,
       final bool isAuth,
@@ -1282,7 +1331,7 @@ abstract class _Initial implements CheckAuthState {
       final User user,
       final List<Region>? regions,
       final Auth? auth,
-      final String errorMessage}) = _$InitialImpl;
+      final String errorMessage}) = _$CheckAuthStateImpl;
 
   @override
   bool get loading;
@@ -1305,6 +1354,6 @@ abstract class _Initial implements CheckAuthState {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+  _$$CheckAuthStateImplCopyWith<_$CheckAuthStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
