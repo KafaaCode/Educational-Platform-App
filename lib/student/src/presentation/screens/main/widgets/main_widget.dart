@@ -1,5 +1,6 @@
 import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/courseCard.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/sectionTitle.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/train_alert.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/main/widgets/trainerGrid.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,13 @@ class MainWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              SectionTitle(title: 'الدورات الأكثر شيوعًا'),
+              SectionTitle(title: 'الدورات الأكثر شيوعًا',onPressed: ()
+              {
+                     Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TrainAlert()),
+          );
+              },),
               isWideScreen
                   ? Row(
                       children: [
@@ -55,13 +62,19 @@ class MainWidget extends StatelessWidget {
                       spaczaltion: 'التسويق الرقمي',
                       parce: 100,
                       evaluation: 5),
-              SectionTitle(title: 'نخبة المدربين'),
+              SectionTitle(title: 'نخبة المدربين',onPressed: ()
+              {
+                print(1);
+              },),
               TrainerGrid(
                   name: 'Adel kharzom',
                   count_Student: '1000',
                   path: 'assets/images/bg_intro_page1.png',
                   spaczaltion: 'التسويق الرقمي'),
-              SectionTitle(title: 'العروض والمحتوى المميز'),
+              SectionTitle(title: 'العروض والمحتوى المميز',onPressed: ()
+              {
+                print(1);
+              },),
               isWideScreen
                   ? Row(
                       children: [

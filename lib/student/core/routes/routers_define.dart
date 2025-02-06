@@ -12,7 +12,7 @@ void configureRoutes(FluroRouter router) {
     RoutesNames.chechAuthRoute,
     handler: Handler(
       handlerFunc: (context, parameters) {
-        return const LoadingPage();
+        return const MainUiScreen();
       },
     ),
   );

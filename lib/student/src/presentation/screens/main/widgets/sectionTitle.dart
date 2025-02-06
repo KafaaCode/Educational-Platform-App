@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class SectionTitle extends StatelessWidget {
   final String title;
-  SectionTitle({required this.title});
+  final VoidCallback onPressed;
+  SectionTitle({required this.title, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,19 @@ class SectionTitle extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const Text(
-            'عرض الكل',
-            style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'Cairo',
-            ),
-          ),
+    
+          TextButton(
+  onPressed: this.onPressed,
+  child: const Text(
+    'عرض الكل',
+    style: TextStyle(
+      color: Colors.black,
+      fontFamily: 'Cairo',
+   
+    ),
+  ),
+)
+
         ],
       ),
     );
