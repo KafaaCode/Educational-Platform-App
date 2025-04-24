@@ -1,3 +1,4 @@
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:educational_platform_app/student/src/data/models/models.dart';
 import 'package:educational_platform_app/student/src/domain/repository/auth_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -11,7 +12,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
   final BaseAuthRepository baseAuthRepository;
 
   CheckAuthBloc(this.baseAuthRepository) : super(const _CheckAuthState()) {
-    on<_Started>(_onStartedEvent);
+    on<_Started>(_onStartedEvent, transformer: droppable());
     on<_LoginEvent>(_onLoginEvent);
     on<_ResgiterEvent>(_onResgiterEvent);
     on<_Logout>(_onLogoutEvent);
@@ -113,6 +114,7 @@ class CheckAuthBloc extends HydratedBloc<CheckAuthEvent, CheckAuthState> {
             academic_stage: state.auth?.student?.academic_stage.toJson(),
             region: r.student?.region.name,
             gander: r.student?.gander);
+
         emit(state.copyWith(
           isAuth: true,
           loading: false,
