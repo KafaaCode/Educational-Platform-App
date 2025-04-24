@@ -16,7 +16,10 @@ class _CoursesWidget extends State<CoursesWidget> {
 
   @override
   void initState() {
-    bloc.add(const MyCoursesEvent.getMyCourses());
+    if (bloc.state.courses.isEmpty) {
+      bloc.add(const MyCoursesEvent.getMyCourses());
+    }
+
     super.initState();
   }
 

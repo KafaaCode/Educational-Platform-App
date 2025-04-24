@@ -31,9 +31,9 @@ class AppScaffold extends StatelessWidget {
           return previous != current;
         },
         listener: (context, state) {
-          if (state.isAuth && !state.isEnpty) {
+          if (state.isAuth && !state.loading) {
             AppRouter.router
-                .navigateTo(context, RoutesNames.mainRoute, replace: true);
+                .navigateTo(context, RoutesNames.mainRoute, clearStack: true);
           }
           if (state.error) {
             Toast().error(context, state.errorMessage);
