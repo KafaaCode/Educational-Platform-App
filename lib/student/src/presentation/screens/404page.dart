@@ -1,4 +1,5 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
+import 'package:educational_platform_app/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,49 +9,57 @@ class NotFoundPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Lang lang = Lang.of(context);
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-              child: Lottie.asset(
-                'assets/lottie/404.json',
-                width: 330,
-                height: 200,
-                fit: BoxFit.cover,
+    return BlocListener<CheckAuthBloc, CheckAuthState>(
+      listener: (context, state) {
+        
+          Navigator.pushNamedAndRemoveUntil(
+              context, RoutesNames.lodingRoute, (route) => false);
+        
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                child: Lottie.asset(
+                  'assets/lottie/404.json',
+                  width: 330,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            // Error Text
-            Text(
-              lang.pageNotFound,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
+              const SizedBox(height: 20),
+              // Error Text
+              Text(
+                lang.pageNotFound,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              lang.pageNotFoundMsg,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
+              const SizedBox(height: 10),
+              Text(
+                lang.pageNotFoundMsg,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            const SizedBox(height: 30),
-            // Back to Home Button
-            IconButton(
-                onPressed: () {
-                  context
-                      .read<CheckAuthBloc>()
-                      .add(const CheckAuthEvent.started());
-                },
-                icon: const Icon(Icons.refresh_rounded))
-          ],
+              const SizedBox(height: 30),
+              // Back to Home Button
+              IconButton(
+                  onPressed: () {
+                    context
+                        .read<CheckAuthBloc>()
+                        .add(const CheckAuthEvent.started());
+                  },
+                  icon: const Icon(Icons.refresh_rounded))
+            ],
+          ),
         ),
       ),
     );

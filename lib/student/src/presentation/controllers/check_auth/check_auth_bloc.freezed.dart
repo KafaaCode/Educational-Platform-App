@@ -21,9 +21,11 @@ mixin _$CheckAuthEvent {
     required TResult Function() started,
     required TResult Function() logout,
     required TResult Function() refreshToken,
+    required TResult Function() refresh,
     required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
     required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
+    required TResult Function(String email, String password) login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,9 +33,11 @@ mixin _$CheckAuthEvent {
     TResult? Function()? started,
     TResult? Function()? logout,
     TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
     TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
     TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
+    TResult? Function(String email, String password)? login,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,9 +45,11 @@ mixin _$CheckAuthEvent {
     TResult Function()? started,
     TResult Function()? logout,
     TResult Function()? refreshToken,
+    TResult Function()? refresh,
     TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
     TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
+    TResult Function(String email, String password)? login,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,7 +58,9 @@ mixin _$CheckAuthEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Logout value) logout,
     required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
   }) =>
@@ -62,7 +70,9 @@ mixin _$CheckAuthEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
   }) =>
@@ -72,7 +82,9 @@ mixin _$CheckAuthEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Logout value)? logout,
     TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
     required TResult orElse(),
@@ -145,9 +157,11 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function() logout,
     required TResult Function() refreshToken,
+    required TResult Function() refresh,
     required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
     required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
+    required TResult Function(String email, String password) login,
   }) {
     return started();
   }
@@ -158,9 +172,11 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function()? logout,
     TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
     TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
     TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
+    TResult? Function(String email, String password)? login,
   }) {
     return started?.call();
   }
@@ -171,9 +187,11 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function()? logout,
     TResult Function()? refreshToken,
+    TResult Function()? refresh,
     TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
     TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
+    TResult Function(String email, String password)? login,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -188,7 +206,9 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_Logout value) logout,
     required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
   }) {
@@ -201,7 +221,9 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
   }) {
@@ -214,7 +236,9 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_Logout value)? logout,
     TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
     required TResult orElse(),
@@ -274,9 +298,11 @@ class _$LogoutImpl implements _Logout {
     required TResult Function() started,
     required TResult Function() logout,
     required TResult Function() refreshToken,
+    required TResult Function() refresh,
     required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
     required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
+    required TResult Function(String email, String password) login,
   }) {
     return logout();
   }
@@ -287,9 +313,11 @@ class _$LogoutImpl implements _Logout {
     TResult? Function()? started,
     TResult? Function()? logout,
     TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
     TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
     TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
+    TResult? Function(String email, String password)? login,
   }) {
     return logout?.call();
   }
@@ -300,9 +328,11 @@ class _$LogoutImpl implements _Logout {
     TResult Function()? started,
     TResult Function()? logout,
     TResult Function()? refreshToken,
+    TResult Function()? refresh,
     TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
     TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
+    TResult Function(String email, String password)? login,
     required TResult orElse(),
   }) {
     if (logout != null) {
@@ -317,7 +347,9 @@ class _$LogoutImpl implements _Logout {
     required TResult Function(_Started value) started,
     required TResult Function(_Logout value) logout,
     required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
   }) {
@@ -330,7 +362,9 @@ class _$LogoutImpl implements _Logout {
     TResult? Function(_Started value)? started,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
   }) {
@@ -343,7 +377,9 @@ class _$LogoutImpl implements _Logout {
     TResult Function(_Started value)? started,
     TResult Function(_Logout value)? logout,
     TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
     required TResult orElse(),
@@ -403,9 +439,11 @@ class _$RefreshTokenImpl implements _RefreshToken {
     required TResult Function() started,
     required TResult Function() logout,
     required TResult Function() refreshToken,
+    required TResult Function() refresh,
     required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
     required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
+    required TResult Function(String email, String password) login,
   }) {
     return refreshToken();
   }
@@ -416,9 +454,11 @@ class _$RefreshTokenImpl implements _RefreshToken {
     TResult? Function()? started,
     TResult? Function()? logout,
     TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
     TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
     TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
+    TResult? Function(String email, String password)? login,
   }) {
     return refreshToken?.call();
   }
@@ -429,9 +469,11 @@ class _$RefreshTokenImpl implements _RefreshToken {
     TResult Function()? started,
     TResult Function()? logout,
     TResult Function()? refreshToken,
+    TResult Function()? refresh,
     TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
     TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
+    TResult Function(String email, String password)? login,
     required TResult orElse(),
   }) {
     if (refreshToken != null) {
@@ -446,7 +488,9 @@ class _$RefreshTokenImpl implements _RefreshToken {
     required TResult Function(_Started value) started,
     required TResult Function(_Logout value) logout,
     required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
   }) {
@@ -459,7 +503,9 @@ class _$RefreshTokenImpl implements _RefreshToken {
     TResult? Function(_Started value)? started,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
   }) {
@@ -472,7 +518,9 @@ class _$RefreshTokenImpl implements _RefreshToken {
     TResult Function(_Started value)? started,
     TResult Function(_Logout value)? logout,
     TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
     required TResult orElse(),
@@ -486,6 +534,147 @@ class _$RefreshTokenImpl implements _RefreshToken {
 
 abstract class _RefreshToken implements CheckAuthEvent {
   const factory _RefreshToken() = _$RefreshTokenImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshImplCopyWith<$Res> {
+  factory _$$RefreshImplCopyWith(
+          _$RefreshImpl value, $Res Function(_$RefreshImpl) then) =
+      __$$RefreshImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefreshImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$RefreshImpl>
+    implements _$$RefreshImplCopyWith<$Res> {
+  __$$RefreshImplCopyWithImpl(
+      _$RefreshImpl _value, $Res Function(_$RefreshImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RefreshImpl implements _Refresh {
+  const _$RefreshImpl();
+
+  @override
+  String toString() {
+    return 'CheckAuthEvent.refresh()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RefreshImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
+    required TResult Function() refresh,
+    required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String email, String password) login,
+  }) {
+    return refresh();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
+    TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String email, String password)? login,
+  }) {
+    return refresh?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
+    TResult Function()? refresh,
+    TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
+    TResult Function(User user)? resgiter,
+    TResult Function(String email, String password)? login,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
+    required TResult Function(_ResgiterEvent value) resgiter,
+    required TResult Function(_LoginEvent value) login,
+  }) {
+    return refresh(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
+    TResult? Function(_ResgiterEvent value)? resgiter,
+    TResult? Function(_LoginEvent value)? login,
+  }) {
+    return refresh?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
+    TResult Function(_ResgiterEvent value)? resgiter,
+    TResult Function(_LoginEvent value)? login,
+    required TResult orElse(),
+  }) {
+    if (refresh != null) {
+      return refresh(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Refresh implements CheckAuthEvent {
+  const factory _Refresh() = _$RefreshImpl;
 }
 
 /// @nodoc
@@ -581,9 +770,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
     required TResult Function() started,
     required TResult Function() logout,
     required TResult Function() refreshToken,
+    required TResult Function() refresh,
     required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
     required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
+    required TResult Function(String email, String password) login,
   }) {
     return updateInfo(user, isSend);
   }
@@ -594,9 +785,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
     TResult? Function()? started,
     TResult? Function()? logout,
     TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
     TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
     TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
+    TResult? Function(String email, String password)? login,
   }) {
     return updateInfo?.call(user, isSend);
   }
@@ -607,9 +800,11 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
     TResult Function()? started,
     TResult Function()? logout,
     TResult Function()? refreshToken,
+    TResult Function()? refresh,
     TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
     TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
+    TResult Function(String email, String password)? login,
     required TResult orElse(),
   }) {
     if (updateInfo != null) {
@@ -624,7 +819,9 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Logout value) logout,
     required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
   }) {
@@ -637,7 +834,9 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
   }) {
@@ -650,7 +849,9 @@ class _$UpdateInfoEventImpl implements _UpdateInfoEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Logout value)? logout,
     TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
     required TResult orElse(),
@@ -673,6 +874,183 @@ abstract class _UpdateInfoEvent implements CheckAuthEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateInfoEventImplCopyWith<_$UpdateInfoEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProfileImplCopyWith<$Res> {
+  factory _$$UpdateProfileImplCopyWith(
+          _$UpdateProfileImpl value, $Res Function(_$UpdateProfileImpl) then) =
+      __$$UpdateProfileImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String path});
+}
+
+/// @nodoc
+class __$$UpdateProfileImplCopyWithImpl<$Res>
+    extends _$CheckAuthEventCopyWithImpl<$Res, _$UpdateProfileImpl>
+    implements _$$UpdateProfileImplCopyWith<$Res> {
+  __$$UpdateProfileImplCopyWithImpl(
+      _$UpdateProfileImpl _value, $Res Function(_$UpdateProfileImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+  }) {
+    return _then(_$UpdateProfileImpl(
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProfileImpl implements _UpdateProfile {
+  const _$UpdateProfileImpl({required this.path});
+
+  @override
+  final String path;
+
+  @override
+  String toString() {
+    return 'CheckAuthEvent.updateProfile(path: $path)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProfileImpl &&
+            (identical(other.path, path) || other.path == path));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, path);
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProfileImplCopyWith<_$UpdateProfileImpl> get copyWith =>
+      __$$UpdateProfileImplCopyWithImpl<_$UpdateProfileImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() logout,
+    required TResult Function() refreshToken,
+    required TResult Function() refresh,
+    required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
+    required TResult Function(User user) resgiter,
+    required TResult Function(String email, String password) login,
+  }) {
+    return updateProfile(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? logout,
+    TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
+    TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
+    TResult? Function(User user)? resgiter,
+    TResult? Function(String email, String password)? login,
+  }) {
+    return updateProfile?.call(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? logout,
+    TResult Function()? refreshToken,
+    TResult Function()? refresh,
+    TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
+    TResult Function(User user)? resgiter,
+    TResult Function(String email, String password)? login,
+    required TResult orElse(),
+  }) {
+    if (updateProfile != null) {
+      return updateProfile(path);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
+    required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
+    required TResult Function(_ResgiterEvent value) resgiter,
+    required TResult Function(_LoginEvent value) login,
+  }) {
+    return updateProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
+    TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
+    TResult? Function(_ResgiterEvent value)? resgiter,
+    TResult? Function(_LoginEvent value)? login,
+  }) {
+    return updateProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
+    TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
+    TResult Function(_ResgiterEvent value)? resgiter,
+    TResult Function(_LoginEvent value)? login,
+    required TResult orElse(),
+  }) {
+    if (updateProfile != null) {
+      return updateProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateProfile implements CheckAuthEvent {
+  const factory _UpdateProfile({required final String path}) =
+      _$UpdateProfileImpl;
+
+  String get path;
+
+  /// Create a copy of CheckAuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateProfileImplCopyWith<_$UpdateProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -759,9 +1137,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
     required TResult Function() started,
     required TResult Function() logout,
     required TResult Function() refreshToken,
+    required TResult Function() refresh,
     required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
     required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
+    required TResult Function(String email, String password) login,
   }) {
     return resgiter(user);
   }
@@ -772,9 +1152,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
     TResult? Function()? started,
     TResult? Function()? logout,
     TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
     TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
     TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
+    TResult? Function(String email, String password)? login,
   }) {
     return resgiter?.call(user);
   }
@@ -785,9 +1167,11 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
     TResult Function()? started,
     TResult Function()? logout,
     TResult Function()? refreshToken,
+    TResult Function()? refresh,
     TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
     TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
+    TResult Function(String email, String password)? login,
     required TResult orElse(),
   }) {
     if (resgiter != null) {
@@ -802,7 +1186,9 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Logout value) logout,
     required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
   }) {
@@ -815,7 +1201,9 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
   }) {
@@ -828,7 +1216,9 @@ class _$ResgiterEventImpl implements _ResgiterEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Logout value)? logout,
     TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
     required TResult orElse(),
@@ -859,7 +1249,7 @@ abstract class _$$LoginEventImplCopyWith<$Res> {
           _$LoginEventImpl value, $Res Function(_$LoginEventImpl) then) =
       __$$LoginEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String eamil, String password});
+  $Res call({String email, String password});
 }
 
 /// @nodoc
@@ -875,13 +1265,13 @@ class __$$LoginEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? eamil = null,
+    Object? email = null,
     Object? password = null,
   }) {
     return _then(_$LoginEventImpl(
-      eamil: null == eamil
-          ? _value.eamil
-          : eamil // ignore: cast_nullable_to_non_nullable
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String,
       password: null == password
           ? _value.password
@@ -894,16 +1284,16 @@ class __$$LoginEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoginEventImpl implements _LoginEvent {
-  const _$LoginEventImpl({required this.eamil, required this.password});
+  const _$LoginEventImpl({required this.email, required this.password});
 
   @override
-  final String eamil;
+  final String email;
   @override
   final String password;
 
   @override
   String toString() {
-    return 'CheckAuthEvent.login(eamil: $eamil, password: $password)';
+    return 'CheckAuthEvent.login(email: $email, password: $password)';
   }
 
   @override
@@ -911,13 +1301,13 @@ class _$LoginEventImpl implements _LoginEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginEventImpl &&
-            (identical(other.eamil, eamil) || other.eamil == eamil) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, eamil, password);
+  int get hashCode => Object.hash(runtimeType, email, password);
 
   /// Create a copy of CheckAuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -933,11 +1323,13 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function() started,
     required TResult Function() logout,
     required TResult Function() refreshToken,
+    required TResult Function() refresh,
     required TResult Function(User user, bool isSend) updateInfo,
+    required TResult Function(String path) updateProfile,
     required TResult Function(User user) resgiter,
-    required TResult Function(String eamil, String password) login,
+    required TResult Function(String email, String password) login,
   }) {
-    return login(eamil, password);
+    return login(email, password);
   }
 
   @override
@@ -946,11 +1338,13 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function()? started,
     TResult? Function()? logout,
     TResult? Function()? refreshToken,
+    TResult? Function()? refresh,
     TResult? Function(User user, bool isSend)? updateInfo,
+    TResult? Function(String path)? updateProfile,
     TResult? Function(User user)? resgiter,
-    TResult? Function(String eamil, String password)? login,
+    TResult? Function(String email, String password)? login,
   }) {
-    return login?.call(eamil, password);
+    return login?.call(email, password);
   }
 
   @override
@@ -959,13 +1353,15 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function()? started,
     TResult Function()? logout,
     TResult Function()? refreshToken,
+    TResult Function()? refresh,
     TResult Function(User user, bool isSend)? updateInfo,
+    TResult Function(String path)? updateProfile,
     TResult Function(User user)? resgiter,
-    TResult Function(String eamil, String password)? login,
+    TResult Function(String email, String password)? login,
     required TResult orElse(),
   }) {
     if (login != null) {
-      return login(eamil, password);
+      return login(email, password);
     }
     return orElse();
   }
@@ -976,7 +1372,9 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_Logout value) logout,
     required TResult Function(_RefreshToken value) refreshToken,
+    required TResult Function(_Refresh value) refresh,
     required TResult Function(_UpdateInfoEvent value) updateInfo,
+    required TResult Function(_UpdateProfile value) updateProfile,
     required TResult Function(_ResgiterEvent value) resgiter,
     required TResult Function(_LoginEvent value) login,
   }) {
@@ -989,7 +1387,9 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_RefreshToken value)? refreshToken,
+    TResult? Function(_Refresh value)? refresh,
     TResult? Function(_UpdateInfoEvent value)? updateInfo,
+    TResult? Function(_UpdateProfile value)? updateProfile,
     TResult? Function(_ResgiterEvent value)? resgiter,
     TResult? Function(_LoginEvent value)? login,
   }) {
@@ -1002,7 +1402,9 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function(_Started value)? started,
     TResult Function(_Logout value)? logout,
     TResult Function(_RefreshToken value)? refreshToken,
+    TResult Function(_Refresh value)? refresh,
     TResult Function(_UpdateInfoEvent value)? updateInfo,
+    TResult Function(_UpdateProfile value)? updateProfile,
     TResult Function(_ResgiterEvent value)? resgiter,
     TResult Function(_LoginEvent value)? login,
     required TResult orElse(),
@@ -1016,10 +1418,10 @@ class _$LoginEventImpl implements _LoginEvent {
 
 abstract class _LoginEvent implements CheckAuthEvent {
   const factory _LoginEvent(
-      {required final String eamil,
+      {required final String email,
       required final String password}) = _$LoginEventImpl;
 
-  String get eamil;
+  String get email;
   String get password;
 
   /// Create a copy of CheckAuthEvent
@@ -1035,10 +1437,9 @@ mixin _$CheckAuthState {
   bool get error => throw _privateConstructorUsedError;
   bool get isAuth => throw _privateConstructorUsedError;
   bool get isEnpty => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
-  List<Region>? get regions => throw _privateConstructorUsedError;
-  Auth? get auth => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
+  Auth? get auth => throw _privateConstructorUsedError;
 
   /// Create a copy of CheckAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1058,10 +1459,9 @@ abstract class $CheckAuthStateCopyWith<$Res> {
       bool error,
       bool isAuth,
       bool isEnpty,
+      String errorMessage,
       User user,
-      List<Region>? regions,
-      Auth? auth,
-      String errorMessage});
+      Auth? auth});
 
   $UserCopyWith<$Res> get user;
   $AuthCopyWith<$Res>? get auth;
@@ -1086,10 +1486,9 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
     Object? error = null,
     Object? isAuth = null,
     Object? isEnpty = null,
-    Object? user = null,
-    Object? regions = freezed,
-    Object? auth = freezed,
     Object? errorMessage = null,
+    Object? user = null,
+    Object? auth = freezed,
   }) {
     return _then(_value.copyWith(
       loading: null == loading
@@ -1108,22 +1507,18 @@ class _$CheckAuthStateCopyWithImpl<$Res, $Val extends CheckAuthState>
           ? _value.isEnpty
           : isEnpty // ignore: cast_nullable_to_non_nullable
               as bool,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      regions: freezed == regions
-          ? _value.regions
-          : regions // ignore: cast_nullable_to_non_nullable
-              as List<Region>?,
-      auth: freezed == auth
-          ? _value.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as Auth?,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      auth: freezed == auth
+          ? _value.auth
+          : auth // ignore: cast_nullable_to_non_nullable
+              as Auth?,
     ) as $Val);
   }
 
@@ -1165,10 +1560,9 @@ abstract class _$$CheckAuthStateImplCopyWith<$Res>
       bool error,
       bool isAuth,
       bool isEnpty,
+      String errorMessage,
       User user,
-      List<Region>? regions,
-      Auth? auth,
-      String errorMessage});
+      Auth? auth});
 
   @override
   $UserCopyWith<$Res> get user;
@@ -1193,10 +1587,9 @@ class __$$CheckAuthStateImplCopyWithImpl<$Res>
     Object? error = null,
     Object? isAuth = null,
     Object? isEnpty = null,
-    Object? user = null,
-    Object? regions = freezed,
-    Object? auth = freezed,
     Object? errorMessage = null,
+    Object? user = null,
+    Object? auth = freezed,
   }) {
     return _then(_$CheckAuthStateImpl(
       loading: null == loading
@@ -1215,22 +1608,18 @@ class __$$CheckAuthStateImplCopyWithImpl<$Res>
           ? _value.isEnpty
           : isEnpty // ignore: cast_nullable_to_non_nullable
               as bool,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      regions: freezed == regions
-          ? _value._regions
-          : regions // ignore: cast_nullable_to_non_nullable
-              as List<Region>?,
-      auth: freezed == auth
-          ? _value.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as Auth?,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+      auth: freezed == auth
+          ? _value.auth
+          : auth // ignore: cast_nullable_to_non_nullable
+              as Auth?,
     ));
   }
 }
@@ -1238,23 +1627,19 @@ class __$$CheckAuthStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CheckAuthStateImpl implements _CheckAuthState {
-  _$CheckAuthStateImpl(
-      {this.loading = false,
+  const _$CheckAuthStateImpl(
+      {this.loading = true,
       this.error = false,
       this.isAuth = false,
       this.isEnpty = false,
+      this.errorMessage = '',
       this.user = const User(
           id: 0,
           name: '',
           email: '',
           role: '',
-          gander: '',
-          region: '',
           academic_stage: {'stage': '', 'type': ""}),
-      final List<Region>? regions,
-      this.auth,
-      this.errorMessage = ''})
-      : _regions = regions;
+      this.auth});
 
   @override
   @JsonKey()
@@ -1270,26 +1655,16 @@ class _$CheckAuthStateImpl implements _CheckAuthState {
   final bool isEnpty;
   @override
   @JsonKey()
-  final User user;
-  final List<Region>? _regions;
-  @override
-  List<Region>? get regions {
-    final value = _regions;
-    if (value == null) return null;
-    if (_regions is EqualUnmodifiableListView) return _regions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  final Auth? auth;
+  final String errorMessage;
   @override
   @JsonKey()
-  final String errorMessage;
+  final User user;
+  @override
+  final Auth? auth;
 
   @override
   String toString() {
-    return 'CheckAuthState(loading: $loading, error: $error, isAuth: $isAuth, isEnpty: $isEnpty, user: $user, regions: $regions, auth: $auth, errorMessage: $errorMessage)';
+    return 'CheckAuthState(loading: $loading, error: $error, isAuth: $isAuth, isEnpty: $isEnpty, errorMessage: $errorMessage, user: $user, auth: $auth)';
   }
 
   @override
@@ -1301,16 +1676,15 @@ class _$CheckAuthStateImpl implements _CheckAuthState {
             (identical(other.error, error) || other.error == error) &&
             (identical(other.isAuth, isAuth) || other.isAuth == isAuth) &&
             (identical(other.isEnpty, isEnpty) || other.isEnpty == isEnpty) &&
-            (identical(other.user, user) || other.user == user) &&
-            const DeepCollectionEquality().equals(other._regions, _regions) &&
-            (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
+                other.errorMessage == errorMessage) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.auth, auth) || other.auth == auth));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loading, error, isAuth, isEnpty,
-      user, const DeepCollectionEquality().hash(_regions), auth, errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType, loading, error, isAuth, isEnpty, errorMessage, user, auth);
 
   /// Create a copy of CheckAuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -1323,15 +1697,14 @@ class _$CheckAuthStateImpl implements _CheckAuthState {
 }
 
 abstract class _CheckAuthState implements CheckAuthState {
-  factory _CheckAuthState(
+  const factory _CheckAuthState(
       {final bool loading,
       final bool error,
       final bool isAuth,
       final bool isEnpty,
+      final String errorMessage,
       final User user,
-      final List<Region>? regions,
-      final Auth? auth,
-      final String errorMessage}) = _$CheckAuthStateImpl;
+      final Auth? auth}) = _$CheckAuthStateImpl;
 
   @override
   bool get loading;
@@ -1342,13 +1715,11 @@ abstract class _CheckAuthState implements CheckAuthState {
   @override
   bool get isEnpty;
   @override
+  String get errorMessage;
+  @override
   User get user;
   @override
-  List<Region>? get regions;
-  @override
   Auth? get auth;
-  @override
-  String get errorMessage;
 
   /// Create a copy of CheckAuthState
   /// with the given fields replaced by the non-null parameter values.

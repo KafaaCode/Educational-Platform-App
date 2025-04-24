@@ -16,9 +16,9 @@ class MainUiScreen extends StatefulWidget {
 class _MainUiScreenState extends State<MainUiScreen> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    MainWidget(),
-    TestsWidget(),
-    CoursesWidget(),
+    const MainWidget(),
+    const TestsWidget(),
+    const CoursesWidget(),
     SettingPage(),
   ];
 
@@ -33,8 +33,8 @@ class _MainUiScreenState extends State<MainUiScreen> {
     return Scaffold(
         appBar: CustomAppBar(
             preferredSize: _selectedIndex == 3
-                ? const Size.fromHeight(190)
-                : const Size.fromHeight(150),
+                ? const Size.fromHeight(180)
+                : const Size.fromHeight(140),
             path: 'assets/images/bg_intro_page1.png',
             isCustom: _selectedIndex == 3,
             child: _selectedIndex == 3 ? const AppbarAccount() : null),

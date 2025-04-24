@@ -1,4 +1,6 @@
-import 'package:educational_platform_app/student/core/observer/app_auth_checker.dart';
+import 'package:educational_platform_app/core/utils/toast.dart';
+import 'package:educational_platform_app/core/routes/router_screens.dart';
+import 'package:educational_platform_app/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,8 +26,19 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<CheckAuthBloc, CheckAuthState>(
-        // listenWhen: (previous, current) => previous != current,
-        listener: AppAuthChecker().listener,
+        listenWhen: (previous, current) {
+          print("------------------login----------------------");
+          return previous != current;
+        },
+        listener: (context, state) {
+          if (state.isAuth && !state.isEnpty) {
+            AppRouter.router
+                .navigateTo(context, RoutesNames.mainRoute, replace: true);
+          }
+          if (state.error) {
+            Toast().error(context, state.errorMessage);
+          }
+        },
         child: Container(
           decoration: BoxDecoration(
             color: AppColors.backgroundColor,

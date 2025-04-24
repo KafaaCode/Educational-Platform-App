@@ -1,5 +1,5 @@
 import 'package:educational_platform_app/core/localization/generated/l10n.dart';
-import 'package:educational_platform_app/student/core/routes/routes_name.dart';
+import 'package:educational_platform_app/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/page_line.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/questions_button.dart';
@@ -7,113 +7,124 @@ import 'package:educational_platform_app/student/src/presentation/widgets/button
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Question1 extends StatefulWidget {
+class Question1 extends StatelessWidget {
   final PageController pageController;
-  final CheckAuthState state;
-  const Question1(
-      {super.key, required this.pageController, required this.state});
-  @override
-  State<Question1> createState() => _Question1State();
-}
-
-class _Question1State extends State<Question1> {
-  String? selectedFilter;
-
-  @override
-  void initState() {
-    selectedFilter ??=
-        widget.state.user.academic_stage?['stage'] ?? 'secondary';
-    super.initState();
-  }
+  final bool isUpdate;
+  Question1({super.key, required this.pageController, required this.isUpdate});
 
   @override
   Widget build(BuildContext context) {
-    selectedFilter ??=
-        widget.state.user.academic_stage?['stage'] ?? 'secondary';
     Lang lang = Lang.of(context);
-    return Column(
-      children: [
-        PageLine(
-          pageIndex: 1,
-          onTap: (value) {
-            widget.pageController.jumpToPage(value);
-          },
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                children: [
-                  QuestionsButton(
-                    label: lang.basic,
-                    isSelected: selectedFilter == 'preparatory',
-                    onTap: () {
-                      setState(() {
-                        selectedFilter = 'preparatory';
-                        context.read<CheckAuthBloc>().add(
-                                CheckAuthEvent.updateInfo(
-                                    user: widget.state.user.copyWith(
-                                        academic_stage: {
-                                  'stage': selectedFilter!,
-                                  'type': 'scientific'
-                                })));
-                      });
-                    },
-                  ),
-                  const SizedBox(height: 25),
-                  QuestionsButton(
-                    label: lang.highSchool,
-                    isSelected: selectedFilter == 'secondary',
-                    onTap: () {
-                      setState(() {
-                        selectedFilter = 'secondary';
-                        context.read<CheckAuthBloc>().add(
-                                CheckAuthEvent.updateInfo(
-                                    user: widget.state.user.copyWith(
-                                        academic_stage: {
-                                  'stage': selectedFilter!,
-                                  'type': 'scientific'
-                                })));
-                      });
-                    },
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              Button(
-                  onPressed: () {
-                    widget.pageController.jumpToPage(2);
-                  },
-                  text: "استمر")
-            ],
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text("لديك حساب؟"),
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).pushNamed(RoutesNames.loginRoute);
-                },
-                child: const Text(
-                  'سجل دخول الان',
-                  style: TextStyle(color: Color.fromRGBO(88, 135, 96, 1)),
+    return BlocBuilder<CheckAuthBloc, CheckAuthState>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                reverse: true,
+                child: Column(
+                  children: [
+                    PageLine(
+                      pageIndex: 1,
+                      onTap: (value) {
+                        pageController.jumpToPage(value);
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          children: [
+                            _buildQuestionsButton(
+                              context: context,
+                              label: lang.basic,
+                              stage: 'primary',
+                              state: state,
+                            ),
+                            const SizedBox(height: 25),
+                            _buildQuestionsButton(
+                              context: context,
+                              label: 'اعدادي',
+                              stage: 'preparatory',
+                              state: state,
+                            ),
+                            const SizedBox(height: 25),
+                            _buildQuestionsButton(
+                              context: context,
+                              label: lang.highSchool,
+                              stage: 'secondary',
+                              state: state,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 40),
+                        Button(
+                          onPressed: () {
+                            if (state.user.academic_stage?['stage'] != null) {
+                              pageController.jumpToPage(2);
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('الرجاء اختيار')),
+                              );
+                            }
+                          },
+                          text: "استمر",
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("لديك حساب؟"),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context)
+                                .pushNamed(RoutesNames.loginRoute);
+                          },
+                          child: const Text(
+                            'سجل دخول الان',
+                            style: TextStyle(
+                                color: Color.fromRGBO(88, 135, 96, 1)),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                  ],
                 ),
-              )
-            ],
-          ),
-        )
-      ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildQuestionsButton({
+    required BuildContext context,
+    required String label,
+    required String stage,
+    required CheckAuthState state,
+  }) {
+    return QuestionsButton(
+      label: label,
+      isSelected: state.user.academic_stage?['stage'] == stage,
+      onTap: () {
+        context.read<CheckAuthBloc>().add(
+              CheckAuthEvent.updateInfo(
+                isSend: isUpdate,
+                user: state.user.copyWith(
+                  academic_stage: {
+                    'stage': stage,
+                    'type': state.user.academic_stage?['type'] ?? ''
+                  },
+                ),
+              ),
+            );
+      },
     );
   }
 }

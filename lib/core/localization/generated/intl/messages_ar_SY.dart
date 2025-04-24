@@ -34,8 +34,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "courses": MessageLookupByLibrary.simpleMessage("الكورسات"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "female": MessageLookupByLibrary.simpleMessage("أنثى"),
+        "general": MessageLookupByLibrary.simpleMessage("عام"),
         "highSchool": MessageLookupByLibrary.simpleMessage("الثانوية"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "literary": MessageLookupByLibrary.simpleMessage("ادبي"),
         "loding": MessageLookupByLibrary.simpleMessage("جار التحميل"),
         "loginAStudent":
             MessageLookupByLibrary.simpleMessage("تسجيل دخول كطالب"),
@@ -46,7 +48,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "عفوا! لم يتم العثور على الصفحة"),
         "pageNotFoundMsg": MessageLookupByLibrary.simpleMessage(
             "الصفحة التي تبحث عنها غير موجودة."),
+        "preparatory": MessageLookupByLibrary.simpleMessage("اعدادي"),
+        "primary": MessageLookupByLibrary.simpleMessage("الأساسية"),
         "registration": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "scientific": MessageLookupByLibrary.simpleMessage("علمي"),
+        "secondary": MessageLookupByLibrary.simpleMessage("الثانوية"),
         "tests": MessageLookupByLibrary.simpleMessage("الاختبارات"),
         "textIntroPage1": MessageLookupByLibrary.simpleMessage(
             "أطلق العنان لإمكانياتك، من خلال دوراتنا التدريبية التي يقودها الخبراء"),

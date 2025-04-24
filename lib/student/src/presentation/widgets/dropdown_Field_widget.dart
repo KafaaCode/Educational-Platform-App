@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 class DropdownFieldWidget extends StatelessWidget {
   final String labelText;
   final IconData icon;
-  final List<Region> items;
-  final String? value; // Make value nullable
+  final List<Region>? items;
+  final String? value;
   final Function(String?)? onChanged;
+  final Color? textColor;
+  final Color? fillColor;
 
   const DropdownFieldWidget({
     super.key,
@@ -15,20 +17,26 @@ class DropdownFieldWidget extends StatelessWidget {
     required this.items,
     required this.value,
     required this.onChanged,
+    this.textColor,
+    this.fillColor,
   });
 
   @override
   Widget build(BuildContext context) {
     // Ensure value exists in items before using it
-    final validValue =
-        items.any((region) => region.name.toString() == value) ? value : null;
+    final validValue = value != null
+        ? items
+            ?.where((region) =>
+                (region.name == value || region.id.toString() == value))
+            .first
+        : null;
 
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
-      child: DropdownButtonFormField<String>(
-        value: validValue,
+      child: DropdownButtonFormField<String?>(
+        value: validValue?.id.toString(),
         hint: Text(labelText),
-        items: items.map((Region region) {
+        items: items?.map((Region region) {
           return DropdownMenuItem<String>(
             value: region.id.toString(),
             child: Text(region.name),
@@ -41,11 +49,11 @@ class DropdownFieldWidget extends StatelessWidget {
           labelText: labelText,
           labelStyle: TextStyle(
             fontFamily: 'Cairo',
-            color: Colors.grey[600],
+            color: textColor ?? Colors.grey[600],
           ),
           prefixIcon: Icon(icon),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: fillColor,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: const BorderSide(

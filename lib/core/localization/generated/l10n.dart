@@ -279,6 +279,66 @@ class Lang {
       args: [],
     );
   }
+
+  /// `scientific`
+  String get scientific {
+    return Intl.message(
+      'scientific',
+      name: 'scientific',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `primary`
+  String get primary {
+    return Intl.message(
+      'primary',
+      name: 'primary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `preparatory`
+  String get preparatory {
+    return Intl.message(
+      'preparatory',
+      name: 'preparatory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `secondary`
+  String get secondary {
+    return Intl.message(
+      'secondary',
+      name: 'secondary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get general {
+    return Intl.message(
+      'General',
+      name: 'general',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `literary`
+  String get literary {
+    return Intl.message(
+      'literary',
+      name: 'literary',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Lang> {

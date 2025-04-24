@@ -19,30 +19,33 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8
     }
 
-    
-    flavorDimensions "default"
-    productFlavors {
-        teacher {
-            dimension "default"
-            applicationIdSuffix ".teacher"
-            versionNameSuffix "-teacher"
-        }
-        student {
-            dimension "default"
-            applicationIdSuffix ".student"
-            versionNameSuffix "-student"
-        }
-    }
+    // flavorDimensions "app"
+    // productFlavors {
+    //     student {
+    //         dimension "app"
+    //         applicationId "com.example.educationalplatform.student"
+    //         versionCode 1
+    //         applicationIdSuffix ".student"
+    //         versionName "1.0"
+    //         resValue "string", "app_name", "Student App"
+    //     }
+    //     teacher {
+    //         dimension "app"
+    //         applicationId "com.example.educationalplatform.teacher"
+    //         resValue "string", "app_name", "Teacher App"
+    //         applicationIdSuffix ".teacher"
+    //         versionCode 1
+    //         versionName "1.0"
+    //     }
+    // }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.educational_platform_app"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        // Remove the specific applicationId from here since it's defined in flavors
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        // missingDimensionStrategy 'app', 'student' // Add this line
     }
 
     buildTypes {

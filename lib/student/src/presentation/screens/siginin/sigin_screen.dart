@@ -1,10 +1,9 @@
-import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/question1.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/question2.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/question_type.dart';
 import 'package:educational_platform_app/student/src/presentation/screens/siginin/widgets/sigin.dart';
 import 'package:educational_platform_app/student/src/presentation/widgets/app_scaffold.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SiginScreen extends StatelessWidget {
@@ -65,17 +64,14 @@ class SiginScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: BlocBuilder<CheckAuthBloc, CheckAuthState>(
-          builder: (context, state) {
-            return PageView(
-              controller: pageController,
-              children: [
-                SignInScreen(pageController: pageController, state: state),
-                Question1(pageController: pageController, state: state),
-                Question2(pageController: pageController, state: state),
-              ],
-            );
-          },
+        body: PageView(
+          controller: pageController,
+          children: [
+            SignInScreen(pageController: pageController),
+            Question1(pageController: pageController, isUpdate: false),
+            QuestionType(pageController: pageController, isUpdate: false),
+            Question2(pageController: pageController, isUpdate: false),
+          ],
         ));
   }
 }

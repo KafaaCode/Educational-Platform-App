@@ -1,72 +1,94 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class TrainerGrid extends StatelessWidget {
+  final Function() onTap;
   final String name;
   final String count_Student;
   final String path;
   final String spaczaltion;
-  TrainerGrid(
-      {required this.name,
+  const TrainerGrid(
+      {super.key,
+      required this.name,
       required this.count_Student,
       required this.path,
-      required this.spaczaltion});
+      required this.spaczaltion,
+      required this.onTap});
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 2,
-      runSpacing: 5,
-      children: List.generate(6, (index) {
-        return Container(
-          width: MediaQuery.of(context).size.width > 800
-              ? MediaQuery.of(context).size.width * 0.23
-              : MediaQuery.of(context).size.width > 550
-                  ? MediaQuery.of(context).size.width * 0.3
-                  : MediaQuery.of(context).size.width * 0.47,
-          child: ClipPath(
-            clipper: RoundedTopEdgeClipper(),
-            child: Card(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const SizedBox(height: 35),
-                    ClipOval(
-                      child: Image.asset(
-                        '${this.path}',
-                        width: 60,
-                        height: 60,
-                        fit: BoxFit.cover,
-                      ),
+    return Container(
+      width: MediaQuery.of(context).size.width > 800
+          ? MediaQuery.of(context).size.width * 0.23
+          : MediaQuery.of(context).size.width > 550
+              ? MediaQuery.of(context).size.width * 0.3
+              : MediaQuery.of(context).size.width * 0.48,
+      child: ClipPath(
+        clipper: RoundedTopEdgeClipper(),
+        child: InkWell(
+          onTap: onTap,
+          child: Card(
+            color: Theme.of(context).cardColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 35),
+                  ClipOval(
+                    child: Image.asset(
+                      path,
+                      width: 60,
+                      height: 60,
+                      fit: BoxFit.cover,
                     ),
-                    Text(
-                      '${this.name}',
-                      style: const TextStyle(fontSize: 14),
-                      textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 5,),
+                  Text(
+                    
+                              maxLines: 1, 
+                        textDirection: TextDirection.ltr,
+  overflow: TextOverflow.ellipsis, 
+                    '${this.name}',
+                    style: TextStyle(
+                      fontFamily: 'cairo',
+                      fontSize: 14,
+                      color: Color(0xFF616161),
                     ),
-                    Text(
-                      '${this.spaczaltion}',
-                      style: const TextStyle(
-                          fontSize: 14, fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
+                    textAlign: TextAlign.center,
+                  ),
+                     SizedBox(height: 5,),
+                  Text(
+                      maxLines: 1, 
+                        textDirection: TextDirection.ltr,
+  overflow: TextOverflow.ellipsis, 
+                    '${this.spaczaltion}',
+                    style: TextStyle(
+                        fontFamily: 'cairo',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
                     ),
-                    Text(
-                      '${this.count_Student}طالب',
-                      style: TextStyle(fontSize: 15, color: Colors.grey[700]),
-                      textAlign: TextAlign.center,
+                    textAlign: TextAlign.center,
+                  ),
+                   SizedBox(height: 5,),
+                  Text(
+                    '${this.count_Student} طالب',
+                    style: TextStyle(
+                        fontFamily: 'cairo',
+                      fontSize: 15,
+                      color: Color(0xFF616161),
                     ),
-                  ],
-                ),
+                    textAlign: TextAlign.center,
+                  ),
+                   SizedBox(height: 10,),
+                ],
               ),
             ),
           ),
-        );
-      }),
+        ),
+      ),
     );
   }
 }

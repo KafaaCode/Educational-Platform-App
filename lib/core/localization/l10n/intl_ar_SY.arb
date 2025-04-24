@@ -22,5 +22,12 @@
     "account":"الحساب",
     "courses":"الكورسات",
     "home":"الرئيسية",
-    "tests":"الاختبارات"
+    "tests":"الاختبارات",
+    "scientific":"علمي",
+    "primary":"الأساسية",
+    "preparatory":"اعدادي",
+    "secondary":"الثانوية",
+    "general":"عام",
+    "literary":"ادبي"
+
 }

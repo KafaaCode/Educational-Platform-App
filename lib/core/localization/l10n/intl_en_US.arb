@@ -22,5 +22,11 @@
     "account":" ",
     "courses":" ",
     "home":" ",
-    "tests":" "
+    "tests":" ",
+    "scientific":"scientific",
+    "primary":"primary",
+    "preparatory":"preparatory",
+    "secondary":"secondary",
+    "general":"General",
+    "literary":"literary"
 }

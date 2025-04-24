@@ -5,9 +5,9 @@ class UserTest {
   final String name;
   final String email;
   final String role;
-  final String gander;
-  final String region;
-  final Map<String, String> academicStage;
+  final String? gander;
+  final String? region;
+  final Map<String, String>? academicStage;
   final String? password;
   final String? phoneNumber;
   final DateTime? createdAt;

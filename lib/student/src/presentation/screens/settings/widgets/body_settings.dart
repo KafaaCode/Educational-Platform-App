@@ -1,4 +1,8 @@
+import 'package:educational_platform_app/core/routes/router_screens.dart';
+import 'package:educational_platform_app/core/routes/routes_name.dart';
 import 'package:educational_platform_app/student/src/presentation/controllers/check_auth/check_auth_bloc.dart';
+import 'package:educational_platform_app/student/src/presentation/screens/settings/widgets/custom_windows.dart';
+import 'package:educational_platform_app/student/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,33 +33,40 @@ class BodySettings extends StatelessWidget {
               [
                 SettingsItem(
                   icon: Icon(Icons.favorite_outlined,
-                      color: Theme.of(context).primaryColor),
+                      color: Theme.of(context).iconTheme.color),
                   text: "المفضلة",
+                  onTap: () => AppRouter.router
+                      .navigateTo(context, RoutesNames.favoritesRoute),
                 ),
                 SettingsItem(
                   icon: Icon(Icons.notifications_rounded,
-                      color: Theme.of(context).primaryColor),
+                      color: Theme.of(context).iconTheme.color),
                   text: "الإشعارات",
+                  onTap: () => CustomWindows.notificationWindow(context),
                 ),
                 SettingsItem(
                   icon: Icon(Icons.nightlight_round_outlined,
-                      color: Theme.of(context).primaryColor),
+                      color: Theme.of(context).iconTheme.color),
                   text: "المظهر",
+                  onTap: () => CustomWindows.themeChangeWindow(context),
                 ),
                 SettingsItem(
                   icon: Icon(Icons.support_agent_rounded,
-                      color: Theme.of(context).primaryColor),
+                      color: Theme.of(context).iconTheme.color),
                   text: "الدعم الفني",
+                  onTap: () => CustomWindows.supportWindow(context),
                 ),
                 SettingsItem(
                   icon: Icon(Icons.privacy_tip_rounded,
-                      color: Theme.of(context).primaryColor),
+                      color: Theme.of(context).iconTheme.color),
                   text: "سياسة الخصوصية",
+                  onTap: () => CustomWindows.privacyPolicyWindow(context),
                 ),
                 SettingsItem(
                   icon: Icon(Icons.info_outline,
-                      color: Theme.of(context).primaryColor),
+                      color: Theme.of(context).iconTheme.color),
                   text: "معلومات التطبيق",
+                  onTap: () => CustomWindows.appInfoWindow(context),
                 ),
               ],
             ),
@@ -80,11 +91,13 @@ class BodySettings extends StatelessWidget {
   Widget _buildSettingsGroup(BuildContext context, List<Widget> children) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor, // Adjusted for theme
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: Theme.of(context)
+                .shadowColor
+                .withOpacity(0.1), // Adjusted for theme
             spreadRadius: 1,
             blurRadius: 4,
             offset: const Offset(0, 2),
@@ -130,17 +143,18 @@ class SettingsItem extends StatelessWidget {
             style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
-              color: textColor ?? Colors.black87,
+              color: textColor ?? Theme.of(context).textTheme.bodyMedium?.color,
             ),
           ),
           trailing: Icon(
             Icons.arrow_forward_ios_rounded,
             size: 15.sp,
-            color: Colors.grey[600],
+            color: Theme.of(context).iconTheme.color,
           ),
           onTap: onTap,
         ),
-        if (text != "تسجيل خروج") Divider(height: 1, color: Colors.grey[100]),
+        if (text != "تسجيل خروج")
+          Divider(height: 1, color: Theme.of(context).dividerColor),
       ],
     );
   }
@@ -151,10 +165,12 @@ class LogoutDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Dialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(32.0),
       ),
+      backgroundColor: theme.cardColor,
       child: Container(
         padding: EdgeInsets.all(20.w),
         child: Column(
@@ -164,7 +180,7 @@ class LogoutDialog extends StatelessWidget {
               width: 55.w,
               height: 55.h,
               decoration: BoxDecoration(
-                color: Colors.red[100],
+                color: Colors.red.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Icon(
@@ -174,24 +190,15 @@ class LogoutDialog extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15.h),
-            // Text(
-            //   'تسجيل الخروج',
-            //   style: TextStyle(
-            //     fontSize: 18.sp,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
-
             Text(
               'هل تريد بالفعل تسجيل الخروج ؟',
               style: TextStyle(
                 fontSize: 14.sp,
-                color: Colors.black,
+                color: theme.textTheme.bodyLarge?.color,
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 30.h),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -201,7 +208,7 @@ class LogoutDialog extends StatelessWidget {
                     'لا',
                     style: TextStyle(
                       fontSize: 16.sp,
-                      color: Colors.grey[600],
+                      color: theme.textTheme.bodyMedium?.color,
                     ),
                   ),
                 ),

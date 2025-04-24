@@ -7,13 +7,14 @@ class Background extends StatelessWidget {
   const Background({super.key, required this.child, this.toolbarHeight = 300});
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     ScreenUtil.init(context,
         designSize: const Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true);
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF9E9), // Light beige background
+        color: theme.scaffoldBackgroundColor, // استخدام لون الخلفية من الثيم
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: Scaffold(
@@ -25,11 +26,11 @@ class Background extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius:
                     BorderRadius.vertical(bottom: Radius.circular(20.r)),
-                color: const Color.fromRGBO(88, 135, 96, 1),
+                color: theme.primaryColor, // استخدام اللون الأساسي من الثيم
               ),
               height: toolbarHeight.h,
               alignment: Alignment.center,
-              child: SizedBox()),
+              child: const SizedBox()),
         ),
         body: Stack(
           children: [
@@ -39,6 +40,12 @@ class Background extends StatelessWidget {
                 child: Image.asset(
                   'assets/images/bg_things.png',
                   fit: BoxFit.cover,
+                  color: theme.brightness == Brightness.dark
+                      ? Colors.black.withOpacity(0.2)
+                      : null, // تعديل اللون بناءً على الثيم
+                  colorBlendMode: theme.brightness == Brightness.dark
+                      ? BlendMode.darken
+                      : null,
                 ),
               ),
             ),

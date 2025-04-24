@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 enum ButtonType { white, worng, red, nomal }
 
 class Button extends StatelessWidget {
+
   final Function() onPressed;
   final String text;
-  ButtonType? type;
+  final ButtonType? type;
 
   Button({super.key, required this.onPressed, required this.text, this.type});
 
